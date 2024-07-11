@@ -2,6 +2,14 @@
   "name": "airsoftseven-app",
   "version": "0.1.0",
   "private": true,
+  "author": "Baptiste Martinet",
+  "description": "Airsoft matchmaking made easy",
+  "license": "ISC",
+  "keywords": [
+    "airsoftseven",
+    "airsoft",
+    "matchmaking"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
