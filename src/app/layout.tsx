@@ -2,7 +2,16 @@ import type { Metadata } from "next";
 
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
-import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
+import {
+  createTheme,
+  ColorSchemeScript,
+  MantineProvider,
+  AppShell,
+  AppShellHeader,
+  AppShellFooter,
+  AppShellMain,
+} from "@mantine/core";
+import { Header, Footer } from "@components/common";
 
 const theme = createTheme({});
 
@@ -26,7 +35,17 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <AppShell header={{ height: 60 }} padding="md">
+            <AppShellHeader>
+              <Header />
+            </AppShellHeader>
+            <AppShellMain>{children}</AppShellMain>
+            <AppShellFooter>
+              <Footer />
+            </AppShellFooter>
+          </AppShell>
+        </MantineProvider>
       </body>
     </html>
   );

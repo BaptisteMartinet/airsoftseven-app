@@ -1,7 +1,7 @@
 import { Overlay, Container, Title, Button, Text } from "@mantine/core";
-import classes from "./Page.module.css";
+import classes from "./Main.module.css";
 
-export default function Page() {
+export default function Main() {
   return (
     <div className={classes.hero}>
       <Overlay
