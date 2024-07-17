@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <ColorSchemeScript />
-        <meta charSet="UTF-8" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
