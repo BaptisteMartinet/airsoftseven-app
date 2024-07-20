@@ -1,8 +1,15 @@
+import type { LocalPageParams } from "@app/[local]/shared";
+
 import { Overlay, Container, Title, Button, Text } from "@mantine/core";
+import { getLocalLanguage } from "@core/utils/language";
 import { AppShell } from "@components/common";
 import classes from "./Main.module.css";
 
-export default function Main({ params: { lang } }: { params: any }) {
+export default function Main(props: { params: LocalPageParams }) {
+  const { params } = props;
+  const { local } = params;
+  const language = getLocalLanguage(local);
+  console.log(language);
   return (
     <AppShell>
       <div className={classes.hero}>
