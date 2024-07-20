@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
+import "@mantine/carousel/styles.css";
 import { createTheme, ColorSchemeScript, MantineProvider } from "@mantine/core";
 
 const theme = createTheme({});
