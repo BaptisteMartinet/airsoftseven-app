@@ -18,6 +18,22 @@ export function getLocalLanguage(local: string) {
   return language;
 }
 
+export function ensureLocalLanguage(local: string) {
+  const language = getLocalLanguage(local);
+  if (!language) throw new Error(`Unsupported local: ${local}`);
+  return language;
+}
+
 export function isSupportedLocal(local: string) {
   return Locals.has(local);
+}
+
+export function genTextsGetter<DefinitionT>(
+  definitions: Map<Language, DefinitionT>
+) {
+  return (language: Language) => {
+    const texts = definitions.get(language);
+    if (!texts) throw new Error(`Unsupported language: ${language}`);
+    return texts;
+  };
 }

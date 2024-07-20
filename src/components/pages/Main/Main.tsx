@@ -1,15 +1,16 @@
 import type { LocalPageParams } from "@app/[local]/shared";
 
 import { Overlay, Container, Title, Button, Text } from "@mantine/core";
-import { getLocalLanguage } from "@core/utils/language";
+import { ensureLocalLanguage } from "@core/utils/language";
 import { AppShell } from "@components/common";
+import texts from "./texts";
 import classes from "./Main.module.css";
 
 export default function Main(props: { params: LocalPageParams }) {
   const { params } = props;
   const { local } = params;
-  const language = getLocalLanguage(local);
-  console.log(language);
+  const language = ensureLocalLanguage(local);
+  const T = texts(language);
   return (
     <AppShell>
       <div className={classes.hero}>
@@ -19,9 +20,7 @@ export default function Main(props: { params: LocalPageParams }) {
           zIndex={0}
         />
         <Container className={classes.container} size="md">
-          <Title className={classes.title}>
-            A fully featured React components library
-          </Title>
+          <Title className={classes.title}>{T.title}</Title>
           <Text className={classes.description} size="xl" mt="xl">
             Build fully functional accessible web applications faster than ever
             – Mantine includes more than 120 customizable components and hooks
