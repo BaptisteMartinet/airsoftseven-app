@@ -7,6 +7,9 @@
     "Header": {
       "title": "AirsoftSeven",
       "createEvent": "Ajouter une partie"
+    },
+    "LocalePicker": {
+      "locale": "{locale, select, fr {Francais} en {English} other {Unknown}}"
     }
   },
   "pages": {
