@@ -6,7 +6,7 @@
   "common": {
     "Header": {
       "title": "AirsoftSeven",
-      "createEvent": "Ajouter une partie"
+      "createEvent": "Ajouter un événement"
     }
   },
   "pages": {
