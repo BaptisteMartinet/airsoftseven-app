@@ -8,6 +8,7 @@ import {
   Text,
   NavLink,
   ActionIcon,
+  Box,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconUserCircle } from "@tabler/icons-react";
@@ -20,23 +21,26 @@ export default function Header() {
   const t = useTranslations("common.Header");
 
   return (
-    <header className={classes.header}>
-      <Container size="lg" className={classes.inner}>
-        <Group gap="sm" visibleFrom="xs">
-          <Text size="lg" fw={500}>
-            {t("title")}
-          </Text>
-        </Group>
-        <Group gap="lg" visibleFrom="xs" wrap="nowrap" align="center">
-          <NavLink component={Link} href="/test" label={t("createEvent")} />
-          <LocalePicker />
-          <ActionIcon variant="transparent" size="md">
-            <IconUserCircle />
-          </ActionIcon>
-        </Group>
+    <>
+      <Box className={classes.placeholder} />
+      <header className={classes.header}>
+        <Container size="lg" className={classes.inner}>
+          <Group gap="sm" visibleFrom="xs">
+            <Text size="lg" fw={500}>
+              {t("title")}
+            </Text>
+          </Group>
+          <Group gap="lg" visibleFrom="xs" wrap="nowrap" align="center">
+            <NavLink component={Link} href="/test" label={t("createEvent")} />
+            <LocalePicker />
+            <ActionIcon variant="transparent" size="md">
+              <IconUserCircle />
+            </ActionIcon>
+          </Group>
 
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-      </Container>
-    </header>
+          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        </Container>
+      </header>
+    </>
   );
 }
