@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 
+import ApolloWrapper from "./ApolloWrapper";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import "@mantine/carousel/styles.css";
 import { createTheme, ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { ApolloProvider } from "@apollo/client";
-import apolloClient from "./apolloClient";
 
 const theme = createTheme({});
 
@@ -24,9 +23,9 @@ export default function RootLayout(
         <ColorSchemeScript />
       </head>
       <body>
-        <ApolloProvider client={apolloClient}>
+        <ApolloWrapper>
           <MantineProvider theme={theme}>{children}</MantineProvider>
-        </ApolloProvider>
+        </ApolloWrapper>
       </body>
     </html>
   );
