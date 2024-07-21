@@ -6,6 +6,7 @@
   "common": {
     "Header": {
       "title": "AirsoftSeven",
+      "betaCaption": "Beta",
       "createEvent": "Add an event"
     },
     "LocalePicker": {
