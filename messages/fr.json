@@ -3,9 +3,17 @@
     "title": "AirsoftSeven | Recherche de parties airsoft",
     "description": "Trouver un événement airsoft n'importe où dans le monde en un instant."
   },
-  "Home": {
-    "Hero": {
-      "title": "caca coucou"
+  "common": {
+    "Header": {
+      "title": "AirsoftSeven",
+      "createEvent": "Ajouter une partie"
+    }
+  },
+  "pages": {
+    "Home": {
+      "Hero": {
+        "title": "caca coucou"
+      }
     }
   }
 }

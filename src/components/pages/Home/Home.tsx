@@ -1,14 +1,14 @@
-import { AppShell } from "@components/common";
+import { PageLayout } from "@components/common";
 import Hero from "./Hero";
 import Faq from "./Faq";
 import Team from "./Team";
 
 export default function Home() {
   return (
-    <AppShell>
+    <PageLayout>
       <Hero />
       <Faq />
       <Team />
-    </AppShell>
+    </PageLayout>
   );
 }

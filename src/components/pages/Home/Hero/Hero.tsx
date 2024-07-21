@@ -4,7 +4,7 @@ import classes from "./Hero.module.css";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
-  const t = useTranslations("Home.Hero");
+  const t = useTranslations("pages.Home.Hero");
 
   return (
     <div className={classes.hero}>
