@@ -6,7 +6,7 @@
   "common": {
     "Header": {
       "title": "AirsoftSeven",
-      "createEvent": "Ajouter une partie"
+      "createEvent": "Add an event"
     },
     "LocalePicker": {
       "locale": "{locale, select, fr {Francais} en {English} other {Unknown}}"
