@@ -1,26 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
-import { isSupportedLocal, DefaultLocal } from "@core/utils/language";
+import createMiddleware from "next-intl/middleware";
+import { locales, DefaultLocale } from "./i18nConfig";
 
-function getLocale(request: NextRequest) {
-  // Detect browser language, check cookies?
-  return DefaultLocal;
-}
-
-function pathnameContainsLocal(pathname: string) {
-  const [, local] = pathname.split("/");
-  if (!local) return false;
-  return isSupportedLocal(local);
-}
-
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  if (pathnameContainsLocal(pathname)) return;
-
-  const locale = getLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
-}
+export default createMiddleware({
+  locales,
+  defaultLocale: DefaultLocale,
+});
 
 export const config = {
-  matcher: ["/((?!_next|favicon.ico).*)"],
+  matcher: ["/", "/(fr|en)/:path*", "/((?!_next|_vercel|.*\\..*).*)"],
 };
