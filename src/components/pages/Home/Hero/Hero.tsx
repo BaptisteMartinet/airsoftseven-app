@@ -16,9 +16,7 @@ export default function Hero() {
       <Container className={classes.container} size="md">
         <Title className={classes.title}>{t("title")}</Title>
         <Text className={classes.description} size="xl" mt="xl">
-          Build fully functional accessible web applications faster than ever –
-          Mantine includes more than 120 customizable components and hooks to
-          cover you in any situation
+          {t("description")}
         </Text>
 
         <Button
@@ -27,7 +25,7 @@ export default function Hero() {
           radius="xl"
           className={classes.control}
         >
-          Get started
+          {t("getStarted")}
         </Button>
       </Container>
     </div>
