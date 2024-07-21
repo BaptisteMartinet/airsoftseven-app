@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
-import ApolloWrapper from "./ApolloWrapper";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import "@mantine/carousel/styles.css";
 import { createTheme, ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { ApolloProvider } from "@providers/index";
 
 const theme = createTheme({});
 
@@ -34,11 +34,11 @@ export default async function LocaleLayout(
         <ColorSchemeScript />
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <ApolloWrapper>
+        <ApolloProvider>
+          <NextIntlClientProvider messages={messages}>
             <MantineProvider theme={theme}>{children}</MantineProvider>
-          </ApolloWrapper>
-        </NextIntlClientProvider>
+          </NextIntlClientProvider>
+        </ApolloProvider>
       </body>
     </html>
   );
