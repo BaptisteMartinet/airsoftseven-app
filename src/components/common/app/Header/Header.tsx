@@ -15,6 +15,7 @@ import { IconUserCircle } from "@tabler/icons-react";
 import { Link } from "@/navigation";
 import { LocalePicker } from "@components/common/app";
 import classes from "./Header.module.css";
+import ProfileMenu from "./ProfileMenu";
 
 export default function Header() {
   const [opened, { toggle }] = useDisclosure(false);
@@ -32,11 +33,13 @@ export default function Header() {
             <Text size="md">{t("betaCaption")}</Text>
           </Group>
           <Group gap="lg" visibleFrom="xs" wrap="nowrap">
-            <NavLink component={Link} href="/test" label={t("createEvent")} />
+            <NavLink
+              component={Link}
+              href="/event/create"
+              label={t("createEvent")}
+            />
             <LocalePicker />
-            <ActionIcon variant="transparent" size="md">
-              <IconUserCircle />
-            </ActionIcon>
+            <ProfileMenu />
           </Group>
 
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
