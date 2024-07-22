@@ -5,7 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useParams } from "next/navigation";
 import { ActionIcon, Menu } from "@mantine/core";
 import { IconLanguage } from "@tabler/icons-react";
-import { locales } from "@/i18nConfig";
+import { Locales } from "@/i18nConfig";
 import { useRouter, usePathname } from "@/navigation";
 
 export default function LocalePicker() {
@@ -35,7 +35,7 @@ export default function LocalePicker() {
       </Menu.Target>
 
       <Menu.Dropdown>
-        {locales.map((locale) => (
+        {Locales.map((locale) => (
           <Menu.Item
             key={locale}
             onClick={() => onLocaleChange(locale)}
