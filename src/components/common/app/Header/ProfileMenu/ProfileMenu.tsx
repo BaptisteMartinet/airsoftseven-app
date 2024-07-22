@@ -6,7 +6,7 @@ import { Link } from "@/navigation";
 export default function ProfileMenu() {
   const t = useTranslations("common.Header.ProfileMenu");
   return (
-    <Menu shadow="md" withArrow>
+    <Menu shadow="md">
       <Menu.Target>
         <ActionIcon variant="transparent" size="md">
           <IconUserCircle />

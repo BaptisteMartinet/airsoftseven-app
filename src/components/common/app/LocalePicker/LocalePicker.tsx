@@ -27,7 +27,7 @@ export default function LocalePicker() {
   };
 
   return (
-    <Menu shadow="md" withArrow>
+    <Menu shadow="md">
       <Menu.Target>
         <ActionIcon variant="transparent" size="md">
           <IconLanguage />
