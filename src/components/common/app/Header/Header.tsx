@@ -29,9 +29,9 @@ export default function Header() {
             <Text size="lg" fw={500}>
               {t("title")}
             </Text>
-            <Text size="md">{t('betaCaption')}</Text>
+            <Text size="md">{t("betaCaption")}</Text>
           </Group>
-          <Group gap="lg" visibleFrom="xs" wrap="nowrap" >
+          <Group gap="lg" visibleFrom="xs" wrap="nowrap">
             <NavLink component={Link} href="/test" label={t("createEvent")} />
             <LocalePicker />
             <ActionIcon variant="transparent" size="md">
