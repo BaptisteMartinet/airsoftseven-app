@@ -26,6 +26,21 @@
         "description": "AirsoftSeven est un système d'indexation collaboratif de parties d'airsoft. Organiser ou trouver une partie n'a jamais été aussi simple.",
         "getStarted": "Explorer les parties"
       }
+    },
+    "Login": {
+      "title": "Rebonjour !",
+      "notRegisteredYet": "Toujours pas de compte ? ",
+      "register": "Créer un compte",
+      "labels": {
+        "email": "Email",
+        "emailPlaceholder": "email@domain.com",
+        "emailError": "Email invalide",
+        "password": "Mot de passe",
+        "passwordPlaceholder": "Votre mot de passe",
+        "passwordError": "Le mot de passe doit contenir au moins 8 caractères."
+      },
+      "forgotPassword": "Mot de passe oublié ?",
+      "submit": "Se connecter"
     }
   }
 }
