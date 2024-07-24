@@ -10,10 +10,9 @@ import {
   Container,
   Button,
 } from "@mantine/core";
-import { useForm } from "@mantine/form";
+import { useForm, isEmail, hasLength } from "@mantine/form";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
-import { EmailValidationRegex } from "@core/constants";
 import { handlePromiseWithToast } from "@core/utils/promise";
 import { LoginMutation } from "./api";
 import classes from "./Login.module.css";
@@ -28,10 +27,8 @@ export default function Login() {
       password: "",
     },
     validate: {
-      email: (value) =>
-        EmailValidationRegex.test(value) ? null : t("labels.emailError"),
-      password: (value) =>
-        value.length >= 8 ? null : t("labels.passwordError"),
+      email: isEmail(t("labels.emailError")),
+      password: hasLength({ min: 8 }, t("labels.passwordError")),
     },
   });
 
