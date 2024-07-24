@@ -3,7 +3,6 @@
 import {
   TextInput,
   PasswordInput,
-  Anchor,
   Paper,
   Title,
   Text,
@@ -14,6 +13,7 @@ import { useForm, isEmail, hasLength } from "@mantine/form";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { handlePromiseWithToast } from "@core/utils/promise";
+import { Anchor } from "@components/common";
 import { LoginMutation } from "./api";
 import classes from "./Login.module.css";
 
@@ -50,7 +50,7 @@ export default function Login() {
       </Title>
       <Text c="dimmed" size="sm" ta="center" mt={5}>
         {t("notRegisteredYet")}
-        <Anchor size="sm" component="button">
+        <Anchor size="sm" href="/register">
           {t("register")}
         </Anchor>
       </Text>
