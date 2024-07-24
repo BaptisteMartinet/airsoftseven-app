@@ -27,6 +27,24 @@
         "getStarted": "Trouver une partie"
       }
     },
+    "Register": {
+      "title": "Inscription",
+      "alreadyRegistered": "Déjà un compte ? ",
+      "login": "Se connecter",
+      "labels": {
+        "username": "Pseudo",
+        "usernamePlaceholder": "Mon pseudo",
+        "usernameError": "Pseudo invalide",
+        "email": "Email",
+        "emailPlaceholder": "email@domain.com",
+        "emailError": "Email invalide",
+        "password": "Mot de passe",
+        "passwordPlaceholder": "Votre mot de passe",
+        "passwordError": "Le mot de passe doit contenir au moins 8 caractères.",
+        "newsletterOptInt": "Recevoir la newsletter"
+      },
+      "submit": "S'incrire"
+    },
     "Login": {
       "title": "Rebonjour !",
       "notRegisteredYet": "Toujours pas de compte ? ",
