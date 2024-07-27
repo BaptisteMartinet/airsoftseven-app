@@ -8,6 +8,7 @@ import {
   Text,
   Container,
   Button,
+  Box,
 } from "@mantine/core";
 import { useForm, isEmail, hasLength } from "@mantine/form";
 import { useTranslations } from "next-intl";
@@ -72,10 +73,12 @@ export default function Login() {
             required
             mt="md"
           />
-          <Anchor href="/" size="sm" mt="lg">
-            {t("forgotPassword")}
-          </Anchor>
-          <Button type="submit" fullWidth mt="xl">
+          <Box mt="sm">
+            <Anchor href="/" size="sm">
+              {t("forgotPassword")}
+            </Anchor>
+          </Box>
+          <Button type="submit" fullWidth mt="md">
             {t("submit")}
           </Button>
         </form>
