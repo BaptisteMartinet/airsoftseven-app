@@ -13,14 +13,16 @@ import {
 import { useForm, isEmail, hasLength } from "@mantine/form";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
-import { handlePromiseWithToast } from "@core/utils/promise";
+import { usePromiseStatusWithToast } from "@core/utils/promise";
 import { Anchor } from "@components/common";
 import { RegisterMutation } from "./api";
 import classes from "./Register.module.css";
 
 export default function Register() {
   const t = useTranslations("pages.Register");
+  const t_shared = useTranslations("shared");
   const client = useApolloClient();
+  const [submitStatus, handleSubmitPromise] = usePromiseStatusWithToast();
 
   const form = useForm({
     initialValues: {
@@ -37,14 +39,15 @@ export default function Register() {
   });
 
   const handleSubmit = (values: typeof form.values) => {
-    const promise = client.mutate({
-      mutation: RegisterMutation,
-      variables: values,
-    });
-    handlePromiseWithToast(promise, {
-      successMessage: "test successm message",
-      errorMessage: "test error message",
-    }); // TODO login
+    handleSubmitPromise(
+      client.mutate({
+        mutation: RegisterMutation,
+        variables: values,
+      }),
+      {
+        errorMessage: t_shared("error"),
+      }
+    );
   };
 
   return (
@@ -90,7 +93,12 @@ export default function Register() {
             label={t("labels.newsletterOptInt")}
             mt="md"
           />
-          <Button type="submit" fullWidth mt="xl">
+          <Button
+            type="submit"
+            fullWidth
+            mt="xl"
+            loading={submitStatus === "pending"}
+          >
             {t("submit")}
           </Button>
         </form>
