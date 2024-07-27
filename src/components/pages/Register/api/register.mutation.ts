@@ -3,6 +3,7 @@ import type { TypedDocumentNode } from "@apollo/client";
 import { gql } from "@apollo/client";
 
 export interface RegisterVariables {
+  code: string;
   username: string;
   email: string;
   password: string;
@@ -11,6 +12,7 @@ export interface RegisterVariables {
 
 const RegisterMutation: TypedDocumentNode<boolean, RegisterVariables> = gql`
   mutation Register(
+    $code: String!
     $username: String!
     $email: String!
     $password: String!
@@ -18,6 +20,7 @@ const RegisterMutation: TypedDocumentNode<boolean, RegisterVariables> = gql`
   ) {
     session {
       register(
+        code: $code
         username: $username
         email: $email
         password: $password

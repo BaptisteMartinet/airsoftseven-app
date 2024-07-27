@@ -46,7 +46,12 @@
         "passwordError": "Le mot de passe doit contenir au moins 8 caractères.",
         "newsletterOptInt": "Recevoir la newsletter"
       },
-      "submit": "S'incrire"
+      "submit": "S'incrire",
+      "registerSuccess": "Compte créé avec succès.",
+      "emailVerifyDialog": {
+        "title": "Vérification d'email",
+        "description": "Un code de vérification vient de vous être envoyé par email."
+      }
     },
     "Login": {
       "title": "Rebonjour !",
