@@ -1,17 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import {
-  Container,
-  Group,
-  Burger,
-  Text,
-  NavLink,
-  ActionIcon,
-  Box,
-} from "@mantine/core";
+import { Container, Group, Burger, Text, NavLink, Box } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconUserCircle } from "@tabler/icons-react";
 import { Link } from "@/navigation";
 import { LocalePicker } from "@components/common/app";
 import classes from "./Header.module.css";
