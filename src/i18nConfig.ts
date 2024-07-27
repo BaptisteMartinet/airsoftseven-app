@@ -1,15 +1,19 @@
-import { Pathnames } from "next-intl/routing";
+import { Pathnames as PathnamesT } from "next-intl/routing";
 
 // Make sure matching JSON files exists in the 'translations' folder.
 export const Locales = ["fr", "en"] as const;
 export const DefaultLocale = "fr";
 
-export const translationsFolderName = "messages";
+export const TranslationsFolderName = "messages";
 
-export const pathnames: Pathnames<typeof Locales> = {
+export const Pathnames: PathnamesT<typeof Locales> = {
   "/": "/",
-  // "/pathnames": { TODO when new page are added
-  //   fr: "/pfadnamen",
-  //   en: "/pathnames",
-  // },
+  "/register": {
+    fr: "/inscription",
+    en: "/register",
+  },
+  "/login": {
+    fr: "/connexion",
+    en: "/login",
+  },
 };
