@@ -6,7 +6,7 @@
   "common": {
     "Header": {
       "title": "AirsoftSeven",
-      "betaCaption": "Beta",
+      "betaCaption": " Beta",
       "createEvent": "Add an event",
 
       "ProfileMenu": {

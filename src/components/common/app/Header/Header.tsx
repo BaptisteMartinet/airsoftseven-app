@@ -1,10 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Container, Group, Burger, Text, NavLink, Box } from "@mantine/core";
+import { Container, Group, Burger, Text, NavLink, Box, Space } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link } from "@/navigation";
-import { LocalePicker } from "@components/common/app";
+import { LocalePicker, Anchor } from "@components/common";
 import classes from "./Header.module.css";
 import ProfileMenu from "./ProfileMenu";
 
@@ -18,10 +18,12 @@ export default function Header() {
       <header className={classes.header}>
         <Container size="lg" className={classes.inner}>
           <Group gap="xs" visibleFrom="xs">
-            <Text size="lg" fw={500}>
+            <Anchor href="/" size="lg" fw={500}>
               {t("title")}
-            </Text>
-            <Text size="md">{t("betaCaption")}</Text>
+              <Text size="md" component="span">
+                {t("betaCaption")}
+              </Text>
+            </Anchor>
           </Group>
           <Group gap="lg" visibleFrom="xs" wrap="nowrap">
             <NavLink
