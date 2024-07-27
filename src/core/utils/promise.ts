@@ -1,7 +1,7 @@
 import { showNotification } from "@mantine/notifications";
 
 interface HandlePromiseWithToastOpts<T> {
-  successMessage: string | null;
+  successMessage?: string;
   onSuccess?: (value: T) => void;
   errorMessage: string;
   onError?: (error: unknown) => void;
