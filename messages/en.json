@@ -3,6 +3,9 @@
     "title": "AirsoftSeven | Searching airsoft events",
     "description": "Find airsoft events anywhere in the world in no time."
   },
+  "shared": {
+    "error": "Something went wrong"
+  },
   "common": {
     "Header": {
       "title": "AirsoftSeven",
