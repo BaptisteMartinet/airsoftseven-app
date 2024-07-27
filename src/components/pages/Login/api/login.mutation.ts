@@ -1,13 +1,18 @@
 import type { TypedDocumentNode } from "@apollo/client";
-import type { IdType } from '@core/api/types';
+import type { IdType } from "@core/api/types";
 
 import { gql } from "@apollo/client";
 
 export interface Session {
-  token: string;
-  user: {
-    id: IdType;
-    username: string;
+  session: {
+    login: {
+      token: string;
+      expireAt: Date;
+      user: {
+        id: IdType;
+        username: string;
+      };
+    };
   };
 }
 
@@ -17,9 +22,9 @@ export interface LoginVariables {
 }
 
 const Login: TypedDocumentNode<Session, LoginVariables> = gql`
-  mutation Login {
+  mutation Login($email: String!, $password: String!) {
     session {
-      login(email: "baptiste.marti@outlook.com", password: "123") {
+      login(email: $email, password: $password) {
         token
         expireAt
         user {

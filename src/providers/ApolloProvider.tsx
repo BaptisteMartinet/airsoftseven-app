@@ -19,7 +19,7 @@ function makeClient() {
   });
 }
 
-export default function ApolloWrapper({ children }: React.PropsWithChildren) {
+export default function ApolloProvider({ children }: React.PropsWithChildren) {
   return (
     <ApolloNextAppProvider makeClient={makeClient}>
       {children}

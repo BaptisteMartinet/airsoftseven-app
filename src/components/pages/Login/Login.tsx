@@ -13,14 +13,20 @@ import {
 import { useForm, isEmail, hasLength } from "@mantine/form";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
-import { handlePromiseWithToast } from "@core/utils/promise";
+import { useRouter } from "@/navigation";
+import { usePromiseStatusWithToast } from "@core/utils/promise";
 import { Anchor } from "@components/common";
+import { useSessionStore } from "@/providers";
 import { LoginMutation } from "./api";
 import classes from "./Login.module.css";
 
 export default function Login() {
   const t = useTranslations("pages.Login");
+  const t_shared = useTranslations("shared");
   const client = useApolloClient();
+  const router = useRouter();
+  const [submitStatus, handleLoginPromise] = usePromiseStatusWithToast();
+  const setSession = useSessionStore((state) => state.setSession);
 
   const form = useForm({
     initialValues: {
@@ -38,10 +44,13 @@ export default function Login() {
       mutation: LoginMutation,
       variables: values,
     });
-    handlePromiseWithToast(promise, {
-      successMessage: "test successm message",
-      errorMessage: "test error message",
-    }); // TODO login
+    handleLoginPromise(promise, {
+      onSuccess: (data) => {
+        setSession(data.data!.session.login); // TODO handle assertion
+        router.replace("/");
+      },
+      errorMessage: t_shared("error"),
+    });
   };
 
   return (
@@ -78,7 +87,12 @@ export default function Login() {
               {t("forgotPassword")}
             </Anchor>
           </Box>
-          <Button type="submit" fullWidth mt="md">
+          <Button
+            type="submit"
+            disabled={submitStatus === "pending"}
+            fullWidth
+            mt="md"
+          >
             {t("submit")}
           </Button>
         </form>

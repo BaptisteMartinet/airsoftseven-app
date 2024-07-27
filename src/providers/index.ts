@@ -1,1 +1,1 @@
-export { default as ApolloProvider } from "./ApolloProvider";
+export { useSessionStore } from './SessionProvider';
