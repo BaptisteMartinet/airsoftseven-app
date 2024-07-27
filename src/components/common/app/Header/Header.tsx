@@ -1,7 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Container, Group, Burger, Text, NavLink, Box, Space } from "@mantine/core";
+import {
+  Container,
+  Group,
+  Burger,
+  Text,
+  NavLink,
+  Box,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Link } from "@/navigation";
 import { LocalePicker, Anchor } from "@components/common";
