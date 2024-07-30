@@ -1,6 +1,7 @@
 import type { IdType } from "@core/api/types";
 
 import { createStore } from "zustand";
+import { AccessTokenKey } from '@core/constants/auth';
 
 interface Session {
   token: string;
@@ -9,8 +10,6 @@ interface Session {
     username: string;
   };
 }
-
-const AccessTokenKey = "accessToken";
 
 interface SessionState {
   session: Session | null | undefined;
