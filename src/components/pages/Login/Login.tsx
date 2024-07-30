@@ -89,7 +89,7 @@ export default function Login() {
           </Box>
           <Button
             type="submit"
-            disabled={submitStatus === "pending"}
+            loading={submitStatus === "pending"}
             fullWidth
             mt="md"
           >
