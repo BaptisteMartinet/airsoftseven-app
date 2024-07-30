@@ -10,6 +10,8 @@ interface Session {
   };
 }
 
+const AccessTokenKey = "accessToken";
+
 interface SessionState {
   session: Session | null | undefined;
 }
@@ -23,6 +25,9 @@ export type SessionStore = SessionState & SessionActions;
 export function createSessionStore() {
   return createStore<SessionStore>()((set) => ({
     session: undefined,
-    setSession: (newSession) => set(() => ({ session: newSession })),
+    setSession: (newSession) => {
+      localStorage.setItem(AccessTokenKey, newSession.token);
+      set(() => ({ session: newSession }));
+    },
   }));
 }
