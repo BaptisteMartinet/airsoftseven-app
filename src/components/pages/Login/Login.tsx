@@ -15,6 +15,7 @@ import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { useRouter } from "@/navigation";
 import { usePromiseStatusWithToast } from "@core/utils/promise";
+import { ensureFetchResultData } from '@core/utils/apollo';
 import { Anchor } from "@components/common";
 import { useSessionStore } from "@/providers";
 import { LoginMutation } from "./api";
@@ -45,8 +46,9 @@ export default function Login() {
       variables: values,
     });
     handleLoginPromise(promise, {
-      onSuccess: (data) => {
-        setSession(data.data!.session.login); // TODO handle assertion
+      onSuccess: (result) => {
+        const data = ensureFetchResultData(result);
+        setSession(data.session.login);
         router.replace("/");
       },
       errorMessage: t_shared("error"),
