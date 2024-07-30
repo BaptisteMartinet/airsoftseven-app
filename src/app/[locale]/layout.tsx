@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
-
+import { getTranslations } from "next-intl/server";
 import { ColorSchemeScript } from "@mantine/core";
 import Providers from "@providers/Providers";
 
@@ -16,21 +14,18 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocaleLayout(
+export default function LocaleLayout(
   props: Readonly<{ children: React.ReactNode; params: { locale: string } }>
 ) {
   const { children, params } = props;
   const { locale } = params;
-  const messages = await getMessages();
   return (
     <html lang={locale}>
       <head>
         <ColorSchemeScript />
       </head>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <Providers>{children}</Providers>
-        </NextIntlClientProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

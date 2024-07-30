@@ -1,16 +1,19 @@
 import type { PropsWithChildren } from "react";
 
+import IntlProvider from "./IntlProvider";
 import ApolloProvider from "./ApolloProvider";
-import SessionProvider from "./SessionProvider";
 import MantineProvider from "./MantineProvider";
+import SessionProvider from "./SessionProvider";
 
 export default function Providers(props: PropsWithChildren) {
   const { children } = props;
   return (
-    <ApolloProvider>
-      <MantineProvider>
-        <SessionProvider>{children}</SessionProvider>
-      </MantineProvider>
-    </ApolloProvider>
+    <IntlProvider>
+      <ApolloProvider>
+        <MantineProvider>
+          <SessionProvider>{children}</SessionProvider>
+        </MantineProvider>
+      </ApolloProvider>
+    </IntlProvider>
   );
 }
