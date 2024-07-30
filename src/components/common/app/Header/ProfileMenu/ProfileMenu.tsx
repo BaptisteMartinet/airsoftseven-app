@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { ActionIcon, Menu, Divider } from "@mantine/core";
+import { ActionIcon, Menu, Divider, Avatar, Box } from "@mantine/core";
 import { IconUserCircle } from "@tabler/icons-react";
 import { Link } from "@/navigation";
 import { useSessionStore } from "@/providers";
@@ -11,7 +11,11 @@ export default function ProfileMenu() {
     <Menu shadow="md">
       <Menu.Target>
         <ActionIcon variant="transparent" size="md">
-          <IconUserCircle />
+          {session ? (
+            <Avatar name={session.user.username} radius="xl" />
+          ) : (
+            <IconUserCircle />
+          )}
         </ActionIcon>
       </Menu.Target>
 
