@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
-import "@mantine/core/styles.css";
-import "@mantine/dates/styles.css";
-import "@mantine/carousel/styles.css";
-import "@mantine/notifications/styles.css";
+
 import { ColorSchemeScript } from "@mantine/core";
-import { Notifications } from "@mantine/notifications";
 import Providers from "@providers/Providers";
 
 export async function generateMetadata({
@@ -33,10 +29,7 @@ export default async function LocaleLayout(
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <Providers>
-            <Notifications />
-            {children}
-          </Providers>
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>
