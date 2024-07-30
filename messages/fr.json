@@ -13,6 +13,7 @@
       "createEvent": "Ajouter un événement",
 
       "ProfileMenu": {
+        "profile": "Profil",
         "login": "Connexion",
         "register": "Inscription",
         "help": "Aide"
