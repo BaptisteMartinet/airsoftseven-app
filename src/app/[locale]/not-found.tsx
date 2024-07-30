@@ -1,1 +1,1 @@
-export { NotFound as default } from "@components/common";
+export { default } from "@components/pages/NotFound";

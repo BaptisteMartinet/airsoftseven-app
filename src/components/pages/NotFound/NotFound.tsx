@@ -1,4 +1,5 @@
-import Link from "next/link";
+
+import Link from 'next/link';
 import { Container, Title, Text, Button, Group } from "@mantine/core";
 import classes from "./NotFound.module.css";
 
@@ -12,6 +13,8 @@ export function Illustration(props: React.ComponentPropsWithoutRef<"svg">) {
     </svg>
   );
 }
+
+// TODO texts
 
 export default function NotFound() {
   return (
