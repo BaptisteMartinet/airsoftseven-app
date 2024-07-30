@@ -11,7 +11,7 @@ interface Session {
 }
 
 interface SessionState {
-  session: Session | null;
+  session: Session | null | undefined;
 }
 
 interface SessionActions {
@@ -22,7 +22,7 @@ export type SessionStore = SessionState & SessionActions;
 
 export function createSessionStore() {
   return createStore<SessionStore>()((set) => ({
-    session: null,
+    session: undefined,
     setSession: (newSession) => set(() => ({ session: newSession })),
   }));
 }
