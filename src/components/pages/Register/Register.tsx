@@ -15,12 +15,12 @@ import { useDisclosure } from "@mantine/hooks";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { usePromiseStatusWithToast } from "@core/utils/promise";
-import { Anchor, PinInputModal } from "@components/common";
+import { Anchor, PinInputModal, withoutAuth } from "@components/common";
 import { useRouter } from "@/navigation";
 import { VerifyEmailMutation, RegisterMutation } from "./api";
 import classes from "./Register.module.css";
 
-export default function Register() {
+function Register() {
   const t = useTranslations("pages.Register");
   const t_shared = useTranslations("shared");
   const client = useApolloClient();
@@ -137,3 +137,5 @@ export default function Register() {
     </>
   );
 }
+
+export default withoutAuth(Register);

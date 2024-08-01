@@ -15,13 +15,13 @@ import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { useRouter } from "@/navigation";
 import { usePromiseStatusWithToast } from "@core/utils/promise";
-import { ensureFetchResultData } from '@core/utils/apollo';
-import { Anchor } from "@components/common";
+import { ensureFetchResultData } from "@core/utils/apollo";
+import { withoutAuth, Anchor } from "@components/common";
 import { useSessionStore } from "@/providers";
 import { LoginMutation } from "./api";
 import classes from "./Login.module.css";
 
-export default function Login() {
+function Login() {
   const t = useTranslations("pages.Login");
   const t_shared = useTranslations("shared");
   const client = useApolloClient();
@@ -102,3 +102,5 @@ export default function Login() {
     </Container>
   );
 }
+
+export default withoutAuth(Login);
