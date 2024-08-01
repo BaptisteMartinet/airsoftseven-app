@@ -6,7 +6,7 @@ import { gql } from "@apollo/client";
 export interface Session {
   session: {
     login: {
-      token: string;
+      id: IdType;
       expireAt: Date;
       user: {
         id: IdType;
@@ -25,7 +25,7 @@ const Login: TypedDocumentNode<Session, LoginVariables> = gql`
   mutation Login($email: String!, $password: String!) {
     session {
       login(email: $email, password: $password) {
-        token
+        id
         expireAt
         user {
           id

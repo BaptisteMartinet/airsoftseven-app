@@ -12,17 +12,17 @@ import { createSessionStore, type SessionStore } from "@stores/session";
 const SessionQuery: TypedDocumentNode<{
   session: {
     id: IdType;
-    token: string;
+    expireAt: Date;
     user: {
       id: IdType;
       username: string;
     };
-  };
+  } | null;
 }> = gql`
   query GetSession {
     session {
       id
-      token
+      expireAt
       user {
         id
         username
@@ -49,7 +49,7 @@ export default function SessionStoreProvider(props: SessionStoreProviderProps) {
   React.useEffect(() => {
     async function initSession() {
       const session = await client.query({ query: SessionQuery });
-      storeRef.current?.setState({ session: session.data.session }, true);
+      storeRef.current?.setState({ session: session.data.session });
     }
     initSession().catch(console.error);
   }, [client]);

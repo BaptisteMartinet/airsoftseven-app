@@ -1,10 +1,10 @@
 import type { IdType } from "@core/api/types";
 
 import { createStore } from "zustand";
-import { AccessTokenKey } from '@core/constants/auth';
 
 interface Session {
-  token: string;
+  id: IdType;
+  expireAt: Date;
   user: {
     id: IdType;
     username: string;
@@ -24,9 +24,6 @@ export type SessionStore = SessionState & SessionActions;
 export function createSessionStore() {
   return createStore<SessionStore>()((set) => ({
     session: undefined,
-    setSession: (newSession) => {
-      localStorage.setItem(AccessTokenKey, newSession.token);
-      set(() => ({ session: newSession }));
-    },
+    setSession: (newSession) => set(() => ({ session: newSession })),
   }));
 }
