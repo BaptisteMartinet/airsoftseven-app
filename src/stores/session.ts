@@ -2,7 +2,7 @@ import type { IdType } from "@core/api/types";
 
 import { createStore } from "zustand";
 
-interface Session {
+export interface Session {
   id: IdType;
   expireAt: Date;
   user: {
