@@ -16,7 +16,7 @@ interface SessionState {
 }
 
 interface SessionActions {
-  setSession: (newSession: Session) => void;
+  setSession: (newSession: Session | null) => void;
 }
 
 export type SessionStore = SessionState & SessionActions;
