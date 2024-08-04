@@ -69,6 +69,16 @@
       },
       "forgotPassword": "Mot de passe oublié ?",
       "submit": "Se connecter"
+    },
+    "EventCreate": {
+      "pageTitle": "Ajouter une partie",
+      "steps": {
+        "step1": "Informations principales",
+        "step2": "Informations supplémentaires",
+        "step3": "Résumé"
+      },
+      "prevStep": "Retour",
+      "nextStep": "Continuer"
     }
   }
 }
