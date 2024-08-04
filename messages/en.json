@@ -14,6 +14,7 @@
 
       "ProfileMenu": {
         "profile": "Profil",
+        "logout": "Déconnexion",
         "login": "Connexion",
         "register": "Inscription",
         "help": "Aide"
