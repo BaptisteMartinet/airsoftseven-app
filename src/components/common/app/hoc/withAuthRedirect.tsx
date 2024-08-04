@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentType } from "react";
 import type { Session } from "@/stores/session";
 
