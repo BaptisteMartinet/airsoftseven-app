@@ -1,1 +1,1 @@
-export { ForgotPassword as default } from "@components/pages";
+export { default } from "@components/pages/ForgotPassword";

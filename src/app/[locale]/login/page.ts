@@ -1,1 +1,1 @@
-export { Login as default } from "@components/pages";
+export { default } from "@components/pages/Login";
