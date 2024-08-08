@@ -1,4 +1,4 @@
-import { Group, Stack, TextInput } from "@mantine/core";
+import { Group, Stack, TextInput, NumberInput } from "@mantine/core";
 import { DatePickerInput } from "@mantine/dates";
 import { useFormContext } from "./form";
 
@@ -14,19 +14,27 @@ export default function Step1() {
         withAsterisk
         maw={400}
       />
-      <Group grow maw={400}>
+      <Group align="start">
         <DatePickerInput
-          key={form.key("startDate")}
-          {...form.getInputProps("startDate")}
-          label="Date de début"
-          placeholder="placegsdfs"
+          key={form.key("dates")}
+          {...form.getInputProps("dates")}
+          type="multiple"
+          label="Dates"
+          description="Indiquer les dates auxquelles cette partie va etre jouée (une date requise)."
+          placeholder="Selectionner une ou plusieurs dates"
           withAsterisk
+          maw={400}
         />
-        <DatePickerInput
-          key={form.key("endDate")}
-          {...form.getInputProps("endDate")}
-          label="Date de fin"
-          placeholder="coucou"
+        <NumberInput
+          key={form.key("durationDays")}
+          {...form.getInputProps("durationDays")}
+          label="Durée (en jours)"
+          description="Si la partie dure 24h ou moins laissez 1 jour."
+          withAsterisk
+          allowDecimal={false}
+          allowNegative={false}
+          min={1}
+          max={14}
         />
       </Group>
     </Stack>

@@ -31,8 +31,8 @@ function EventCreate() {
   const form = useForm({
     initialValues: {
       title: "",
-      startDate: null,
-      endDate: null,
+      dates: [],
+      durationDays: 1,
     },
   });
 
