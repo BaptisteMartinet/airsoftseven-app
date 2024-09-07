@@ -42,6 +42,25 @@
       },
       "clubCreateSuccess": "Association ajoutée avec succès",
       "submit": "Ajouter"
+    },
+    "FieldPicker": {
+      "createField": "Ajouter une terrain"
+    },
+    "FieldCreateModal": {
+      "modalTitle": "Ajouter un terrain",
+      "labels": {
+        "name": "Nom",
+        "namePlaceholder": "Nom du terrain",
+        "address": "Adresse",
+        "addressPlaceholder": "Adresse du terrain",
+
+        "description": "Description",
+        "descriptionPlaceholder": "Description",
+        "publicURL": "Lien",
+        "publicURLPlaceholder": "Site internet, groupe facebook, etc"
+      },
+      "fieldCreateSuccess": "Terrain ajouté avec succès",
+      "submit": "Ajouter"
     }
   },
   "pages": {
