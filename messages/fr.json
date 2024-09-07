@@ -108,6 +108,30 @@
       },
       "forgotPassword": "Mot de passe oublié ?",
       "submit": "Se connecter"
+    },
+    "EventCreate": {
+      "pageTitle": "Ajouter une partie",
+      "labels": {
+        "title": "Titre",
+        "titlePlaceholder": "Titre de la partie",
+        "date": "Date",
+        "datePlaceholder": "Selectionner une date",
+        "durationDays": "Durée (en jours)",
+        "club": "Association",
+        "clubPlaceholder": "Saisir le nom d'une association",
+        "field": "Terrain",
+        "fieldPlaceholder": "Saisir le nom d'un terrain",
+
+        "description": "Description",
+        "descriptionPlaceholder": "Description",
+        "publicURL": "Lien",
+        "publicURLPlaceholder": "Site internet, évènement facebook, etc",
+        "price": "Prix",
+        "pricePlaceholder": "Prix",
+        "capacity": "Nombre de joueurs attendus",
+        "capacityPlaceholder": "Joueurs attendus"
+      },
+      "submit": "Ajouter"
     }
   }
 }
