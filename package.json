@@ -26,6 +26,7 @@
     "@mantine/hooks": "^7.11.2",
     "@mantine/notifications": "^7.11.2",
     "@tabler/icons-react": "^3.11.0",
+    "@vis.gl/react-google-maps": "^1.1.2",
     "dayjs": "^1.11.11",
     "embla-carousel-react": "^8.1.7",
     "graphql": "^16.9.0",
