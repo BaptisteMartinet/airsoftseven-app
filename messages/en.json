@@ -132,6 +132,26 @@
         "capacityPlaceholder": "Joueurs attendus"
       },
       "submit": "Ajouter"
+    },
+    "Event": {
+      "EventBanner": {
+        "resource": "Évènement/",
+        "subtitle": "{date, date, full} par {clubName}",
+        "Actions": {
+          "copyLink": "Copier le lien",
+          "copyLinkSuccess": "Lien copié avec succès",
+          "share": "Partager sur facebook",
+          "report": "Signaler"
+        }
+      },
+      "EventContent": {
+        "description": "Description",
+        "capacity": "Nombre de joueurs attendus",
+        "price": "Prix",
+        "publicURL": "Lien",
+        "field": "Terrain",
+        "author": "Ajouté par {username}"
+      }
     }
   }
 }
