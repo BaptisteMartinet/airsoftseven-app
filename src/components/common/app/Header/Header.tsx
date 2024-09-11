@@ -25,7 +25,7 @@ export default function Header() {
             </Anchor>
           </Group>
           <Group gap="lg" visibleFrom="xs" wrap="nowrap">
-            <Link href="/event/create" label={t("createEvent")} />
+            <Link href="/event-create" label={t("createEvent")} />
             <LocalePicker />
             <ProfileMenu />
           </Group>
