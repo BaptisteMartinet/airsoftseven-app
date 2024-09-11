@@ -16,4 +16,12 @@ export const Pathnames: PathnamesT<typeof Locales> = {
     fr: "/connexion",
     en: "/login",
   },
+  "/event-create": {
+    fr: "/nouvelle-partie",
+    en: "/event-create",
+  },
+  "/event/[slug]": {
+    fr: "/evenement/[slug]",
+    en: "/event/[slug]",
+  },
 };
