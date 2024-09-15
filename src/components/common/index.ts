@@ -8,3 +8,4 @@ export { default as ClubPicker } from "./ClubPicker";
 export { default as ClubCreateModal } from "./ClubCreateModal";
 export { default as FieldPicker } from "./FieldPicker";
 export { default as FieldCreateModal } from "./FieldCreateModal";
+export { default as StaticMap } from './StaticMap';
