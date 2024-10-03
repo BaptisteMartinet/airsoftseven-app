@@ -75,7 +75,7 @@
       "Hero": {
         "title": "Airsoft matchmaking made easy",
         "description": "La plus grande base de donnée de partie d'airsoft du monde.",
-        "getStarted": "Trouver une partie"
+        "addressPickerPlaceholder": "Rechercher à proximité d'une adresse"
       }
     },
     "Register": {
