@@ -159,6 +159,17 @@
         "field": "Terrain",
         "author": "Ajouté par {username}"
       }
+    },
+    "Events": {
+      "Filters": {
+        "addressPlaceholder": "Rechercher à proximité d'une adresse",
+        "distanceLabel": "{distanceKm} km ({distanceMi, number, ::precision-integer} miles)",
+        "submit": "Rechercher"
+      },
+      "EventsList": {
+        "eventsCount": "{count} parties trouvées",
+        "loadMore": "Afficher plus"
+      }
     }
   }
 }

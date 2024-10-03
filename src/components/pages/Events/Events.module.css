@@ -1,0 +1,8 @@
+.mapContainer {
+  position: sticky;
+  top: calc(rem(64px) + rem(64px)); /* TODO improve (header + filters) */
+  left: 0;
+  height: calc(
+    100dvh - rem(64px) - rem(64px)
+  ); /* TODO improve this (100vh - header - filters) */
+}

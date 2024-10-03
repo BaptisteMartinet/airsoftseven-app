@@ -1,0 +1,12 @@
+.container {
+  position: fixed;
+  width: 100%;
+  height: rem(64px);
+  background-color: white;
+  z-index: var(--mantine-z-index-app);
+  border-bottom: 1px solid var(--mantine-color-dark-4);
+}
+
+.dummyContainer {
+  height: rem(64px);
+}
