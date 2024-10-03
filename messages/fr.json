@@ -22,6 +22,45 @@
     },
     "LocalePicker": {
       "locale": "{locale, select, fr {Francais} en {English} other {Unknown}}"
+    },
+    "ClubPicker": {
+      "createClub": "Ajouter une association"
+    },
+    "ClubCreateModal": {
+      "modalTitle": "Ajouter une association",
+      "labels": {
+        "name": "Nom",
+        "namePlaceholder": "Nom de l'association",
+        "description": "Description",
+        "descriptionPlaceholder": "Description",
+        "rules": "Règles",
+        "rulesPlaceholder": "Renseigner les règles pratiqué par cette association",
+        "publicURL": "Lien",
+        "publicURLPlaceholder": "Site internet, groupe facebook, etc",
+        "acceptUnderage": "Mineurs acceptés",
+        "rentals": "Location disponible"
+      },
+      "clubCreateSuccess": "Association ajoutée avec succès",
+      "submit": "Ajouter"
+    },
+    "FieldPicker": {
+      "createField": "Ajouter une terrain"
+    },
+    "FieldCreateModal": {
+      "modalTitle": "Ajouter un terrain",
+      "labels": {
+        "name": "Nom",
+        "namePlaceholder": "Nom du terrain",
+        "address": "Adresse",
+        "addressPlaceholder": "Adresse du terrain",
+
+        "description": "Description",
+        "descriptionPlaceholder": "Description",
+        "publicURL": "Lien",
+        "publicURLPlaceholder": "Site internet, groupe facebook, etc"
+      },
+      "fieldCreateSuccess": "Terrain ajouté avec succès",
+      "submit": "Ajouter"
     }
   },
   "pages": {
@@ -69,6 +108,50 @@
       },
       "forgotPassword": "Mot de passe oublié ?",
       "submit": "Se connecter"
+    },
+    "EventCreate": {
+      "pageTitle": "Ajouter une partie",
+      "labels": {
+        "title": "Titre",
+        "titlePlaceholder": "Titre de la partie",
+        "date": "Date",
+        "datePlaceholder": "Selectionner une date",
+        "durationDays": "Durée (en jours)",
+        "club": "Association",
+        "clubPlaceholder": "Saisir le nom d'une association",
+        "field": "Terrain",
+        "fieldPlaceholder": "Saisir le nom d'un terrain",
+
+        "description": "Description",
+        "descriptionPlaceholder": "Description",
+        "publicURL": "Lien",
+        "publicURLPlaceholder": "Site internet, évènement facebook, etc",
+        "price": "Prix",
+        "pricePlaceholder": "Prix",
+        "capacity": "Nombre de joueurs attendus",
+        "capacityPlaceholder": "Joueurs attendus"
+      },
+      "submit": "Ajouter"
+    },
+    "Event": {
+      "EventBanner": {
+        "resource": "Évènement/",
+        "subtitle": "{date, date, full} par {clubName}",
+        "Actions": {
+          "copyLink": "Copier le lien",
+          "copyLinkSuccess": "Lien copié avec succès",
+          "share": "Partager sur facebook",
+          "report": "Signaler"
+        }
+      },
+      "EventContent": {
+        "description": "Description",
+        "capacity": "Nombre de joueurs attendus",
+        "price": "Prix",
+        "publicURL": "Lien",
+        "field": "Terrain",
+        "author": "Ajouté par {username}"
+      }
     }
   }
 }
