@@ -61,6 +61,13 @@
       },
       "fieldCreateSuccess": "Terrain ajouté avec succès",
       "submit": "Ajouter"
+    },
+    "EventCard": {
+      "date": "{date, date, full}",
+      "description": "Organisé par {clubName} à {fieldName}",
+      "capacity": "{capacity} places",
+      "acceptUnderage": "Mineurs acceptés",
+      "rentals": "Location disponible"
     }
   },
   "pages": {
