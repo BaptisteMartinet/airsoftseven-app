@@ -10,3 +10,4 @@ export { default as FieldPicker } from "./FieldPicker";
 export { default as FieldCreateModal } from "./FieldCreateModal";
 export { default as StaticMap } from "./StaticMap";
 export { default as EventCard } from "./EventCard";
+export { default as ResourceBanner } from "./ResourceBanner";
