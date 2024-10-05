@@ -1,16 +1,16 @@
 "use client";
 
-import type { SearchableSelectProps } from "./SearchableSelect";
+import type { SelectProps } from "./Select";
 
 import React from "react";
 import { useTranslations } from "next-intl";
 import { Loader } from "@mantine/core";
 import { useDebouncedCallback } from "@mantine/hooks";
 import { usePromiseStatusWithToast } from "@/core/utils/promise";
-import SearchableSelect from "./SearchableSelect";
+import Select from "./Select";
 
-export type SelectProps<T> = Omit<
-  SearchableSelectProps<T>,
+export type PickedSelectProps<T> = Omit<
+  SelectProps<T>,
   | "options"
   | "searchable"
   | "searchValue"
@@ -20,7 +20,7 @@ export type SelectProps<T> = Omit<
   | "rightSectionPointerEvents"
 >;
 
-export interface AsyncSelectProps<T> extends SelectProps<T> {
+export interface AsyncSelectProps<T> extends PickedSelectProps<T> {
   fetchOptions: (term: string) => Promise<Array<T>>;
 }
 
@@ -48,7 +48,7 @@ export default function AsyncSelect<T>(props: AsyncSelectProps<T>) {
   }, 500);
 
   return (
-    <SearchableSelect
+    <Select
       value={value}
       onChange={onChange}
       options={options}

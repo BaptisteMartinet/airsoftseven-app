@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { Box, Button, Container, Group } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { convertKilometersToMiles } from "@/core/utils/distance";
-import { AddressPicker, SearchableSelect } from "@/components/common";
+import { AddressPicker, Select } from "@/components/common";
 import { useFormContext, type EventsFormValues } from "./form";
 import classes from "./Filters.module.css";
 
@@ -47,7 +47,7 @@ export default function Filters(props: FiltersProps) {
               placeholder={t("addressPlaceholder")}
               w={500}
             />
-            <SearchableSelect
+            <Select
               key={form.key("distance")}
               value={form.values.distance}
               onChange={(newDistance) => {

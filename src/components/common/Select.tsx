@@ -7,14 +7,14 @@ import type {
 
 import React from "react";
 import assert from "assert";
-import { Select } from "@mantine/core";
+import { Select as MantineSelect } from "@mantine/core";
 
-export type SelectProps = Omit<
+export type PickedMantineSelectProps = Omit<
   MantineSelectProps,
   "value" | "onChange" | "data"
 >;
 
-export interface SearchableSelectProps<T> extends SelectProps {
+export interface SelectProps<T> extends PickedMantineSelectProps {
   value: T | null;
   onChange: (newValue: T | null) => void;
   options: ReadonlyArray<T>;
@@ -22,7 +22,7 @@ export interface SearchableSelectProps<T> extends SelectProps {
   getOptionLabel: (opt: T) => string;
 }
 
-export default function SearchableSelect<T>(props: SearchableSelectProps<T>) {
+export default function Select<T>(props: SelectProps<T>) {
   const {
     value,
     onChange,
@@ -51,7 +51,7 @@ export default function SearchableSelect<T>(props: SearchableSelectProps<T>) {
   }, [options, value, getOptionValue, getOptionItem]);
 
   return (
-    <Select
+    <MantineSelect
       value={value ? getOptionValue(value) : null}
       onChange={(selectedValue) => {
         const newValue =
