@@ -17,7 +17,7 @@ export type SelectProps = Omit<
 export interface SearchableSelectProps<T> extends SelectProps {
   value: T | null;
   onChange: (newValue: T | null) => void;
-  options: Array<T>;
+  options: ReadonlyArray<T>;
   getOptionValue: (opt: T) => string;
   getOptionLabel: (opt: T) => string;
 }

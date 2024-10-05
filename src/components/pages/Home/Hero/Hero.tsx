@@ -1,10 +1,16 @@
-import { Overlay, Container, Title, Button, Text } from "@mantine/core";
-import classes from "./Hero.module.css";
+"use client";
 
+import assert from "assert";
 import { useTranslations } from "next-intl";
+import { Overlay, Container, Title, Text } from "@mantine/core";
+import { IconSearch } from "@tabler/icons-react";
+import { useRouter } from "@/navigation";
+import { AddressPicker } from "@/components/common";
+import classes from "./Hero.module.css";
 
 export default function Hero() {
   const t = useTranslations("pages.Home.Hero");
+  const router = useRouter();
 
   return (
     <div className={classes.hero}>
@@ -18,15 +24,23 @@ export default function Hero() {
         <Text className={classes.description} size="xl" mt="xl">
           {t("description")}
         </Text>
-
-        <Button
-          variant="gradient"
-          size="xl"
-          radius="xl"
+        <AddressPicker
+          value={null}
+          onChange={(address, details) => {
+            assert(details && details.location); // Safe assert
+            const lat = details.location.lat();
+            const lng = details.location.lng();
+            router.push({
+              pathname: "/events",
+              query: { address, lat, lng },
+            });
+          }}
+          placeDetailsFields={["location"]}
+          placeholder={t("addressPickerPlaceholder")}
+          leftSection={<IconSearch />}
+          size="lg"
           className={classes.control}
-        >
-          {t("getStarted")}
-        </Button>
+        />
       </Container>
     </div>
   );

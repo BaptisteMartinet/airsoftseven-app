@@ -61,6 +61,13 @@
       },
       "fieldCreateSuccess": "Terrain ajouté avec succès",
       "submit": "Ajouter"
+    },
+    "EventCard": {
+      "date": "{date, date, full}",
+      "description": "Organisé par {clubName} à {fieldName}",
+      "capacity": "{capacity} places",
+      "acceptUnderage": "Mineurs acceptés",
+      "rentals": "Location disponible"
     }
   },
   "pages": {
@@ -68,7 +75,7 @@
       "Hero": {
         "title": "Airsoft matchmaking made easy",
         "description": "La plus grande base de donnée de partie d'airsoft du monde.",
-        "getStarted": "Trouver une partie"
+        "addressPickerPlaceholder": "Rechercher à proximité d'une adresse"
       }
     },
     "Register": {
@@ -152,6 +159,17 @@
         "field": "Terrain",
         "author": "Ajouté par {username}"
       }
+    },
+    "Events": {
+      "Filters": {
+        "addressPlaceholder": "Rechercher à proximité d'une adresse",
+        "distanceLabel": "{distanceKm} km ({distanceMi, number, ::precision-integer} miles)",
+        "submit": "Rechercher"
+      }
+    },
+    "EventsList": {
+      "eventsCount": "{count} parties trouvées",
+      "loadMore": "Afficher plus"
     }
   }
 }

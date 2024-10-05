@@ -61,6 +61,13 @@
       },
       "fieldCreateSuccess": "Terrain ajouté avec succès",
       "submit": "Ajouter"
+    },
+    "EventCard": {
+      "date": "{date, date, full}",
+      "description": "Organisé par {clubName} à {fieldName}",
+      "capacity": "{capacity} places",
+      "acceptUnderage": "Mineurs acceptés",
+      "rentals": "Location disponible"
     }
   },
   "pages": {
@@ -68,7 +75,7 @@
       "Hero": {
         "title": "Trouver une partie d'airsoft n'a jamais été aussi simple",
         "description": "AirsoftSeven est un système d'indexation collaboratif de parties d'airsoft. Organiser ou trouver une partie n'a jamais été aussi simple.",
-        "getStarted": "Explorer les parties"
+        "addressPickerPlaceholder": "Rechercher à proximité d'une adresse"
       }
     },
     "Register": {
@@ -151,6 +158,17 @@
         "publicURL": "Lien",
         "field": "Terrain",
         "author": "Ajouté par {username}"
+      }
+    },
+    "Events": {
+      "Filters": {
+        "addressPlaceholder": "Rechercher à proximité d'une adresse",
+        "distanceLabel": "{distanceKm} km ({distanceMi, number, ::precision-integer} miles)",
+        "submit": "Rechercher"
+      },
+      "EventsList": {
+        "eventsCount": "{count} parties trouvées",
+        "loadMore": "Afficher plus"
       }
     }
   }
