@@ -22,3 +22,13 @@ export function indexMultipleArrayItems<
 export function makeArrayUniq<T>(arr: ReadonlyArray<T>) {
   return Array.from(new Set(arr));
 }
+
+export function mergeArrays<T>(
+  target: ReadonlyArray<T>,
+  source: ReadonlyArray<T>,
+  offset: number
+) {
+  const res = target.slice();
+  for (let i = 0; i < source.length; ++i) res[offset + i] = source[i];
+  return res;
+}
