@@ -1,9 +1,0 @@
-.bannerContainer {
-  position: relative;
-  height: rem(400);
-  background-color: var(--mantine-color-grape-8);
-  color: var(--mantine-color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
