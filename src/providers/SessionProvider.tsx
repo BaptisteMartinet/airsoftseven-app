@@ -15,6 +15,7 @@ const SessionQuery: TypedDocumentNode<{
     expireAt: Date;
     user: {
       id: IdType;
+      slug: string;
       username: string;
     };
   } | null;
@@ -25,6 +26,7 @@ const SessionQuery: TypedDocumentNode<{
       expireAt
       user {
         id
+        slug
         username
       }
     }
