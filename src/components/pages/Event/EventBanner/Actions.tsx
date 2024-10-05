@@ -5,11 +5,14 @@ import { ActionIcon, Group, Tooltip } from "@mantine/core";
 import { IconShare, IconFlag, IconLink } from "@tabler/icons-react";
 import { handlePromiseWithToast } from "@/core/utils/promise";
 import { copyToClipboard } from "@/core/utils/navigator";
+import { usePathname } from "next/navigation";
+import { makeAppURL } from "@/navigation";
 
 export default function Actions() {
   const t = useTranslations("pages.Event.EventBanner.Actions");
   const t_shared = useTranslations("shared");
-  const locationURL = window.location.href;
+  const pathname = usePathname();
+  const locationURL = makeAppURL(pathname);
 
   return (
     <Group>
@@ -18,7 +21,7 @@ export default function Actions() {
           color="white"
           variant="transparent"
           onClick={() => {
-            const promise = copyToClipboard(locationURL);
+            const promise = copyToClipboard(locationURL.href);
             handlePromiseWithToast(promise, {
               successMessage: t("copyLinkSuccess"),
               errorMessage: t_shared("error"),

@@ -6,3 +6,7 @@ export const { Link, getPathname, redirect, usePathname, useRouter } =
     locales: Locales,
     pathnames: Pathnames,
   });
+
+export function makeAppURL(pathname: string) {
+  return new URL(pathname, process.env.NEXT_PUBLIC_APP_BASE_URL);
+}
