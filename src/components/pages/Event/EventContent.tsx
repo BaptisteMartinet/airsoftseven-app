@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Box, Stack, Text, Anchor as MantineAnchor } from "@mantine/core";
 import { genGmapsLocationLink } from "@/core/utils/gmaps";
-import { StaticMap, Anchor } from "@/components/common";
-import TitledContainer from "./TitledContainer";
+import { StaticMap, Anchor, TitledContainer } from "@/components/common";
 
 export interface EventContentProps {
   description: string | null;
