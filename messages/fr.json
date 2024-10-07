@@ -68,6 +68,10 @@
       "capacity": "{capacity} places",
       "acceptUnderage": "Mineurs acceptés",
       "rentals": "Location disponible"
+    },
+    "PaginatedList": {
+      "count": "{count} résultats",
+      "loadMore": "Afficher plus"
     }
   },
   "pages": {
