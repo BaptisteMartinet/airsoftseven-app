@@ -33,7 +33,13 @@ export default function EventCard(props: EventCardProps) {
       href={{ pathname: "/event/[slug]", params: { slug: event.slug } }}
       style={{ textDecoration: "none" }}
     >
-      <Card shadow="sm" padding={small ? "xs" : "lg"} radius="md" withBorder>
+      <Card
+        miw={300}
+        shadow="sm"
+        padding={small ? "xs" : "lg"}
+        radius="md"
+        withBorder
+      >
         {!small ? (
           <CardSection>
             <Image src="/m4-closeup.jpg" height={160} alt="Norway" />
