@@ -39,6 +39,16 @@ function makeClient() {
             fields: OffsetPaginationFieldPolicy,
           },
         },
+        Club: {
+          fields: {
+            events: OffsetPaginationFieldPolicy,
+          },
+        },
+        Field: {
+          fields: {
+            events: OffsetPaginationFieldPolicy,
+          },
+        },
       },
     }),
     link: httpLink,
