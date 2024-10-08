@@ -32,4 +32,8 @@ export const Pathnames: PathnamesT<typeof Locales> = {
     fr: "/utilisateur/[slug]",
     en: "/user/[slug]",
   },
+  "/club/[slug]": {
+    fr: "/association/[slug]",
+    en: "/club/[slug]",
+  },
 };

@@ -183,6 +183,18 @@
           "copyLinkSuccess": "Lien copié avec succès"
         }
       }
+    },
+    "Club": {
+      "ClubBanner": {
+        "resource": "Association/"
+      },
+      "ClubContent": {
+        "description": "Description",
+        "rules": "Règles",
+        "publicURL": "Lien",
+        "events": "Prochaines parties",
+        "author": "Ajouté par {username}"
+      }
     }
   }
 }
