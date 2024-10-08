@@ -4,7 +4,8 @@
     "description": "Trouver un événement airsoft n'importe où dans le monde en un instant."
   },
   "shared": {
-    "error": "Une erreur est survenue"
+    "error": "Une erreur est survenue",
+    "metadataTitle": "{title} | AirsoftSeven"
   },
   "common": {
     "Header": {
