@@ -36,4 +36,8 @@ export const Pathnames: PathnamesT<typeof Locales> = {
     fr: "/association/[slug]",
     en: "/club/[slug]",
   },
+  "/field/[slug]": {
+    fr: "/terrain/[slug]",
+    en: "/field/[slug]",
+  },
 };

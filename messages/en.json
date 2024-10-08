@@ -195,6 +195,18 @@
         "events": "Prochaines parties",
         "author": "Ajouté par {username}"
       }
+    },
+    "Field": {
+      "FieldBanner": {
+        "resource": "Terrain/"
+      },
+      "FieldContent": {
+        "description": "Description",
+        "publicURL": "Lien",
+        "address": "Localisation",
+        "events": "Prochaines parties",
+        "author": "Ajouté par {username}"
+      }
     }
   }
 }
