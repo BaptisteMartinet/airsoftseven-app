@@ -68,6 +68,10 @@
       "capacity": "{capacity} places",
       "acceptUnderage": "Mineurs acceptés",
       "rentals": "Location disponible"
+    },
+    "PaginatedList": {
+      "count": "{count} résultats",
+      "loadMore": "Afficher plus"
     }
   },
   "pages": {
@@ -169,6 +173,15 @@
       "EventsList": {
         "eventsCount": "{count} parties trouvées",
         "loadMore": "Afficher plus"
+      }
+    },
+    "User": {
+      "UserBanner": {
+        "resource": "Utilisateur/",
+        "Actions": {
+          "copyLink": "Copier le lien",
+          "copyLinkSuccess": "Lien copié avec succès"
+        }
       }
     }
   }

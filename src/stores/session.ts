@@ -7,6 +7,7 @@ export interface Session {
   expireAt: Date;
   user: {
     id: IdType;
+    slug: string;
     username: string;
   };
 }

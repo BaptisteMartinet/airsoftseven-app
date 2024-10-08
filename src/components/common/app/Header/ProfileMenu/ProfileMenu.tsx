@@ -37,7 +37,15 @@ export default function ProfileMenu() {
       <Menu.Dropdown>
         {session ? (
           <>
-            <Menu.Item component={Link} href="/profile">
+            <Menu.Item
+              component={Link}
+              href={
+                {
+                  pathname: "/user/[slug]",
+                  params: { slug: session.user.slug },
+                } as any
+              } // TODO casted due to type issue not handling params correctly (nextintl v3.17.2)
+            >
               {t("profile")}
             </Menu.Item>
             <Menu.Item onClick={handleLogout}>{t("logout")}</Menu.Item>

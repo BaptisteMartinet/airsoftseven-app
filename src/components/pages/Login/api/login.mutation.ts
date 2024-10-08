@@ -10,6 +10,7 @@ export interface Session {
       expireAt: Date;
       user: {
         id: IdType;
+        slug: string;
         username: string;
       };
     };
@@ -29,6 +30,7 @@ const Login: TypedDocumentNode<Session, LoginVariables> = gql`
         expireAt
         user {
           id
+          slug
           username
         }
       }

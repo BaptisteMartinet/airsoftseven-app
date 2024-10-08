@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { Box } from "@mantine/core";
 import { isNotEmpty } from "@mantine/form";
 import { handlePromiseWithToast } from "@/core/utils/promise";
-import { mergeOffsetPaginationResults } from "@/core/utils/apollo";
 import { redirect } from "@/navigation";
 import { PageLayout } from "@/components/common";
 import { EventsQuery } from "./api";
@@ -41,10 +40,20 @@ function EventsPage(props: EventsPageProps) {
       longitude: lng,
       distance: DefaultDistanceMeters,
     },
-    fetchPolicy: "network-only", // Cache is not needed and adds complexity
   });
   const events = data?.events.nodes ?? [];
   const eventsCount = data?.events.count ?? 0;
+
+  const handleFetchMore = () => {
+    const promise = fetchMore({
+      variables: {
+        offset: events.length,
+      },
+    });
+    handlePromiseWithToast(promise, {
+      errorMessage: t_shared("error"),
+    });
+  };
 
   const form = useForm({
     initialValues: {
@@ -78,28 +87,7 @@ function EventsPage(props: EventsPageProps) {
               events={events}
               eventsCount={eventsCount}
               loading={loading}
-              onClickLoadMore={() => {
-                const promise = fetchMore({
-                  variables: {
-                    offset: events.length,
-                  },
-                  updateQuery(
-                    prevResult,
-                    { fetchMoreResult, variables: { offset } }
-                  ) {
-                    return {
-                      events: mergeOffsetPaginationResults(
-                        prevResult.events,
-                        fetchMoreResult.events,
-                        offset
-                      ),
-                    };
-                  },
-                });
-                handlePromiseWithToast(promise, {
-                  errorMessage: t_shared("error"),
-                });
-              }}
+              onClickLoadMore={handleFetchMore}
             />
           </Box>
           <Box pos="relative" flex={2}>

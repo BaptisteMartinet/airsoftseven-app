@@ -68,6 +68,10 @@
       "capacity": "{capacity} places",
       "acceptUnderage": "Mineurs acceptés",
       "rentals": "Location disponible"
+    },
+    "PaginatedList": {
+      "count": "{count} résultats",
+      "loadMore": "Afficher plus"
     }
   },
   "pages": {
@@ -165,11 +169,20 @@
         "addressPlaceholder": "Rechercher à proximité d'une adresse",
         "distanceLabel": "{distanceKm} km ({distanceMi, number, ::precision-integer} miles)",
         "submit": "Rechercher"
+      },
+      "EventsList": {
+        "eventsCount": "{count} parties trouvées",
+        "loadMore": "Afficher plus"
       }
     },
-    "EventsList": {
-      "eventsCount": "{count} parties trouvées",
-      "loadMore": "Afficher plus"
+    "User": {
+      "UserBanner": {
+        "resource": "Utilisateur/",
+        "Actions": {
+          "copyLink": "Copier le lien",
+          "copyLinkSuccess": "Lien copié avec succès"
+        }
+      }
     }
   }
 }

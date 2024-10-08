@@ -1,7 +1,7 @@
 import type { IdType } from "@/core/api/types";
 
 import { useTranslations } from "next-intl";
-import { Badge, Card, CardSection, Group, Image, Text } from "@mantine/core";
+import { Card, CardSection, Image, Text } from "@mantine/core";
 import { Link } from "@/navigation";
 
 export interface EventCardProps {
@@ -14,8 +14,6 @@ export interface EventCardProps {
     club: {
       id: IdType;
       name: string;
-      acceptUnderage: boolean | null;
-      rentals: boolean | null;
     };
     field: {
       id: IdType;
@@ -33,7 +31,13 @@ export default function EventCard(props: EventCardProps) {
       href={{ pathname: "/event/[slug]", params: { slug: event.slug } }}
       style={{ textDecoration: "none" }}
     >
-      <Card shadow="sm" padding={small ? "xs" : "lg"} radius="md" withBorder>
+      <Card
+        miw={300}
+        shadow="sm"
+        padding={small ? "xs" : "lg"}
+        radius="md"
+        withBorder
+      >
         {!small ? (
           <CardSection>
             <Image src="/m4-closeup.jpg" height={160} alt="Norway" />
@@ -59,16 +63,6 @@ export default function EventCard(props: EventCardProps) {
         >
           {t("capacity", { capacity: event.capacity })}
         </Text>
-        {!small ? (
-          <Group mt={10}>
-            {event.club.acceptUnderage ? (
-              <Badge size="sm">{t("acceptUnderage")}</Badge>
-            ) : null}
-            {event.club.rentals ? (
-              <Badge size="sm">{t("rentals")}</Badge>
-            ) : null}
-          </Group>
-        ) : null}
       </Card>
     </Link>
   );

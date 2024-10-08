@@ -14,12 +14,12 @@ export interface OffsetConnection<T> {
 }
 
 export function mergeOffsetPaginationResults<T>(
-  previousData: OffsetConnection<T>,
+  previousData: OffsetConnection<T> | null,
   newData: OffsetConnection<T>,
   offset: number
 ) {
   return {
     count: newData.count,
-    nodes: mergeArrays(previousData.nodes, newData.nodes, offset),
+    nodes: mergeArrays(previousData?.nodes ?? [], newData.nodes, offset),
   };
 }
