@@ -4,12 +4,12 @@ import assert from "assert";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { ActionIcon, Group, Tooltip } from "@mantine/core";
-import { useSession } from "@/providers";
-import { CopyLocationButton } from "@/components/common";
 import { IconTrash } from "@tabler/icons-react";
-import { ClubDeleteMutation } from "@components/pages/Club/api";
 import { handlePromiseWithToast } from "@/core/utils/promise";
 import { useRouter } from "@/navigation";
+import { useSession } from "@/providers";
+import { CopyLocationButton } from "@/components/common";
+import { ClubDeleteMutation } from "@components/pages/Club/api";
 
 export interface ActionsProps {
   clubId: IdType;
