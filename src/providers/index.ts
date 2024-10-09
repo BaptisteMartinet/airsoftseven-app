@@ -1,1 +1,1 @@
-export { useSessionStore } from './SessionProvider';
+export { useSessionStore, useSession } from './SessionProvider';

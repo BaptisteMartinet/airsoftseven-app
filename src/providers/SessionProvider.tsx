@@ -69,3 +69,7 @@ export function useSessionStore<T>(selector: (store: SessionStore) => T): T {
     throw new Error(`useCounterStore must be used within CounterStoreProvider`);
   return useStore(sessionStoreCtx, selector);
 }
+
+export function useSession() {
+  return useSessionStore(({ session }) => session);
+}
