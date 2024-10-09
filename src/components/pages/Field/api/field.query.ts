@@ -16,6 +16,9 @@ export interface Field {
     slug: string;
     username: string;
   };
+  events: {
+    count: number;
+  };
 }
 
 export interface FieldQueryRes {
@@ -40,6 +43,9 @@ const FieldQuery: TypedDocumentNode<FieldQueryRes, FieldQueryVars> = gql`
         id
         slug
         username
+      }
+      events {
+        count
       }
     }
   }

@@ -24,7 +24,12 @@ export default async function Field(props: FieldProps) {
 
   return (
     <PageLayout>
-      <FieldBanner name={field.name} />
+      <FieldBanner
+        fieldId={field.id}
+        name={field.name}
+        user={field.user}
+        events={field.events}
+      />
       <Container mt="md">
         <FieldContent
           slug={slug}
