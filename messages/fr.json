@@ -75,6 +75,10 @@
     "PaginatedList": {
       "count": "{count} résultats",
       "loadMore": "Afficher plus"
+    },
+    "CopyLocationButton": {
+      "copyLink": "Copier le lien",
+      "copyLinkSuccess": "Lien copié avec succès"
     }
   },
   "pages": {
