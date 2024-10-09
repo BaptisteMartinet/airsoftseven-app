@@ -5,7 +5,9 @@
   },
   "shared": {
     "error": "Something went wrong",
-    "metadataTitle": "{title} | AirsoftSeven"
+    "metadataTitle": "{title} | AirsoftSeven",
+    "delete": "Supprimer",
+    "deleteSuccess": "Supprimé avec succès"
   },
   "common": {
     "Header": {

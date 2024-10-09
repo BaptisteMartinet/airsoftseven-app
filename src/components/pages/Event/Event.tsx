@@ -22,6 +22,7 @@ export default async function Event(props: EventProps) {
     notFound()
   );
   const {
+    id,
     title,
     date,
     club,
@@ -35,7 +36,13 @@ export default async function Event(props: EventProps) {
 
   return (
     <PageLayout>
-      <EventBanner title={title} date={date} club={club} />
+      <EventBanner
+        eventId={id}
+        title={title}
+        date={date}
+        club={club}
+        user={user}
+      />
       <Container mt="md">
         <EventContent
           description={description}
