@@ -1,16 +1,15 @@
 "use client";
 
 import assert from "assert";
-import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { ActionIcon, Group, Tooltip } from "@mantine/core";
-import { IconShare, IconFlag, IconLink, IconTrash } from "@tabler/icons-react";
+import { IconFlag, IconTrash } from "@tabler/icons-react";
 import { handlePromiseWithToast } from "@/core/utils/promise";
-import { copyToClipboard } from "@/core/utils/navigator";
 import { IdType } from "@/core/api/types";
-import { makeAppURL, useRouter } from "@/navigation";
+import { useRouter } from "@/navigation";
 import { useSession } from "@/providers";
+import { CopyLocationButton } from "@/components/common";
 import { EventDeleteMutation } from "@components/pages/Event/api";
 
 export interface ActionsProps {
@@ -24,8 +23,6 @@ export default function Actions(props: ActionsProps) {
   const { eventId, user } = props;
   const t = useTranslations("pages.Event.EventBanner.Actions");
   const t_shared = useTranslations("shared");
-  const pathname = usePathname();
-  const locationURL = makeAppURL(pathname);
   const client = useApolloClient();
   const router = useRouter();
   const session = useSession();
@@ -64,32 +61,7 @@ export default function Actions(props: ActionsProps) {
         </Group>
       ) : null}
       <Group>
-        <Tooltip label={t("copyLink")}>
-          <ActionIcon
-            color="white"
-            variant="transparent"
-            onClick={() => {
-              const promise = copyToClipboard(locationURL.href);
-              handlePromiseWithToast(promise, {
-                successMessage: t("copyLinkSuccess"),
-                errorMessage: t_shared("error"),
-              });
-            }}
-          >
-            <IconLink />
-          </ActionIcon>
-        </Tooltip>
-        <Tooltip label={t("share")}>
-          <ActionIcon
-            component="a"
-            href={`https://www.facebook.com/share.php?u=${locationURL}`}
-            target="_blank"
-            color="white"
-            variant="transparent"
-          >
-            <IconShare />
-          </ActionIcon>
-        </Tooltip>
+        <CopyLocationButton />
         <Tooltip label={t("report")}>
           <ActionIcon color="white" variant="transparent">
             <IconFlag />

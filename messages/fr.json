@@ -156,9 +156,6 @@
         "resource": "Évènement/",
         "subtitle": "{date, date, full} par {clubName}",
         "Actions": {
-          "copyLink": "Copier le lien",
-          "copyLinkSuccess": "Lien copié avec succès",
-          "share": "Partager sur facebook",
           "report": "Signaler"
         }
       },
