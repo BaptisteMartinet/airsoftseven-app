@@ -24,7 +24,12 @@ export default async function Club(props: ClubProps) {
 
   return (
     <PageLayout>
-      <ClubBanner name={club.name} />
+      <ClubBanner
+        clubId={club.id}
+        name={club.name}
+        user={club.user}
+        events={club.events}
+      />
       <Container mt="md">
         <ClubContent
           slug={slug}

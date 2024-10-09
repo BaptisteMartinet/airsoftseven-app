@@ -14,6 +14,9 @@ export interface Club {
     slug: string;
     username: string;
   };
+  events: {
+    count: number;
+  };
 }
 
 export interface ClubQueryRes {
@@ -36,6 +39,9 @@ const ClubQuery: TypedDocumentNode<ClubQueryRes, ClubQueryVars> = gql`
         id
         slug
         username
+      }
+      events {
+        count
       }
     }
   }
