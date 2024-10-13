@@ -68,7 +68,7 @@ function EventCreate() {
     handleSubmitPromise(promise, {
       onSuccess: (res) => {
         const data = ensureFetchResultData(res);
-        const slug = data.authenticated.event.create.slug;
+        const slug = data.event.create.slug;
         router.replace(`/event/${slug}`);
       },
       errorMessage: t_shared("error"),

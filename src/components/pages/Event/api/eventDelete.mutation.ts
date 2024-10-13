@@ -4,10 +4,8 @@ import type { IdType } from "@core/api/types";
 import { gql } from "@apollo/client";
 
 export interface EventDeleteMutationRes {
-  authenticated: {
-    event: {
-      delete: boolean;
-    };
+  event: {
+    delete: boolean;
   };
 }
 
@@ -20,10 +18,8 @@ const EventDeleteMutation: TypedDocumentNode<
   EventDeleteMutationVars
 > = gql`
   mutation EventDelete($id: ID!) {
-    authenticated {
-      event {
-        delete(id: $id)
-      }
+    event {
+      delete(id: $id)
     }
   }
 `;

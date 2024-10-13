@@ -4,10 +4,8 @@ import type { IdType } from "@core/api/types";
 import { gql } from "@apollo/client";
 
 export interface ClubDeleteMutationRes {
-  authenticated: {
-    club: {
-      delete: boolean;
-    };
+  club: {
+    delete: boolean;
   };
 }
 
@@ -20,10 +18,8 @@ const ClubDeleteMutation: TypedDocumentNode<
   ClubDeleteMutationVars
 > = gql`
   mutation ClubDelete($id: ID!) {
-    authenticated {
-      club {
-        delete(id: $id)
-      }
+    club {
+      delete(id: $id)
     }
   }
 `;

@@ -62,7 +62,7 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
       successMessage: t("fieldCreateSuccess"),
       onSuccess: (res) => {
         const data = ensureFetchResultData(res);
-        onCreateSuccess(data.authenticated.field.create);
+        onCreateSuccess(data.field.create);
       },
       errorMessage: t_shared("error"),
     });

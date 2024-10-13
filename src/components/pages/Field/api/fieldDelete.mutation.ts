@@ -4,10 +4,8 @@ import type { IdType } from "@core/api/types";
 import { gql } from "@apollo/client";
 
 export interface FieldDeleteMutationRes {
-  authenticated: {
-    field: {
-      delete: boolean;
-    };
+  field: {
+    delete: boolean;
   };
 }
 
@@ -20,10 +18,8 @@ const FieldDeleteMutation: TypedDocumentNode<
   FieldDeleteMutationVars
 > = gql`
   mutation FieldDelete($id: ID!) {
-    authenticated {
-      field {
-        delete(id: $id)
-      }
+    field {
+      delete(id: $id)
     }
   }
 `;

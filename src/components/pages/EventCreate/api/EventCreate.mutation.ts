@@ -4,12 +4,10 @@ import type { IdType } from "@/core/api/types";
 import { gql } from "@apollo/client";
 
 export interface EventCreateMutationResult {
-  authenticated: {
-    event: {
-      create: {
-        id: IdType;
-        slug: string;
-      };
+  event: {
+    create: {
+      id: IdType;
+      slug: string;
     };
   };
 }
@@ -32,13 +30,11 @@ const EventCreateMutation: TypedDocumentNode<
   EventCreateMutationResult,
   EventCreateMutationVars
 > = gql`
-  mutation EventCreate($input: AuthenticatedEventCreateInput!) {
-    authenticated {
-      event {
-        create(input: $input) {
-          id
-          slug
-        }
+  mutation EventCreate($input: EventCreateInput!) {
+    event {
+      create(input: $input) {
+        id
+        slug
       }
     }
   }

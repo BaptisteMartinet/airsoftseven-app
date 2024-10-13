@@ -9,10 +9,8 @@ export interface Club {
 }
 
 export interface ClubCreate {
-  authenticated: {
-    club: {
-      create: Club;
-    };
+  club: {
+    create: Club;
   };
 }
 
@@ -28,13 +26,11 @@ export interface ClubCreateVariables {
 }
 
 const ClubCreate: TypedDocumentNode<ClubCreate, ClubCreateVariables> = gql`
-  mutation ClubCreate($input: AuthenticatedClubCreateInput!) {
-    authenticated {
-      club {
-        create(input: $input) {
-          id
-          name
-        }
+  mutation ClubCreate($input: ClubCreateInput!) {
+    club {
+      create(input: $input) {
+        id
+        name
       }
     }
   }

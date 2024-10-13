@@ -48,7 +48,7 @@ export default function ClubCreateForm(props: ClubCreateFormProps) {
       successMessage: t("clubCreateSuccess"),
       onSuccess: (res) => {
         const data = ensureFetchResultData(res);
-        onCreateSuccess(data.authenticated.club.create);
+        onCreateSuccess(data.club.create);
       },
       errorMessage: t_shared("error"),
     });

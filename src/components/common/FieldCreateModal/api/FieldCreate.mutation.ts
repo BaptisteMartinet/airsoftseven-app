@@ -9,10 +9,8 @@ export interface Field {
 }
 
 export interface FieldCreateResult {
-  authenticated: {
-    field: {
-      create: Field;
-    };
+  field: {
+    create: Field;
   };
 }
 
@@ -31,13 +29,11 @@ const ClubCreate: TypedDocumentNode<
   FieldCreateResult,
   FieldCreateVariables
 > = gql`
-  mutation CreateField($input: AuthenticatedFieldCreateInput!) {
-    authenticated {
-      field {
-        create(input: $input) {
-          id
-          name
-        }
+  mutation CreateField($input: FieldCreateInput!) {
+    field {
+      create(input: $input) {
+        id
+        name
       }
     }
   }
