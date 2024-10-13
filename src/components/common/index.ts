@@ -16,3 +16,4 @@ export { default as PaginatedList } from "./PaginatedList";
 export { default as ClubCard } from "./ClubCard";
 export { default as FieldCard } from "./FieldCard";
 export { default as CopyLocationButton } from "./CopyLocationButton";
+export { default as ReportCreateModal } from "./ReportCreateModal";

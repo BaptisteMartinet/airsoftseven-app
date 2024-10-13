@@ -13,6 +13,7 @@ export interface EventQueryRes {
     price: number | null;
     capacity: number | null;
     publicURL: string | null;
+    reported: boolean;
     club: {
       id: IdType;
       slug: string;
@@ -48,6 +49,7 @@ const EventQuery: TypedDocumentNode<EventQueryRes, EventQueryVars> = gql`
       price
       capacity
       publicURL
+      reported
       club {
         id
         slug

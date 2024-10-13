@@ -30,6 +30,7 @@ export default async function Event(props: EventProps) {
     capacity,
     price,
     publicURL,
+    reported,
     field,
     user,
   } = event;
@@ -40,6 +41,7 @@ export default async function Event(props: EventProps) {
         eventId={id}
         title={title}
         date={date}
+        reported={reported}
         club={club}
         user={user}
       />

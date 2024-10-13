@@ -7,7 +7,10 @@
     "error": "Something went wrong",
     "metadataTitle": "{title} | AirsoftSeven",
     "delete": "Supprimer",
-    "deleteSuccess": "Supprimé avec succès"
+    "deleteSuccess": "Supprimé avec succès",
+    "enums": {
+      "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}"
+    }
   },
   "common": {
     "Header": {
@@ -79,6 +82,16 @@
     "CopyLocationButton": {
       "copyLink": "Copier le lien",
       "copyLinkSuccess": "Lien copié avec succès"
+    },
+    "ReportCreateModal": {
+      "modalTitle": "Signaler",
+      "reportCreateSuccess": "Votre signalement a bien été pris en compte.",
+      "labels": {
+        "reason": "Raison",
+        "message": "Message",
+        "messagePlaceholder": "Décrivez au mieux la raison du signalement."
+      },
+      "submit": "Signaler"
     }
   },
   "pages": {

@@ -4,28 +4,34 @@ import assert from "assert";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
 import { ActionIcon, Group, Tooltip } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { IconFlag, IconTrash } from "@tabler/icons-react";
 import { handlePromiseWithToast } from "@/core/utils/promise";
-import { IdType } from "@/core/api/types";
+import { type IdType, ReportableResource } from "@/core/api/types";
 import { useRouter } from "@/navigation";
 import { useSession } from "@/providers";
-import { CopyLocationButton } from "@/components/common";
+import { CopyLocationButton, ReportCreateModal } from "@/components/common";
 import { EventDeleteMutation } from "@components/pages/Event/api";
 
 export interface ActionsProps {
   eventId: IdType;
+  reported: boolean;
   user: {
     id: IdType;
   };
 }
 
 export default function Actions(props: ActionsProps) {
-  const { eventId, user } = props;
+  const { eventId, reported, user } = props;
   const t = useTranslations("pages.Event.EventBanner.Actions");
   const t_shared = useTranslations("shared");
   const client = useApolloClient();
   const router = useRouter();
   const session = useSession();
+  const [
+    reportCreateModalOpened,
+    { open: openReportCreateModal, close: closeReportCreateModal },
+  ] = useDisclosure();
 
   const handleDelete = () => {
     const promise = client.mutate({
@@ -46,28 +52,42 @@ export default function Actions(props: ActionsProps) {
   };
 
   return (
-    <Group>
-      {session?.user.id === user.id ? (
+    <>
+      <Group>
+        {session?.user.id === user.id ? (
+          <Group>
+            <Tooltip label={t_shared("delete")}>
+              <ActionIcon
+                onClick={handleDelete}
+                variant="transparent"
+                color="red"
+              >
+                <IconTrash />
+              </ActionIcon>
+            </Tooltip>
+          </Group>
+        ) : null}
         <Group>
-          <Tooltip label={t_shared("delete")}>
+          <CopyLocationButton />
+          <Tooltip label={t("report")}>
             <ActionIcon
-              onClick={handleDelete}
+              onClick={openReportCreateModal}
+              disabled={reported}
+              color="white"
               variant="transparent"
-              color="red"
             >
-              <IconTrash />
+              <IconFlag />
             </ActionIcon>
           </Tooltip>
         </Group>
-      ) : null}
-      <Group>
-        <CopyLocationButton />
-        <Tooltip label={t("report")}>
-          <ActionIcon color="white" variant="transparent">
-            <IconFlag />
-          </ActionIcon>
-        </Tooltip>
       </Group>
-    </Group>
+      <ReportCreateModal
+        resourceId={eventId}
+        resourceType={ReportableResource.Event}
+        opened={reportCreateModalOpened}
+        onClose={closeReportCreateModal}
+        onCreateSuccess={() => {}} // TODO update Event
+      />
+    </>
   );
 }
