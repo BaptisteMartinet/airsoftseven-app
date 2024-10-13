@@ -3,7 +3,7 @@
 import assert from "assert";
 import { useTranslations } from "next-intl";
 import { Overlay, Container, Title, Text } from "@mantine/core";
-import { IconSearch } from "@tabler/icons-react";
+import { IconMapPin } from "@tabler/icons-react";
 import { useRouter } from "@/navigation";
 import { AddressPicker } from "@/components/common";
 import classes from "./Hero.module.css";
@@ -37,7 +37,7 @@ export default function Hero() {
           }}
           placeDetailsFields={["location"]}
           placeholder={t("addressPickerPlaceholder")}
-          leftSection={<IconSearch />}
+          leftSection={<IconMapPin />}
           size="lg"
           className={classes.control}
         />
