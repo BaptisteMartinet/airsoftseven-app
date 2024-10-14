@@ -1,4 +1,6 @@
-import { HttpLink } from "@apollo/client";
+import { headers as getNextHeaders } from "next/headers";
+import { createHttpLink } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 import {
   registerApolloClient,
   ApolloClient,
@@ -8,11 +10,23 @@ import {
 // Apollo client for server-side fetching
 
 export const { getClient, query, PreloadQuery } = registerApolloClient(() => {
+  const httpLink = createHttpLink({
+    uri: process.env.NEXT_PUBLIC_API_URI,
+    fetchOptions: { cache: "no-store" },
+  });
+
+  const headersForwardLink = setContext((_, { headers }) => {
+    const newHeaders = Object.fromEntries(getNextHeaders().entries());
+    return {
+      headers: {
+        ...headers,
+        ...newHeaders,
+      },
+    };
+  });
+
   return new ApolloClient({
+    link: headersForwardLink.concat(httpLink),
     cache: new InMemoryCache(),
-    link: new HttpLink({
-      uri: process.env.NEXT_PUBLIC_API_URI,
-      fetchOptions: { cache: "no-store" },
-    }),
   });
 });
