@@ -9,6 +9,7 @@ import Actions from "./Actions";
 export interface FieldBannerProps {
   fieldId: IdType;
   name: string;
+  reported: boolean;
   user: {
     id: IdType;
   };
@@ -18,7 +19,7 @@ export interface FieldBannerProps {
 }
 
 export default function FieldBanner(props: FieldBannerProps) {
-  const { fieldId, name, user, events } = props;
+  const { fieldId, name, reported, user, events } = props;
   const t = useTranslations("pages.Field.FieldBanner");
   const theme = useMantineTheme();
 
@@ -26,7 +27,14 @@ export default function FieldBanner(props: FieldBannerProps) {
     <ResourceBanner
       resourceName={t("resource")}
       title={name}
-      actions={<Actions fieldId={fieldId} user={user} events={events} />}
+      actions={
+        <Actions
+          fieldId={fieldId}
+          reported={reported}
+          user={user}
+          events={events}
+        />
+      }
       bgColor={theme.colors.green[8]}
     />
   );

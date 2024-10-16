@@ -27,6 +27,7 @@ export default async function Field(props: FieldProps) {
       <FieldBanner
         fieldId={field.id}
         name={field.name}
+        reported={field.reported}
         user={field.user}
         events={field.events}
       />
