@@ -6,6 +6,7 @@ import { gql } from "@apollo/client";
 export interface User {
   id: IdType;
   username: string;
+  reported: boolean;
   events: {
     count: number;
   };
@@ -30,6 +31,7 @@ const UserQuery: TypedDocumentNode<UserQueryRes, UserQueryVars> = gql`
     user(slug: $slug) {
       id
       username
+      reported
       events {
         count
       }

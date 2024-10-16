@@ -24,7 +24,11 @@ export default async function User(props: UserProps) {
 
   return (
     <PageLayout>
-      <UserBanner username={user.username} />
+      <UserBanner
+        userId={user.id}
+        username={user.username}
+        reported={user.reported}
+      />
       <Container mt="md">
         <UserContent
           slug={slug}

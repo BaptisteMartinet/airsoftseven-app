@@ -1,34 +1,53 @@
-import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Group, Tooltip, ActionIcon } from "@mantine/core";
-import { IconLink } from "@tabler/icons-react";
-import { handlePromiseWithToast } from "@/core/utils/promise";
-import { copyToClipboard } from "@/core/utils/navigator";
-import { makeAppURL } from "@/navigation";
+import { useDisclosure } from "@mantine/hooks";
+import { IconFlag } from "@tabler/icons-react";
+import { type IdType, ReportableResource } from "@/core/api/types";
+import { useSession } from "@/providers";
+import { CopyLocationButton, ReportCreateModal } from "@/components/common";
 
-export default function Actions() {
-  const t = useTranslations("pages.User.UserBanner.Actions");
+export interface ActionsProps {
+  userId: IdType;
+  reported: boolean;
+}
+
+export default function Actions(props: ActionsProps) {
+  const { userId, reported } = props;
   const t_shared = useTranslations("shared");
-  const pathname = usePathname();
-  const locationURL = makeAppURL(pathname);
+  const session = useSession();
+  const [
+    reportCreateModalOpened,
+    { open: openReportCreateModal, close: closeReportCreateModal },
+  ] = useDisclosure();
 
   return (
-    <Group>
-      <Tooltip label={t("copyLink")}>
-        <ActionIcon
-          color="white"
-          variant="transparent"
-          onClick={() => {
-            const promise = copyToClipboard(locationURL.href);
-            handlePromiseWithToast(promise, {
-              successMessage: t("copyLinkSuccess"),
-              errorMessage: t_shared("error"),
-            });
-          }}
-        >
-          <IconLink />
-        </ActionIcon>
-      </Tooltip>
-    </Group>
+    <>
+      <Group>
+        {session ? (
+          <>
+            {session.user.id !== userId ? (
+              <Tooltip label={t_shared("report")}>
+                <ActionIcon
+                  onClick={openReportCreateModal}
+                  disabled={reported}
+                  color="white"
+                  variant="transparent"
+                >
+                  <IconFlag />
+                </ActionIcon>
+              </Tooltip>
+            ) : null}
+          </>
+        ) : null}
+        <CopyLocationButton />
+      </Group>
+      <ReportCreateModal
+        resourceId={userId}
+        resourceType={ReportableResource.User}
+        opened={reportCreateModalOpened}
+        onClose={closeReportCreateModal}
+        onCreateSuccess={() => {}} // TODO update User
+      />
+    </>
   );
 }
