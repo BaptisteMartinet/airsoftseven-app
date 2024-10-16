@@ -23,6 +23,15 @@ export default function Footer() {
           <MantineAnchor href={`mailto:${SupportEmail}`} c="dimmed" size="sm">
             {t("links.contact")}
           </MantineAnchor>
+
+          <MantineAnchor
+            href="https://github.com/BaptisteMartinet/airsoftseven-app"
+            target="_blank"
+            c="dimmed"
+            size="sm"
+          >
+            {t("links.github")}
+          </MantineAnchor>
         </Group>
       </Container>
     </div>

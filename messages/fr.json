@@ -29,7 +29,8 @@
     "Footer": {
       "links": {
         "contact": "Contact",
-        "home": "Accueil"
+        "home": "Accueil",
+        "github": "GitHub"
       }
     },
     "LocalePicker": {
