@@ -28,7 +28,7 @@ export default async function Field(props: FieldProps) {
         fieldId={field.id}
         name={field.name}
         reported={field.reported}
-        user={field.user}
+        author={field.author}
         events={field.events}
       />
       <Container mt="md">
@@ -39,7 +39,7 @@ export default async function Field(props: FieldProps) {
           latitude={field.latitude}
           longitude={field.longitude}
           publicURL={field.publicURL}
-          user={field.user}
+          author={field.author}
         />
       </Container>
     </PageLayout>

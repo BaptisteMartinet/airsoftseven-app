@@ -14,7 +14,7 @@ import { ClubDeleteMutation } from "@components/pages/Club/api";
 export interface ActionsProps {
   clubId: IdType;
   reported: boolean;
-  user: {
+  author: {
     id: IdType;
   };
   events: {
@@ -23,7 +23,7 @@ export interface ActionsProps {
 }
 
 export default function Actions(props: ActionsProps) {
-  const { clubId, reported, user, events } = props;
+  const { clubId, reported, author, events } = props;
   const t_shared = useTranslations("shared");
   const session = useSession();
   const client = useApolloClient();
@@ -54,7 +54,7 @@ export default function Actions(props: ActionsProps) {
   return (
     <>
       <Group>
-        {session?.user.id === user.id ? (
+        {session?.user.id === author.id ? (
           <>
             <Tooltip label={t_shared("delete")}>
               <ActionIcon

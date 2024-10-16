@@ -28,7 +28,7 @@ export default async function Club(props: ClubProps) {
         clubId={club.id}
         name={club.name}
         reported={club.reported}
-        user={club.user}
+        author={club.author}
         events={club.events}
       />
       <Container mt="md">
@@ -37,7 +37,7 @@ export default async function Club(props: ClubProps) {
           description={club.description}
           rules={club.rules}
           publicURL={club.publicURL}
-          user={club.user}
+          author={club.author}
         />
       </Container>
     </PageLayout>

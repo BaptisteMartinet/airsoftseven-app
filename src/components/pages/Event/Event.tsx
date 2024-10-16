@@ -32,7 +32,7 @@ export default async function Event(props: EventProps) {
     publicURL,
     reported,
     field,
-    user,
+    author,
   } = event;
 
   return (
@@ -43,7 +43,7 @@ export default async function Event(props: EventProps) {
         date={date}
         reported={reported}
         club={club}
-        user={user}
+        author={author}
       />
       <Container mt="md">
         <EventContent
@@ -52,7 +52,7 @@ export default async function Event(props: EventProps) {
           price={price}
           publicURL={publicURL}
           field={field}
-          user={user}
+          author={author}
         />
       </Container>
     </PageLayout>

@@ -8,14 +8,14 @@ export interface ClubContentProps {
   description: string | null;
   rules: string | null;
   publicURL: string | null;
-  user: {
+  author: {
     slug: string;
     username: string;
   };
 }
 
 export default function ClubContent(props: ClubContentProps) {
-  const { slug, description, rules, publicURL, user } = props;
+  const { slug, description, rules, publicURL, author } = props;
   const t = useTranslations("pages.Club.ClubContent");
 
   return (
@@ -39,12 +39,14 @@ export default function ClubContent(props: ClubContentProps) {
         <ClubEvents slug={slug} />
       </TitledContainer>
       <Anchor
-        href={{ pathname: "/user/[slug]", params: { slug: user.slug } } as any} // TODO casted due to type issue
+        href={
+          { pathname: "/user/[slug]", params: { slug: author.slug } } as any
+        } // TODO casted due to type issue
         size="sm"
         ta="right"
         mt={20}
       >
-        {t("author", { username: user.username })}
+        {t("author", { username: author.username })}
       </Anchor>
     </Stack>
   );

@@ -10,7 +10,7 @@ export interface ClubBannerProps {
   clubId: IdType;
   name: string;
   reported: boolean;
-  user: {
+  author: {
     id: IdType;
   };
   events: {
@@ -19,7 +19,7 @@ export interface ClubBannerProps {
 }
 
 export default function ClubBanner(props: ClubBannerProps) {
-  const { clubId, name, reported, user, events } = props;
+  const { clubId, name, reported, author, events } = props;
   const t = useTranslations("pages.Club.ClubBanner");
   const theme = useMantineTheme();
 
@@ -31,7 +31,7 @@ export default function ClubBanner(props: ClubBannerProps) {
         <Actions
           clubId={clubId}
           reported={reported}
-          user={user}
+          author={author}
           events={events}
         />
       }

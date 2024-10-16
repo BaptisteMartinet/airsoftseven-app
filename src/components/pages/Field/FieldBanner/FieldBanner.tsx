@@ -10,7 +10,7 @@ export interface FieldBannerProps {
   fieldId: IdType;
   name: string;
   reported: boolean;
-  user: {
+  author: {
     id: IdType;
   };
   events: {
@@ -19,7 +19,7 @@ export interface FieldBannerProps {
 }
 
 export default function FieldBanner(props: FieldBannerProps) {
-  const { fieldId, name, reported, user, events } = props;
+  const { fieldId, name, reported, author, events } = props;
   const t = useTranslations("pages.Field.FieldBanner");
   const theme = useMantineTheme();
 
@@ -31,7 +31,7 @@ export default function FieldBanner(props: FieldBannerProps) {
         <Actions
           fieldId={fieldId}
           reported={reported}
-          user={user}
+          author={author}
           events={events}
         />
       }

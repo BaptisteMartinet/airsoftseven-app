@@ -27,7 +27,7 @@ export interface EventQueryRes {
       latitude: number;
       longitude: number;
     };
-    user: {
+    author: {
       id: IdType;
       username: string;
     };
@@ -63,7 +63,7 @@ const EventQuery: TypedDocumentNode<EventQueryRes, EventQueryVars> = gql`
         latitude
         longitude
       }
-      user {
+      author {
         id
         username
       }

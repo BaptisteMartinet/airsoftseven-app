@@ -11,14 +11,14 @@ export interface FieldContentProps {
   latitude: number;
   longitude: number;
   publicURL: string | null;
-  user: {
+  author: {
     slug: string;
     username: string;
   };
 }
 
 export default function FieldContent(props: FieldContentProps) {
-  const { slug, description, address, latitude, longitude, publicURL, user } =
+  const { slug, description, address, latitude, longitude, publicURL, author } =
     props;
   const t = useTranslations("pages.Field.FieldContent");
   const googleMapsLocationLink = genGmapsLocationLink({
@@ -60,12 +60,14 @@ export default function FieldContent(props: FieldContentProps) {
         <FieldEvents slug={slug} />
       </TitledContainer>
       <Anchor
-        href={{ pathname: "/user/[slug]", params: { slug: user.slug } } as any} // TODO casted due to type issue
+        href={
+          { pathname: "/user/[slug]", params: { slug: author.slug } } as any
+        } // TODO casted due to type issue
         size="sm"
         ta="right"
         mt={20}
       >
-        {t("author", { username: user.username })}
+        {t("author", { username: author.username })}
       </Anchor>
     </Stack>
   );

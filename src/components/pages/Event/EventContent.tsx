@@ -15,13 +15,13 @@ export interface EventContentProps {
     latitude: number;
     longitude: number;
   };
-  user: {
+  author: {
     username: string;
   };
 }
 
 export default function EventContent(props: EventContentProps) {
-  const { description, capacity, price, publicURL, field, user } = props;
+  const { description, capacity, price, publicURL, field, author } = props;
   const t = useTranslations("pages.Event.EventContent");
   const googleMapsLocationLink = genGmapsLocationLink({
     lat: field.latitude,
@@ -70,7 +70,7 @@ export default function EventContent(props: EventContentProps) {
         </Box>
       </TitledContainer>
       <Anchor href="https://youtube.com" size="sm" ta="right" mt={20}>
-        {t("author", { username: user.username })}
+        {t("author", { username: author.username })}
       </Anchor>
     </Stack>
   );

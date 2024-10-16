@@ -12,7 +12,7 @@ export interface Field {
   longitude: number;
   publicURL: string | null;
   reported: boolean;
-  user: {
+  author: {
     id: IdType;
     slug: string;
     username: string;
@@ -41,7 +41,7 @@ const FieldQuery: TypedDocumentNode<FieldQueryRes, FieldQueryVars> = gql`
       longitude
       publicURL
       reported
-      user {
+      author {
         id
         slug
         username

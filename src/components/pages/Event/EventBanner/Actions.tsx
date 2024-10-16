@@ -16,13 +16,13 @@ import { EventDeleteMutation } from "@components/pages/Event/api";
 export interface ActionsProps {
   eventId: IdType;
   reported: boolean;
-  user: {
+  author: {
     id: IdType;
   };
 }
 
 export default function Actions(props: ActionsProps) {
-  const { eventId, reported, user } = props;
+  const { eventId, reported, author } = props;
   const t_shared = useTranslations("shared");
   const client = useApolloClient();
   const router = useRouter();
@@ -53,7 +53,7 @@ export default function Actions(props: ActionsProps) {
   return (
     <>
       <Group>
-        {session?.user.id === user.id ? (
+        {session?.user.id === author.id ? (
           <>
             <Tooltip label={t_shared("delete")}>
               <ActionIcon
