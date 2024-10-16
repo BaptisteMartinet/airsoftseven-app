@@ -30,6 +30,7 @@ export interface EventQueryRes {
     author: {
       id: IdType;
       username: string;
+      slug: string;
     };
   };
 }
@@ -66,6 +67,7 @@ const EventQuery: TypedDocumentNode<EventQueryRes, EventQueryVars> = gql`
       author {
         id
         username
+        slug
       }
     }
   }

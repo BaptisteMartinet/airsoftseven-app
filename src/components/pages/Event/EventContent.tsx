@@ -17,6 +17,7 @@ export interface EventContentProps {
   };
   author: {
     username: string;
+    slug: string;
   };
 }
 
@@ -53,7 +54,14 @@ export default function EventContent(props: EventContentProps) {
         </TitledContainer>
       ) : null}
       <TitledContainer title={t("field")}>
-        <Text>{field.name}</Text>
+        <Anchor
+          href={
+            { pathname: "/field/[slug]", params: { slug: field.slug } } as any
+          } // TODO casted due to type issue
+        >
+          {field.name}
+        </Anchor>
+        <br />
         <Anchor href={googleMapsLocationLink}>{field.address}</Anchor>
         <Box h={500}>
           <a href={googleMapsLocationLink} target="_blank">
@@ -69,7 +77,14 @@ export default function EventContent(props: EventContentProps) {
           </a>
         </Box>
       </TitledContainer>
-      <Anchor href="https://youtube.com" size="sm" ta="right" mt={20}>
+      <Anchor
+        href={
+          { pathname: "/user/[slug]", params: { slug: author.slug } } as any
+        } // TODO casted due to type issue
+        size="sm"
+        ta="right"
+        mt={20}
+      >
         {t("author", { username: author.username })}
       </Anchor>
     </Stack>
