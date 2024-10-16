@@ -26,6 +26,12 @@
         "register": "Inscription"
       }
     },
+    "Footer": {
+      "links": {
+        "contact": "Contact",
+        "home": "Accueil"
+      }
+    },
     "LocalePicker": {
       "locale": "{locale, select, fr {Francais} en {English} other {Unknown}}"
     },

@@ -1,31 +1,29 @@
-import { Container, Group, Anchor } from "@mantine/core";
-import { IconHeart } from "@tabler/icons-react";
+import { useTranslations } from "next-intl";
+import {
+  Container,
+  Group,
+  Anchor as MantineAnchor,
+  Image,
+} from "@mantine/core";
+import { SupportEmail } from "@/core/constants";
+import { Anchor } from "@components/common";
 import classes from "./Footer.module.css";
 
-const links = [
-  { link: "#", label: "Contact" },
-  { link: "#", label: "Privacy" },
-  { link: "#", label: "Blog" },
-  { link: "#", label: "Careers" },
-];
-
 export default function Footer() {
-  const items = links.map((link) => (
-    <Anchor<"a">
-      c="dimmed"
-      key={link.label}
-      href={link.link}
-      size="sm"
-    >
-      {link.label}
-    </Anchor>
-  ));
-
+  const t = useTranslations("common.Footer");
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <IconHeart size={28} />
-        <Group className={classes.links}>{items}</Group>
+        <Image src="/logo.png" w={32} h={32} alt="logo" />
+        <Group className={classes.links}>
+          <Anchor href="/" c="dimmed" size="sm">
+            {t("links.home")}
+          </Anchor>
+
+          <MantineAnchor href={`mailto:${SupportEmail}`} c="dimmed" size="sm">
+            {t("links.contact")}
+          </MantineAnchor>
+        </Group>
       </Container>
     </div>
   );
