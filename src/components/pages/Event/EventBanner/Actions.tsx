@@ -55,7 +55,7 @@ export default function Actions(props: ActionsProps) {
     <>
       <Group>
         {session?.user.id === user.id ? (
-          <Group>
+          <>
             <Tooltip label={t_shared("delete")}>
               <ActionIcon
                 onClick={handleDelete}
@@ -65,21 +65,23 @@ export default function Actions(props: ActionsProps) {
                 <IconTrash />
               </ActionIcon>
             </Tooltip>
-          </Group>
+          </>
         ) : null}
-        <Group>
-          <CopyLocationButton />
-          <Tooltip label={t("report")}>
-            <ActionIcon
-              onClick={openReportCreateModal}
-              disabled={reported}
-              color="white"
-              variant="transparent"
-            >
-              <IconFlag />
-            </ActionIcon>
-          </Tooltip>
-        </Group>
+        {session ? (
+          <>
+            <Tooltip label={t("report")}>
+              <ActionIcon
+                onClick={openReportCreateModal}
+                disabled={reported}
+                color="white"
+                variant="transparent"
+              >
+                <IconFlag />
+              </ActionIcon>
+            </Tooltip>
+          </>
+        ) : null}
+        <CopyLocationButton />
       </Group>
       <ReportCreateModal
         resourceId={eventId}
