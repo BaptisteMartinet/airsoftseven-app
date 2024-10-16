@@ -48,6 +48,7 @@ export default function ProfileMenu() {
             >
               {t("profile")}
             </Menu.Item>
+            <Divider my="sm" />
             <Menu.Item onClick={handleLogout}>{t("logout")}</Menu.Item>
           </>
         ) : (
@@ -60,10 +61,6 @@ export default function ProfileMenu() {
             </Menu.Item>
           </>
         )}
-        <Divider my="sm" />
-        <Menu.Item component={Link} href="/help">
-          {t("help")}
-        </Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );
