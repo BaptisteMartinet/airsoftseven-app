@@ -23,7 +23,6 @@ export interface ActionsProps {
 
 export default function Actions(props: ActionsProps) {
   const { eventId, reported, user } = props;
-  const t = useTranslations("pages.Event.EventBanner.Actions");
   const t_shared = useTranslations("shared");
   const client = useApolloClient();
   const router = useRouter();
@@ -69,7 +68,7 @@ export default function Actions(props: ActionsProps) {
         ) : null}
         {session ? (
           <>
-            <Tooltip label={t("report")}>
+            <Tooltip label={t_shared("report")}>
               <ActionIcon
                 onClick={openReportCreateModal}
                 disabled={reported}

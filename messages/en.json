@@ -168,10 +168,7 @@
     "Event": {
       "EventBanner": {
         "resource": "Évènement/",
-        "subtitle": "{date, date, full} par {clubName}",
-        "Actions": {
-          "report": "Signaler"
-        }
+        "subtitle": "{date, date, full} par {clubName}"
       },
       "EventContent": {
         "description": "Description",
