@@ -9,6 +9,7 @@ export interface Club {
   description: string | null;
   rules: string | null;
   publicURL: string | null;
+  reported: boolean;
   user: {
     id: IdType;
     slug: string;
@@ -35,6 +36,7 @@ const ClubQuery: TypedDocumentNode<ClubQueryRes, ClubQueryVars> = gql`
       description
       rules
       publicURL
+      reported
       user {
         id
         slug

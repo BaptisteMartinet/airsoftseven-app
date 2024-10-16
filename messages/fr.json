@@ -8,6 +8,7 @@
     "metadataTitle": "{title} | AirsoftSeven",
     "delete": "Supprimer",
     "deleteSuccess": "Supprimé avec succès",
+    "report": "Signaler",
     "enums": {
       "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}"
     }

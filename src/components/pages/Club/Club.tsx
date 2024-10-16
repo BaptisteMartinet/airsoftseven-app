@@ -27,6 +27,7 @@ export default async function Club(props: ClubProps) {
       <ClubBanner
         clubId={club.id}
         name={club.name}
+        reported={club.reported}
         user={club.user}
         events={club.events}
       />
