@@ -120,6 +120,17 @@
         "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB.",
         "question5Title": "À quelle date est prévue la sortie de la Bêta ?",
         "question5Desc": "Le projet est pour le moment en phase de test. Il sortira dans sa v1.0 courant octobre 2024."
+      },
+      "Team": {
+        "title": "Contributeurs principaux",
+        "member1Username": "Baptiste (Bapt)",
+        "member1Role": "Lead dev - France",
+        "member2Username": "Pierre",
+        "member2Role": "Développeur - France",
+        "member3Username": "Paul",
+        "member3Role": "Administrateur - GB",
+        "member4Username": "Jacque",
+        "member4Role": "Modérateur - États unis"
       }
     },
     "Register": {
