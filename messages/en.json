@@ -106,6 +106,19 @@
         "title": "Airsoft matchmaking made easy",
         "description": "La plus grande base de donnée de partie d'airsoft du monde.",
         "addressPickerPlaceholder": "Rechercher à proximité d'une adresse"
+      },
+      "Faq": {
+        "title": "Foire aux questions",
+        "question1Title": "Pourquoi AirsoftSeven ?",
+        "question1Desc": "Le projet est né en 2024 d'une envie commune de simplifier la recherche et l'organisation de parties d'airsoft. Il n'est pas là pour remplacer les événements Facebook ou autres, mais plutôt pour venir en complémentarité afin d'avoir un outil efficace de recherche de parties.",
+        "question2Title": "Comment sont ajoutées  les parties ?",
+        "question2Desc": "Elles sont ajoutées de deux manières. Premièrement, n'importe quel utilisateur peut ajouter une partie s'il en a la connaissance (les informations minimum étant une date, un lieu et une association.). Aucune validation n'est nécessaire, il y a cependant un antispam ainsi qu'un système de signalement pour éviter les abus. La deuxième méthode implique l'utilisation de scripts scannant Internet à la recherche de parties. L'objectif long terme étant que les associations viennent ajouter directement leurs parties.",
+        "question3Title": "Le projet fonctionne-t-il à l'international ?",
+        "question3Desc": "Oui, le site est entièrement traduit en anglais et n'a aucune restriction géographique particulière. Il peut être utilisé pour organiser des parties partout dans le monde.",
+        "question4Title": "Le projet est il open source ?",
+        "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB.",
+        "question5Title": "À quelle date est prévue la sortie de la Bêta ?",
+        "question5Desc": "Le projet est pour le moment en phase de test. Il sortira dans sa v1.0 courant octobre 2024."
       }
     },
     "Register": {
