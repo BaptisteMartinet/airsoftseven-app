@@ -1,1 +1,1 @@
-export { default as FieldsQuery, type Field } from "./fields.query";
+export { default as FieldsQuery, type Field } from "./Fields.query";
