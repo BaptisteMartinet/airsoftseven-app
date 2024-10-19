@@ -217,6 +217,8 @@
       "Filters": {
         "addressPlaceholder": "Rechercher à proximité d'une adresse",
         "distanceLabel": "{distanceKm} km ({distanceMi, number, ::precision-integer} miles)",
+        "filtersBtn": "Filtres",
+        "modalTitle": "Filtres",
         "submit": "Rechercher"
       },
       "EventsList": {

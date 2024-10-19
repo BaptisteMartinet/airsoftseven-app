@@ -1,20 +1,16 @@
+'use client'
+
 import assert from "assert";
 import { useTranslations } from "next-intl";
 import { Box, Button, Container, Group } from "@mantine/core";
+import { useDisclosure } from '@mantine/hooks';
 import { IconSearch } from "@tabler/icons-react";
 import { convertKilometersToMiles } from "@/core/utils/distance";
 import { AddressPicker, Select } from "@/components/common";
-import { useFormContext, type EventsFormValues } from "./form";
+import { useFormContext, type EventsFormValues, AvailableDistancesMeters } from "./form";
 import classes from "./Filters.module.css";
+import FiltersModal from './FiltersModal';
 
-export const DefaultDistanceMeters = 200_000;
-export const AvailableDistancesMeters = [
-  50_000,
-  100_000,
-  DefaultDistanceMeters,
-  250_000,
-  500_000,
-] as const;
 
 export interface FiltersProps {
   handleSubmit: (values: EventsFormValues) => void;
@@ -24,15 +20,15 @@ export default function Filters(props: FiltersProps) {
   const { handleSubmit } = props;
   const t = useTranslations("pages.Events.Filters");
   const form = useFormContext();
+  const [filtersModalOpened, { open: openFiltersModal, close: closeFiltersModal }] = useDisclosure();
+
+  const handleFormSubmit = form.onSubmit(handleSubmit);
 
   return (
     <>
-      <form
-        onSubmit={form.onSubmit(handleSubmit)}
-        className={classes.container}
-      >
+      <Box className={classes.container}>
         <Container size="xl" h="100%">
-          <Group h="100%">
+          <Group h="100%" visibleFrom="sm">
             <AddressPicker
               key={form.key("address")}
               value={form.values.address}
@@ -62,12 +58,25 @@ export default function Filters(props: FiltersProps) {
                 return t("distanceLabel", { distanceKm, distanceMi });
               }}
             />
-            <Button type="submit" rightSection={<IconSearch />}>
+            <Button onClick={() => handleFormSubmit()} rightSection={<IconSearch />}>
               {t("submit")}
             </Button>
           </Group>
+          <Group h="100%" hiddenFrom="sm">
+            <Button
+              variant="light"
+              onClick={openFiltersModal}
+            >
+              {t('filtersBtn')}
+            </Button>
+            <FiltersModal
+              opened={filtersModalOpened}
+              onClose={closeFiltersModal}
+              onSubmit={() => handleFormSubmit()}
+            />
+          </Group>
         </Container>
-      </form>
+      </Box>
       <Box className={classes.dummyContainer} />
     </>
   );

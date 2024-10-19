@@ -9,3 +9,12 @@ export interface EventsFormValues {
 
 export const [FormProvider, useFormContext, useForm] =
   createFormContext<EventsFormValues>();
+
+export const DefaultDistanceMeters = 200_000;
+export const AvailableDistancesMeters = [
+  50_000,
+  100_000,
+  DefaultDistanceMeters,
+  250_000,
+  500_000,
+] as const;
