@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Box, Text, Title } from "@mantine/core";
+import { useMobile } from '@/core/utils/hooks';
 
 export interface ResourceBannerProps {
   resourceName: string;
@@ -12,6 +13,7 @@ export interface ResourceBannerProps {
 
 export default function ResourceBanner(props: ResourceBannerProps) {
   const { resourceName, title, subtitle, actions, bgColor } = props;
+  const mobile = useMobile();
 
   return (
     <Box
@@ -24,7 +26,7 @@ export default function ResourceBanner(props: ResourceBannerProps) {
     >
       <Box>
         <Text fw={500}>{resourceName}</Text>
-        <Title size={75} lineClamp={1}>
+        <Title size={mobile ? 22 : 70} lineClamp={1}>
           {title}
         </Title>
         {subtitle ? <Text ta="right">{subtitle}</Text> : null}
