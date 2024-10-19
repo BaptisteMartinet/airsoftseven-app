@@ -100,6 +100,7 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
           }
           label={t("labels.address")}
           placeholder={t("labels.addressPlaceholder")}
+          required
         />
         <Textarea
           key={form.key("description")}
