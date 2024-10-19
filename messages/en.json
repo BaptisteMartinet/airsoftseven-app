@@ -107,7 +107,7 @@
       "Hero": {
         "title": "Airsoft matchmaking made easy",
         "description": "La plus grande base de donnée de partie d'airsoft du monde.",
-        "addressPickerPlaceholder": "Rechercher à proximité d'une adresse"
+        "addressPickerPlaceholder": "Rechercher à proximité d'une adresse ou ville"
       },
       "Faq": {
         "title": "Foire aux questions",
