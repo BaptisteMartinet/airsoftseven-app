@@ -1,14 +1,12 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Container, Group, Burger, Text, Box, Image } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { Container, Group, Text, Box, Image } from "@mantine/core";
 import { LocalePicker, Anchor, Link } from "@components/common";
 import classes from "./Header.module.css";
 import ProfileMenu from "./ProfileMenu";
 
 export default function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
   const t = useTranslations("common.Header");
 
   return (
@@ -27,13 +25,14 @@ export default function Header() {
               </Text>
             </Anchor>
           </Group>
-          <Group gap="lg" visibleFrom="xs" wrap="nowrap">
+          <Anchor href="/" hiddenFrom="xs">
+            <Image src="/logo.png" w={24} h={24} alt="logo" />
+          </Anchor>
+          <Group gap="lg" wrap="nowrap">
             <Link href="/event-create" label={t("createEvent")} />
             <LocalePicker />
             <ProfileMenu />
           </Group>
-
-          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
         </Container>
       </header>
     </>
