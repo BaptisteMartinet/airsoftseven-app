@@ -14,7 +14,9 @@ export default function Footer() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <Image src="/logo.png" w={32} h={32} alt="logo" />
+        <Anchor href="/">
+          <Image src="/logo.png" w={32} h={32} alt="logo" />
+        </Anchor>
         <Group className={classes.links}>
           <Anchor href="/" c="dimmed" size="sm">
             {t("links.home")}
