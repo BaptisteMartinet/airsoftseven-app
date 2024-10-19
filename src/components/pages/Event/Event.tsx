@@ -51,6 +51,7 @@ export default async function Event(props: EventProps) {
           capacity={capacity}
           price={price}
           publicURL={publicURL}
+          club={club}
           field={field}
           author={author}
         />

@@ -8,6 +8,10 @@ export interface EventContentProps {
   capacity: number | null;
   price: number | null;
   publicURL: string | null;
+  club: {
+    slug: string;
+    name: string;
+  };
   field: {
     slug: string;
     name: string;
@@ -22,7 +26,7 @@ export interface EventContentProps {
 }
 
 export default function EventContent(props: EventContentProps) {
-  const { description, capacity, price, publicURL, field, author } = props;
+  const { description, capacity, price, publicURL, club, field, author } = props;
   const t = useTranslations("pages.Event.EventContent");
   const googleMapsLocationLink = genGmapsLocationLink({
     lat: field.latitude,
@@ -53,6 +57,15 @@ export default function EventContent(props: EventContentProps) {
           </MantineAnchor>
         </TitledContainer>
       ) : null}
+      <TitledContainer title={t('club')}>
+        <Anchor
+          href={
+            { pathname: "/club/[slug]", params: { slug: club.slug } } as any
+          } // TODO casted due to type issue
+        >
+          {club.name}
+        </Anchor>
+      </TitledContainer>
       <TitledContainer title={t("field")}>
         <Anchor
           href={

@@ -208,6 +208,7 @@
         "capacity": "Nombre de joueurs attendus",
         "price": "Prix",
         "publicURL": "Lien",
+        "club": "Association",
         "field": "Terrain",
         "author": "Ajouté par {username}"
       }
