@@ -23,7 +23,7 @@ export default function SecondaryInfo() {
         {...form.getInputProps("publicURL")}
         label={t("labels.publicURL")}
         placeholder={t("labels.publicURLPlaceholder")}
-        w={400}
+        maw={400}
       />
       <Group align="start">
         <NullableNumberInput
