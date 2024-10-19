@@ -49,22 +49,22 @@ function useTeamMembers(): Array<TeamMember> {
 
   return [
     {
-      image: "/player-placeholder-3.jpg",
+      image: "/players/player-placeholder-3_512.jpg",
       username: t("member1Username"),
       role: t("member1Role"),
     },
     {
-      image: "/player-placeholder-2.jpg",
+      image: "/players/player-placeholder-2_512.jpg",
       username: t("member2Username"),
       role: t("member2Role"),
     },
     {
-      image: "/player-placeholder-1.jpg",
+      image: "/players/player-placeholder-1_512.jpg",
       username: t("member3Username"),
       role: t("member3Role"),
     },
     {
-      image: "/player-placeholder-4.jpg",
+      image: "/players/player-placeholder-4_512.jpg",
       username: t("member4Username"),
       role: t("member4Role"),
     },

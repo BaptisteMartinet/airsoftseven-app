@@ -40,7 +40,7 @@ export default function EventCard(props: EventCardProps) {
       >
         {!small ? (
           <CardSection>
-            <Image src="/m4-closeup.jpg" height={160} alt="Norway" />
+            <Image src="/banners/m4-closeup_512.jpg" height={160} alt="Norway" />
           </CardSection>
         ) : null}
 
