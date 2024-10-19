@@ -10,7 +10,8 @@
     "deleteSuccess": "Supprimé avec succès",
     "report": "Signaler",
     "enums": {
-      "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}"
+      "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}",
+      "playgroundType": "{type, select, CQB {CQB} Forest {Forêt} Buildings {Immeuble} Speedsoft {Speedsoft} other {Unknown}}"
     }
   },
   "common": {
@@ -70,7 +71,9 @@
         "description": "Description",
         "descriptionPlaceholder": "Description",
         "publicURL": "Lien",
-        "publicURLPlaceholder": "Site internet, groupe facebook, etc"
+        "publicURLPlaceholder": "Site internet, groupe facebook, etc",
+        "playgroundTypes": "Types de terrains",
+        "playgroundTypesPlaceholder": "Ajouter un ou plusieurs types de terrains"
       },
       "fieldCreateSuccess": "Terrain ajouté avec succès",
       "submit": "Ajouter"

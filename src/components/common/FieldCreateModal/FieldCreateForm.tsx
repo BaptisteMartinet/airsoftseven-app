@@ -5,10 +5,11 @@ import React from "react";
 import assert from "assert";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
-import { Button, Stack, Textarea, TextInput } from "@mantine/core";
+import { Button, MultiSelect, Stack, Textarea, TextInput } from "@mantine/core";
 import { hasLength, isNotEmpty } from "@mantine/form";
 import { usePromiseStatusWithToast } from "@/core/utils/promise";
 import { ensureFetchResultData } from "@/core/utils/apollo";
+import { PlaygroundType } from "@/core/api/enums";
 import { AddressPicker } from "@components/common";
 import { FormProvider, useForm } from "./form";
 import { FieldCreateMutation } from "./api";
@@ -33,6 +34,7 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
       latitude: null,
       longitude: null,
       publicURL: "",
+      playgroundTypes: [],
     },
     validate: {
       name: hasLength({ min: 3, max: 50 }),
@@ -55,6 +57,7 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
           latitude: values.latitude!, // Safe
           longitude: values.longitude!, // Safe
           publicURL: values.publicURL,
+          playgroundTypes: values.playgroundTypes,
         },
       },
     });
@@ -113,6 +116,18 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
           {...form.getInputProps("publicURL")}
           label={t("labels.publicURL")}
           placeholder={t("labels.publicURLPlaceholder")}
+        />
+        <MultiSelect
+          key={form.key("playgroundTypes")}
+          {...form.getInputProps("playgroundTypes")}
+          data={[
+            { label: t_shared("enums.playgroundType", { type: PlaygroundType.CQB }), value: PlaygroundType.CQB },
+            { label: t_shared("enums.playgroundType", { type: PlaygroundType.Forest }), value: PlaygroundType.Forest },
+            { label: t_shared("enums.playgroundType", { type: PlaygroundType.Buildings }), value: PlaygroundType.Buildings },
+            { label: t_shared("enums.playgroundType", { type: PlaygroundType.Speedsoft }), value: PlaygroundType.Speedsoft },
+          ]}
+          label={t("labels.playgroundTypes")}
+          placeholder={t("labels.playgroundTypesPlaceholder")}
         />
       </Stack>
       <Button

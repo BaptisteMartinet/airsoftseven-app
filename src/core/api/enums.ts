@@ -15,3 +15,10 @@ export enum ReportableResource {
   Field = "Field",
   User = "User",
 }
+
+export enum PlaygroundType {
+  CQB = "CQB",
+  Forest = "Forest",
+  Buildings = "Buildings",
+  Speedsoft = "Speedsoft",
+}

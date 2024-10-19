@@ -1,5 +1,5 @@
 import type { TypedDocumentNode } from "@apollo/client";
-import type { IdType } from "@core/api/types";
+import type { IdType, PlaygroundType } from "@core/api/types";
 
 import { gql } from "@apollo/client";
 
@@ -22,6 +22,7 @@ export interface FieldCreateVariables {
     latitude: number;
     longitude: number;
     publicURL?: string | null;
+    playgroundTypes?: Array<PlaygroundType>;
   };
 }
 

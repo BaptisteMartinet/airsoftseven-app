@@ -10,7 +10,8 @@
     "deleteSuccess": "Supprimé avec succès",
     "report": "Signaler",
     "enums": {
-      "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}"
+      "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}",
+      "playgroundType": "{type, select, CQB {CQB} Forest {Forêt} Buildings {Immeuble} Speedsoft {Speedsoft} other {Unknown}}"
     }
   },
   "common": {
@@ -18,7 +19,6 @@
       "title": "AirsoftSeven",
       "betaCaption": " Beta",
       "createEvent": "Add an event",
-
       "ProfileMenu": {
         "profile": "Profil",
         "logout": "Déconnexion",
@@ -50,6 +50,8 @@
         "rulesPlaceholder": "Renseigner les règles pratiquées par cette association",
         "publicURL": "Lien",
         "publicURLPlaceholder": "Site internet, groupe facebook, etc",
+        "playgroundTypes": "Types de terrains",
+        "playgroundTypesPlaceholder": "Ajouter un ou plusieurs types de terrains",
         "acceptUnderage": "Mineurs acceptés",
         "rentals": "Location disponible"
       },
@@ -66,7 +68,6 @@
         "namePlaceholder": "Nom du terrain",
         "address": "Adresse",
         "addressPlaceholder": "Adresse du terrain",
-
         "description": "Description",
         "descriptionPlaceholder": "Description",
         "publicURL": "Lien",
@@ -183,7 +184,6 @@
         "clubPlaceholder": "Saisir le nom d'une association",
         "field": "Terrain",
         "fieldPlaceholder": "Saisir le nom d'un terrain",
-
         "description": "Description",
         "descriptionPlaceholder": "Description",
         "publicURL": "Lien",
