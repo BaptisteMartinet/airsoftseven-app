@@ -3,9 +3,11 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { useTranslations } from "next-intl";
-import { Box } from "@mantine/core";
+import { Box, Button } from "@mantine/core";
 import { isNotEmpty } from "@mantine/form";
+import { IconList, IconMap } from '@tabler/icons-react';
 import { handlePromiseWithToast } from "@/core/utils/promise";
+import { useMobile } from '@/core/utils/hooks';
 import { redirect } from "@/navigation";
 import { PageLayout } from "@/components/common";
 import { EventsQuery } from "./api";
@@ -25,6 +27,7 @@ interface EventsPageProps {
 
 function EventsPage(props: EventsPageProps) {
   const { address, lat, lng } = props;
+  const t = useTranslations('pages.Events.EventsList');
   const t_shared = useTranslations("shared");
   const now = React.useRef(Date.now());
 
@@ -77,24 +80,41 @@ function EventsPage(props: EventsPageProps) {
     });
   };
 
+  const isMobile = useMobile();
+  const [mobileShowMap, setMobileShowMap] = React.useState(false);
+
   return (
     <FormProvider form={form}>
       <PageLayout>
         <Filters handleSubmit={handleSubmit} />
-        <Box display="flex">
-          <Box flex={3}>
-            <EventsList
-              events={events}
-              eventsCount={eventsCount}
-              loading={loading}
-              onClickLoadMore={handleFetchMore}
-            />
-          </Box>
-          <Box pos="relative" flex={2}>
-            <Box className={classes.mapContainer}>
-              <EventsMap events={events} />
+        <Box pos="relative" display="flex">
+          {!isMobile || !mobileShowMap ? (
+            <Box flex={3}>
+              <EventsList
+                events={events}
+                eventsCount={eventsCount}
+                loading={loading}
+                onClickLoadMore={handleFetchMore}
+              />
             </Box>
-          </Box>
+          ) : null}
+          {!isMobile || mobileShowMap ? (
+            <Box pos="relative" flex={2}>
+              <Box className={classes.mapContainer}>
+                <EventsMap events={events} />
+              </Box>
+            </Box>
+          ) : null}
+          <Button
+            onClick={() => setMobileShowMap((prev) => !prev)}
+            pos="absolute"
+            bottom={40}
+            left="50%"
+            style={{ transform: "translateX(-50%)" }}
+            rightSection={mobileShowMap ? <IconList /> : <IconMap />}
+          >
+            {mobileShowMap ? t('showListBtn') : t('showMapBtn')}
+          </Button>
         </Box>
       </PageLayout>
     </FormProvider>
