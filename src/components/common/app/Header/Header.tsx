@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Container, Group, Burger, Text, Box } from "@mantine/core";
+import { Container, Group, Burger, Text, Box, Image } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { LocalePicker, Anchor, Link } from "@components/common";
 import classes from "./Header.module.css";
@@ -17,6 +17,9 @@ export default function Header() {
       <header className={classes.header}>
         <Container size="lg" className={classes.inner}>
           <Group gap="xs" visibleFrom="xs">
+            <Anchor href="/">
+              <Image src="/logo.png" w={24} h={24} alt="logo" />
+            </Anchor>
             <Anchor href="/" size="lg" fw={500}>
               {t("title")}
               <Text size="md" component="span">
