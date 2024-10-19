@@ -4,7 +4,7 @@ import type { ClubCreateFormValues } from "./form";
 import React from "react";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
-import { Button, TextInput, Textarea, Chip, Group } from "@mantine/core";
+import { Button, TextInput, Textarea, Chip, Group, Stack } from "@mantine/core";
 import { hasLength } from "@mantine/form";
 import { ensureFetchResultData } from "@/core/utils/apollo";
 import { usePromiseStatusWithToast } from "@/core/utils/promise";
@@ -56,54 +56,53 @@ export default function ClubCreateForm(props: ClubCreateFormProps) {
 
   return (
     <FormProvider form={form}>
-      <TextInput
-        key={form.key("name")}
-        {...form.getInputProps("name")}
-        label={t("labels.name")}
-        placeholder={t("labels.namePlaceholder")}
-        required
-      />
-      <Textarea
-        key={form.key("description")}
-        {...form.getInputProps("description")}
-        label={t("labels.description")}
-        placeholder={t("labels.descriptionPlaceholder")}
-        autosize
-        minRows={3}
-        maxRows={8}
-        mt={10}
-      />
-      <Textarea
-        key={form.key("rules")}
-        {...form.getInputProps("rules")}
-        label={t("labels.rules")}
-        placeholder={t("labels.rulesPlaceholder")}
-        autosize
-        minRows={3}
-        maxRows={8}
-        mt={10}
-      />
-      <TextInput
-        key={form.key("publicURL")}
-        {...form.getInputProps("publicURL")}
-        label={t("labels.publicURL")}
-        placeholder={t("labels.publicURLPlaceholder")}
-        mt={10}
-      />
-      <Group mt={20}>
-        <Chip
-          key={form.key("acceptUnderage")}
-          {...form.getInputProps("acceptUnderage", { type: "checkbox" })}
-        >
-          {t("labels.acceptUnderage")}
-        </Chip>
-        <Chip
-          key={form.key("rentals")}
-          {...form.getInputProps("rentals", { type: "checkbox" })}
-        >
-          {t("labels.rentals")}
-        </Chip>
-      </Group>
+      <Stack>
+        <TextInput
+          key={form.key("name")}
+          {...form.getInputProps("name")}
+          label={t("labels.name")}
+          placeholder={t("labels.namePlaceholder")}
+          required
+        />
+        <Textarea
+          key={form.key("description")}
+          {...form.getInputProps("description")}
+          label={t("labels.description")}
+          placeholder={t("labels.descriptionPlaceholder")}
+          autosize
+          minRows={3}
+          maxRows={8}
+        />
+        <Textarea
+          key={form.key("rules")}
+          {...form.getInputProps("rules")}
+          label={t("labels.rules")}
+          placeholder={t("labels.rulesPlaceholder")}
+          autosize
+          minRows={3}
+          maxRows={8}
+        />
+        <TextInput
+          key={form.key("publicURL")}
+          {...form.getInputProps("publicURL")}
+          label={t("labels.publicURL")}
+          placeholder={t("labels.publicURLPlaceholder")}
+        />
+        <Group>
+          <Chip
+            key={form.key("acceptUnderage")}
+            {...form.getInputProps("acceptUnderage", { type: "checkbox" })}
+          >
+            {t("labels.acceptUnderage")}
+          </Chip>
+          <Chip
+            key={form.key("rentals")}
+            {...form.getInputProps("rentals", { type: "checkbox" })}
+          >
+            {t("labels.rentals")}
+          </Chip>
+        </Group>
+      </Stack>
       <Button
         onClick={() => form.onSubmit(handleSubmit)()}
         loading={createStatus === "pending"}
