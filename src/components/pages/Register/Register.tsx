@@ -14,7 +14,9 @@ import { useForm, isEmail, hasLength } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import { useTranslations } from "next-intl";
 import { useApolloClient } from "@apollo/client";
+import { ensureFetchResultData } from '@/core/utils/apollo';
 import { usePromiseStatusWithToast } from "@core/utils/promise";
+import { useSessionStore } from '@/providers';
 import { Anchor, PinInputModal, withoutAuth } from "@components/common";
 import { useRouter } from "@/navigation";
 import { VerifyEmailMutation, RegisterMutation } from "./api";
@@ -25,6 +27,7 @@ function Register() {
   const t_shared = useTranslations("shared");
   const client = useApolloClient();
   const router = useRouter();
+  const setSession = useSessionStore((state) => state.setSession);
   const [submitStatus, handleSubmitPromise] = usePromiseStatusWithToast();
   const [registerStatus, handleRegisterPromise] = usePromiseStatusWithToast();
   const [pinModalOpened, { open: openPinModal, close: closePinModal }] =
@@ -126,9 +129,11 @@ function Register() {
           });
           handleRegisterPromise(promise, {
             successMessage: t("registerSuccess"),
-            onSuccess: () => {
+            onSuccess: (res) => {
+              const data = ensureFetchResultData(res);
+              setSession(data.session.register);
               closePinModal();
-              router.replace("/login");
+              router.replace("/");
             },
             errorMessage: t_shared("error"),
           });

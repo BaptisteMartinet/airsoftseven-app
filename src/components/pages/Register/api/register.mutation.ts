@@ -1,6 +1,23 @@
 import type { TypedDocumentNode } from "@apollo/client";
+import type { IdType } from "@/core/api/types";
 
 import { gql } from "@apollo/client";
+
+export interface Session {
+  id: IdType;
+  expireAt: Date;
+  user: {
+    id: IdType;
+    slug: string;
+    username: string;
+  };
+}
+
+export interface RegisterResult {
+  session: {
+    register: Session;
+  };
+}
 
 export interface RegisterVariables {
   code: string;
@@ -10,7 +27,10 @@ export interface RegisterVariables {
   newsletterOptIn?: boolean;
 }
 
-const RegisterMutation: TypedDocumentNode<boolean, RegisterVariables> = gql`
+const RegisterMutation: TypedDocumentNode<
+  RegisterResult,
+  RegisterVariables
+> = gql`
   mutation Register(
     $code: String!
     $username: String!
@@ -25,7 +45,15 @@ const RegisterMutation: TypedDocumentNode<boolean, RegisterVariables> = gql`
         email: $email
         password: $password
         newsletterOptIn: $newsletterOptIn
-      )
+      ) {
+        id
+        expireAt
+        user {
+          id
+          slug
+          username
+        }
+      }
     }
   }
 `;
