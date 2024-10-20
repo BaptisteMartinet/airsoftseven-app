@@ -12,16 +12,20 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     openGraph: {
-      title: "Title opengraph",
-      description: "Desc opengraph",
-      url: 'https://airsoftseven.com',
-      siteName: 'AirsoftSeven',
       images: {
         url: 'https://airsoftseven.com/banners/m4-loadout_1920.jpg',
         width: 1920,
         height: 1280,
       },
-      type: 'website'
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: {
+        url: 'https://airsoftseven.com/banners/m4-loadout_1920.jpg',
+        width: 1920,
+        height: 1280,
+      },
     },
   };
 }
