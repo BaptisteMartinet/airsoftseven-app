@@ -87,7 +87,7 @@ function EventsPage(props: EventsPageProps) {
     <FormProvider form={form}>
       <PageLayout>
         <Filters handleSubmit={handleSubmit} />
-        <Box pos="relative" display="flex">
+        <Box display="flex">
           {!isMobile || !mobileShowMap ? (
             <Box flex={3}>
               <EventsList
@@ -105,16 +105,18 @@ function EventsPage(props: EventsPageProps) {
               </Box>
             </Box>
           ) : null}
-          <Button
-            onClick={() => setMobileShowMap((prev) => !prev)}
-            pos="absolute"
-            bottom={40}
-            left="50%"
-            style={{ transform: "translateX(-50%)" }}
-            rightSection={mobileShowMap ? <IconList /> : <IconMap />}
-          >
-            {mobileShowMap ? t('showListBtn') : t('showMapBtn')}
-          </Button>
+          {isMobile ? (
+            <Button
+              onClick={() => setMobileShowMap((prev) => !prev)}
+              pos="fixed"
+              bottom={100}
+              left="50%"
+              style={{ transform: "translateX(-50%)" }}
+              rightSection={mobileShowMap ? <IconList /> : <IconMap />}
+            >
+              {mobileShowMap ? t('showListBtn') : t('showMapBtn')}
+            </Button>
+          ) : null}
         </Box>
       </PageLayout>
     </FormProvider>
