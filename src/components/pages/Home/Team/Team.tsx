@@ -3,7 +3,6 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import {
-  useMantineTheme,
   rem,
   Container,
   Paper,
@@ -11,7 +10,6 @@ import {
   Title,
 } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
-import { useMediaQuery } from "@mantine/hooks";
 import classes from "./Team.module.css";
 
 interface TeamMember {
@@ -73,8 +71,6 @@ function useTeamMembers(): Array<TeamMember> {
 
 export default function Team() {
   const t = useTranslations("pages.Home.Team");
-  const theme = useMantineTheme();
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   const teamMembers = useTeamMembers();
   const slides = teamMembers.map((member) => (
@@ -90,7 +86,7 @@ export default function Team() {
         slideSize={{ base: "100%", sm: "50%" }}
         slideGap={{ base: rem(2), sm: "xl" }}
         align="start"
-        slidesToScroll={mobile ? 1 : 2}
+        slidesToScroll={1}
         withIndicators
       >
         {slides}
