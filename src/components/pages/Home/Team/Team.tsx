@@ -20,7 +20,7 @@ interface TeamMember {
   role: string;
 }
 
-interface CardProps extends TeamMember {}
+interface CardProps extends TeamMember { }
 
 function Card(props: CardProps) {
   const { image, username, role } = props;
