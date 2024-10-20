@@ -47,7 +47,7 @@ function Card(props: CardProps) {
 function useTeamMembers(): Array<TeamMember> {
   const t = useTranslations("pages.Home.Team");
 
-  return [
+  return React.useMemo(() => [
     {
       image: "/players/player-placeholder-3_512.jpg",
       username: t("member1Username"),
@@ -68,7 +68,7 @@ function useTeamMembers(): Array<TeamMember> {
       username: t("member4Username"),
       role: t("member4Role"),
     },
-  ];
+  ], [t]);
 }
 
 export default function Team() {
