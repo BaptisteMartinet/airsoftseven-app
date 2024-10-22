@@ -20,6 +20,8 @@ export type PickedSelectProps<T> = Omit<
   | "rightSectionPointerEvents"
 >;
 
+const MinCharsToDebounce = 2;
+
 export interface AsyncSelectProps<T> extends PickedSelectProps<T> {
   fetchOptions: (term: string) => Promise<Array<T>>;
 }
@@ -31,6 +33,7 @@ export default function AsyncSelect<T>(props: AsyncSelectProps<T>) {
     fetchOptions,
     getOptionValue,
     getOptionLabel,
+    nothingFoundMessage,
     ...passedProps
   } = props;
   const t_shared = useTranslations("shared");
@@ -39,7 +42,7 @@ export default function AsyncSelect<T>(props: AsyncSelectProps<T>) {
   const [optionsStatus, handleOptionsStatus] = usePromiseStatusWithToast();
 
   const handleFetchOptions = useDebouncedCallback((term: string) => {
-    if (term.length < 2) return;
+    if (term.length < MinCharsToDebounce) return;
     const promise = fetchOptions(term);
     handleOptionsStatus(promise, {
       onSuccess: setOptions,
@@ -65,6 +68,7 @@ export default function AsyncSelect<T>(props: AsyncSelectProps<T>) {
         optionsStatus === "pending" ? <Loader size={18} /> : undefined
       }
       rightSectionPointerEvents="none"
+      nothingFoundMessage={input.length >= MinCharsToDebounce ? nothingFoundMessage : null}
       {...passedProps}
     />
   );
