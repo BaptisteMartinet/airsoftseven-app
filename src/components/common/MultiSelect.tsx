@@ -47,7 +47,7 @@ export default function MultiSelect<T>(props: MultiSelectProps<T>) {
       value={value.map(getOptionValue)}
       onChange={(newSelectedValues) => {
         const newValue = newSelectedValues.map((val) => options.find((opt) => getOptionValue(opt) === val)).filter(isNonNullish);
-        assert(newValue.length !== newSelectedValues.length, 'Unable to fully rebuild value array');
+        assert(newValue.length === newSelectedValues.length, 'Unable to fully rebuild value array');
         onChange(newValue);
       }}
       data={data}
