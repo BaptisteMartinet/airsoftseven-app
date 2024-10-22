@@ -17,6 +17,7 @@ export interface EventCreateMutationVars {
     title: string;
     description?: string | null;
     date: Date;
+    dateTzOffset: number;
     durationDays?: number | null;
     price?: number | null;
     capacity?: number | null;

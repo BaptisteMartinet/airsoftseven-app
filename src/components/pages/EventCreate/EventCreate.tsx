@@ -56,6 +56,7 @@ function EventCreate() {
           title: values.title,
           description: values.description,
           date: values.date!, // Safe assertion
+          dateTzOffset: values.date!.getTimezoneOffset(), // Safe assertion
           durationDays: values.durationDays,
           price: values.price,
           capacity: values.capacity,
