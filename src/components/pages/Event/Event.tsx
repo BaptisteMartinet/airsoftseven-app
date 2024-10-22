@@ -31,6 +31,8 @@ export default async function Event(props: EventProps) {
     price,
     publicURL,
     reported,
+    interested,
+    interests: { count: interestsCount },
     field,
     author,
   } = event;
@@ -42,6 +44,8 @@ export default async function Event(props: EventProps) {
         title={title}
         date={date}
         reported={reported}
+        interested={interested}
+        interestsCount={interestsCount}
         club={club}
         author={author}
       />

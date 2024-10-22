@@ -32,6 +32,10 @@ export interface EventQueryRes {
       username: string;
       slug: string;
     };
+    interested: boolean;
+    interests: {
+      count: number;
+    };
   };
 }
 
@@ -68,6 +72,10 @@ const EventQuery: TypedDocumentNode<EventQueryRes, EventQueryVars> = gql`
         id
         username
         slug
+      }
+      interested
+      interests {
+        count
       }
     }
   }

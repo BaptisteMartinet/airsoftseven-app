@@ -11,6 +11,8 @@ export interface EventBannerProps {
   title: string;
   date: number;
   reported: boolean;
+  interested: boolean;
+  interestsCount: number;
   club: {
     name: string;
   };
@@ -20,7 +22,16 @@ export interface EventBannerProps {
 }
 
 export default function EventBanner(props: EventBannerProps) {
-  const { eventId, title, date, reported, club, author } = props;
+  const {
+    eventId,
+    title,
+    date,
+    reported,
+    interested,
+    interestsCount,
+    club,
+    author,
+  } = props;
   const t = useTranslations("pages.Event.EventBanner");
   const theme = useMantineTheme();
 
@@ -29,7 +40,15 @@ export default function EventBanner(props: EventBannerProps) {
       resourceName={t("resource")}
       title={title}
       subtitle={t("subtitle", { date: date, clubName: club.name })}
-      actions={<Actions eventId={eventId} reported={reported} author={author} />}
+      actions={
+        <Actions
+          eventId={eventId}
+          reported={reported}
+          interested={interested}
+          interestsCount={interestsCount}
+          author={author}
+        />
+      }
       bgColor={theme.colors.grape[8]}
     />
   );

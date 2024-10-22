@@ -198,7 +198,10 @@
     "Event": {
       "EventBanner": {
         "resource": "Évènement/",
-        "subtitle": "{date, date, full} par {clubName}"
+        "subtitle": "{date, date, full} par {clubName}",
+        "Actions": {
+          "interests": "{interestsCount} intéressés"
+        }
       },
       "EventContent": {
         "description": "Description",
