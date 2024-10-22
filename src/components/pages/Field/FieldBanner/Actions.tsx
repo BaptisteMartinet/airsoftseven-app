@@ -89,7 +89,7 @@ export default function Actions(props: ActionsProps) {
         resourceType={ReportableResource.Field}
         opened={reportCreateModalOpened}
         onClose={closeReportCreateModal}
-        onCreateSuccess={() => {}} // TODO update Field
+        onCreateSuccess={() => router.refresh()}
       />
     </>
   );

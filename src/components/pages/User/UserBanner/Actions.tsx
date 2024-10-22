@@ -3,6 +3,7 @@ import { Group, Tooltip, ActionIcon } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconFlag } from "@tabler/icons-react";
 import { type IdType, ReportableResource } from "@/core/api/types";
+import { useRouter } from '@/navigation';
 import { useSession } from "@/providers";
 import { CopyLocationButton, ReportCreateModal } from "@/components/common";
 
@@ -15,6 +16,7 @@ export default function Actions(props: ActionsProps) {
   const { userId, reported } = props;
   const t_shared = useTranslations("shared");
   const session = useSession();
+  const router = useRouter();
   const [
     reportCreateModalOpened,
     { open: openReportCreateModal, close: closeReportCreateModal },
@@ -46,7 +48,7 @@ export default function Actions(props: ActionsProps) {
         resourceType={ReportableResource.User}
         opened={reportCreateModalOpened}
         onClose={closeReportCreateModal}
-        onCreateSuccess={() => {}} // TODO update User
+        onCreateSuccess={() => router.refresh()}
       />
     </>
   );

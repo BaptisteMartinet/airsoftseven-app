@@ -89,7 +89,7 @@ export default function Actions(props: ActionsProps) {
         resourceType={ReportableResource.Club}
         opened={reportCreateModalOpened}
         onClose={closeReportCreateModal}
-        onCreateSuccess={() => {}} // TODO update Club
+        onCreateSuccess={() => router.refresh()}
       />
     </>
   );
