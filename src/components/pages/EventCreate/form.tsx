@@ -1,3 +1,4 @@
+import type { EventGamemodeType } from '@core/api/types';
 import type { Club } from "@components/common/ClubPicker";
 import type { Field } from "@components/common/FieldPicker";
 
@@ -11,6 +12,7 @@ export interface EventCreateFormValues {
   price: number | null;
   capacity: number | null;
   publicURL: string;
+  gamemodes: Array<EventGamemodeType>;
   club: Club | null;
   field: Field | null;
 }

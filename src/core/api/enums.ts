@@ -22,3 +22,10 @@ export enum PlaygroundType {
   Buildings = "Buildings",
   Speedsoft = "Speedsoft",
 }
+
+export enum EventGamemodeType {
+  MilSim = "MilSim",
+  Nocturnal = "Nocturnal",
+  Speedsoft = "Speedsoft",
+  Skirmish = "Skirmish",
+}

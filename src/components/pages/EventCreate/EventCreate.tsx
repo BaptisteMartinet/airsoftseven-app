@@ -32,6 +32,7 @@ function EventCreate() {
       price: null,
       capacity: null,
       publicURL: "",
+      gamemodes: [],
       club: null,
       field: null,
     },
@@ -61,6 +62,7 @@ function EventCreate() {
           price: values.price,
           capacity: values.capacity,
           publicURL: values.publicURL,
+          gamemodes: values.gamemodes,
           clubId: values.club!.id, // Safe assertion
           fieldId: values.field!.id, // Safe assertion
         },

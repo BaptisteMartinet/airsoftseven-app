@@ -1,5 +1,5 @@
 import type { TypedDocumentNode } from "@apollo/client";
-import type { IdType } from "@/core/api/types";
+import type { EventGamemodeType, IdType } from "@/core/api/types";
 
 import { gql } from "@apollo/client";
 
@@ -22,6 +22,7 @@ export interface EventCreateMutationVars {
     price?: number | null;
     capacity?: number | null;
     publicURL?: string | null;
+    gamemodes?: Array<EventGamemodeType>;
     fieldId: IdType;
     clubId: IdType;
   };

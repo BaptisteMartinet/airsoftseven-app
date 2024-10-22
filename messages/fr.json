@@ -11,7 +11,8 @@
     "report": "Signaler",
     "enums": {
       "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}",
-      "playgroundType": "{type, select, CQB {CQB} Forest {Forêt} Buildings {Immeuble} Speedsoft {Speedsoft} other {Unknown}}"
+      "playgroundType": "{type, select, CQB {CQB} Forest {Forêt} Buildings {Immeuble} Speedsoft {Speedsoft} other {Unknown}}",
+      "eventGamemodeType": "{type, select, MilSim {MilSim} Nocturnal {Nocturne} Speedsoft {Speedsoft} Skirmish {Dominicale} other {Unknown}}"
     }
   },
   "common": {
@@ -194,7 +195,9 @@
         "price": "Prix",
         "pricePlaceholder": "Prix",
         "capacity": "Nombre de joueurs attendus",
-        "capacityPlaceholder": "Joueurs attendus"
+        "capacityPlaceholder": "Joueurs attendus",
+        "gamemodes": "Modes de jeu",
+        "gamemodesPlaceholder": "Modes de jeu"
       },
       "submit": "Ajouter"
     },
