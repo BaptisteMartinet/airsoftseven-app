@@ -85,7 +85,7 @@ function Login() {
             mt="md"
           />
           <Box mt="sm">
-            <Anchor href="/" size="sm">
+            <Anchor href="/forgot-password" size="sm">
               {t("forgotPassword")}
             </Anchor>
           </Box>

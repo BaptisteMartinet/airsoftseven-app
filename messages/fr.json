@@ -175,6 +175,28 @@
       "forgotPassword": "Mot de passe oublié ?",
       "submit": "Se connecter"
     },
+    "ForgotPassword": {
+      "title": "Mot de passe oublié ?",
+      "description": "Réinitialisation",
+      "ForgotPasswordForm": {
+        "backToLoginBtn": "Retour à la connexion",
+        "labels": {
+          "email": "Email",
+          "emailPlaceholder": "email@domain.com"
+        },
+        "submit": "Envoyer le code"
+      },
+      "ResetPasswordForm": {
+        "labels": {
+          "code": "Code",
+          "codePlaceholder": "Saisir le code recu par email",
+          "newPassword": "Nouveau mot de passe",
+          "newPasswordPlaceholder": "Nouveau mot de passe"
+        },
+        "passwordResetSuccess": "Mot de passe réinitialisé avec succès",
+        "submit": "Réinitialiser le mot de passe"
+      }
+    },
     "EventCreate": {
       "pageTitle": "Ajouter une partie",
       "labels": {
