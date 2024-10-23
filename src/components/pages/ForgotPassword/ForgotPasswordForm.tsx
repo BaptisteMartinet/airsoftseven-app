@@ -58,6 +58,7 @@ export default function ForgotPasswordForm(props: ForgotPassword) {
         {...form.getInputProps('email')}
         label={t('labels.email')}
         placeholder={t('labels.emailPlaceholder')}
+        autoComplete="email"
         required
       />
       <Group justify="space-between" mt="lg" className={classes.controls}>

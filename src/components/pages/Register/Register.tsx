@@ -79,6 +79,7 @@ function Register() {
               {...form.getInputProps("username")}
               label={t("labels.username")}
               placeholder={t("labels.usernamePlaceholder")}
+              autoComplete="username"
               required
             />
             <TextInput
@@ -86,6 +87,7 @@ function Register() {
               {...form.getInputProps("email")}
               label={t("labels.email")}
               placeholder={t("labels.emailPlaceholder")}
+              autoComplete="email"
               required
               mt="md"
             />
@@ -94,6 +96,7 @@ function Register() {
               {...form.getInputProps("password")}
               label={t("labels.password")}
               placeholder={t("labels.passwordPlaceholder")}
+              autoComplete="new-password"
               required
               mt="md"
             />

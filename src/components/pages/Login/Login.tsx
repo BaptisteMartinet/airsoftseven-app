@@ -74,6 +74,7 @@ function Login() {
             {...form.getInputProps("email")}
             label={t("labels.email")}
             placeholder={t("labels.emailPlaceholder")}
+            autoComplete="email"
             required
           />
           <PasswordInput
@@ -81,6 +82,7 @@ function Login() {
             {...form.getInputProps("password")}
             label={t("labels.password")}
             placeholder={t("labels.passwordPlaceholder")}
+            autoComplete="current-password"
             required
             mt="md"
           />
