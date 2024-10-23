@@ -37,12 +37,12 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
       playgroundTypes: [],
     },
     validate: {
-      name: hasLength({ min: 3, max: 50 }),
-      description: hasLength({ max: 500 }),
+      name: hasLength({ min: 3, max: 64 }),
+      description: hasLength({ max: 2000 }),
       address: isNotEmpty(),
       latitude: isNotEmpty(),
       longitude: isNotEmpty(),
-      publicURL: hasLength({ max: 100 }),
+      publicURL: hasLength({ max: 500 }),
     },
   });
 

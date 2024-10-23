@@ -32,10 +32,10 @@ export default function ClubCreateForm(props: ClubCreateFormProps) {
       acceptUnderage: false,
     },
     validate: {
-      name: hasLength({ min: 3, max: 30 }),
-      description: hasLength({ max: 500 }),
-      rules: hasLength({ max: 500 }),
-      publicURL: hasLength({ max: 100 }),
+      name: hasLength({ min: 3, max: 64 }),
+      description: hasLength({ max: 2000 }),
+      rules: hasLength({ max: 2000 }),
+      publicURL: hasLength({ max: 500 }),
     },
   });
 

@@ -37,13 +37,13 @@ function EventCreate() {
       field: null,
     },
     validate: {
-      title: hasLength({ min: 3, max: 50 }),
-      description: hasLength({ min: 0, max: 1000 }),
+      title: hasLength({ min: 3, max: 64 }),
+      description: hasLength({ max: 2000 }),
       date: isNotEmpty(),
       durationDays: isInRange({ min: 1, max: 50 }),
       // price
       // capacity
-      publicURL: hasLength({ min: 0, max: 100 }),
+      publicURL: hasLength({ max: 100 }),
       club: isNotEmpty(),
       field: isNotEmpty(),
     },

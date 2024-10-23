@@ -41,7 +41,7 @@ function Register() {
       newsletterOptIn: true,
     },
     validate: {
-      username: hasLength({ min: 2 }, t("labels.usernameError")),
+      username: hasLength({ min: 3, max: 64 }, t("labels.usernameError")),
       email: isEmail(t("labels.emailError")),
       password: hasLength({ min: 8 }, t("labels.passwordError")),
     },
