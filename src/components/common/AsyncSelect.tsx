@@ -68,7 +68,7 @@ export default function AsyncSelect<T>(props: AsyncSelectProps<T>) {
         optionsStatus === "pending" ? <Loader size={18} /> : undefined
       }
       rightSectionPointerEvents="none"
-      nothingFoundMessage={input.length >= MinCharsToDebounce ? nothingFoundMessage : null}
+      nothingFoundMessage={input.length >= MinCharsToDebounce && optionsStatus !== 'pending' ? nothingFoundMessage : null}
       {...passedProps}
     />
   );
