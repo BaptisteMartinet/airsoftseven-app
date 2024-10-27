@@ -28,6 +28,9 @@ export default function FieldContent(props: FieldContentProps) {
 
   return (
     <Stack gap="sm">
+      <TitledContainer title={t("events")}>
+        <FieldEvents slug={slug} />
+      </TitledContainer>
       {description ? (
         <TitledContainer title={t("description")}>
           {description}
@@ -55,9 +58,6 @@ export default function FieldContent(props: FieldContentProps) {
             />
           </a>
         </Box>
-      </TitledContainer>
-      <TitledContainer title={t("events")}>
-        <FieldEvents slug={slug} />
       </TitledContainer>
       <Anchor
         href={
