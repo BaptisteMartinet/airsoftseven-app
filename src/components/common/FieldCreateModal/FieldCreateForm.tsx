@@ -110,6 +110,9 @@ export default function FieldCreateForm(props: FieldCreateFormProps) {
           {...form.getInputProps("description")}
           label={t("labels.description")}
           placeholder={t("labels.descriptionPlaceholder")}
+          autosize
+          minRows={3}
+          maxRows={8}
         />
         <TextInput
           key={form.key("publicURL")}
