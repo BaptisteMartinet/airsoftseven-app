@@ -2,6 +2,7 @@ import type { IdType } from "@/core/api/types";
 
 import { useTranslations } from "next-intl";
 import { Card, CardSection, Image, Text } from "@mantine/core";
+import { adjustTimestampToTimezone } from '@/core/utils/time';
 import { Link } from "@/navigation";
 
 export interface EventCardProps {
@@ -10,6 +11,7 @@ export interface EventCardProps {
     slug: string;
     title: string;
     date: number;
+    dateTzOffset: number;
     capacity: number | null;
     club: {
       id: IdType;
@@ -26,6 +28,7 @@ export interface EventCardProps {
 export default function EventCard(props: EventCardProps) {
   const { event, small } = props;
   const t = useTranslations("common.EventCard");
+  const adjustedDate = adjustTimestampToTimezone(event.date, event.dateTzOffset);
   return (
     <Link
       href={{ pathname: "/event/[slug]", params: { slug: event.slug } }}
@@ -48,7 +51,7 @@ export default function EventCard(props: EventCardProps) {
           {event.title}
         </Text>
         <Text size="sm" c="dimmed" tt="capitalize">
-          {t("date", { date: event.date })}
+          {t("date", { date: adjustedDate })}
         </Text>
         <Text size="sm" c="dimmed">
           {t("description", {

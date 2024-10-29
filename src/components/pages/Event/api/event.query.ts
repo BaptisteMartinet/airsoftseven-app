@@ -9,6 +9,7 @@ export interface EventQueryRes {
     title: string;
     description: string | null;
     date: number;
+    dateTzOffset: number;
     durationDays: number;
     price: number | null;
     capacity: number | null;
@@ -50,6 +51,7 @@ const EventQuery: TypedDocumentNode<EventQueryRes, EventQueryVars> = gql`
       title
       description
       date
+      dateTzOffset
       durationDays
       price
       capacity

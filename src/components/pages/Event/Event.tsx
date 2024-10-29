@@ -25,6 +25,7 @@ export default async function Event(props: EventProps) {
     id,
     title,
     date,
+    dateTzOffset,
     club,
     description,
     capacity,
@@ -43,6 +44,7 @@ export default async function Event(props: EventProps) {
         eventId={id}
         title={title}
         date={date}
+        dateTzOffset={dateTzOffset}
         reported={reported}
         interested={interested}
         interestsCount={interestsCount}

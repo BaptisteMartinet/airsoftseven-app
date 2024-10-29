@@ -8,6 +8,7 @@ export interface Event {
   slug: string;
   title: string;
   date: number;
+  dateTzOffset: number;
   capacity: number | null;
   club: {
     id: IdType;
@@ -58,6 +59,7 @@ const UserEventsQuery: TypedDocumentNode<
           slug
           title
           date
+          dateTzOffset
           capacity
           club {
             id
