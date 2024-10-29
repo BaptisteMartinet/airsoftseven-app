@@ -11,7 +11,10 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'header', key: 'host', value: 'www.airsoftseven.com' }],
+        has: [
+          { type: 'header', key: 'host', value: 'www.airsoftseven.com' },
+          { type: 'header', key: 'host', value: 'airsoftseven.com' }
+        ],
         destination: 'https://airsoftseven.com/:path*',
         permanent: true,
       },
