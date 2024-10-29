@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useMantineTheme } from "@mantine/core";
 import { IdType } from "@/core/api/types";
-import { adjustTimestampToTimezone } from '@/core/utils/time';
+import { adjustTimestampToUTC } from '@/core/utils/time';
 import { ResourceBanner } from "@/components/common";
 import Actions from "./Actions";
 
@@ -38,7 +38,7 @@ export default function EventBanner(props: EventBannerProps) {
   const t = useTranslations("pages.Event.EventBanner");
   const theme = useMantineTheme();
 
-  const adjustedDate = adjustTimestampToTimezone(date, dateTzOffset);
+  const adjustedDate = adjustTimestampToUTC(date, dateTzOffset);
 
   return (
     <ResourceBanner

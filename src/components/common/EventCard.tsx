@@ -2,7 +2,7 @@ import type { IdType } from "@/core/api/types";
 
 import { useTranslations } from "next-intl";
 import { Card, CardSection, Image, Text } from "@mantine/core";
-import { adjustTimestampToTimezone } from '@/core/utils/time';
+import { adjustTimestampToUTC } from '@/core/utils/time';
 import { Link } from "@/navigation";
 
 export interface EventCardProps {
@@ -28,7 +28,7 @@ export interface EventCardProps {
 export default function EventCard(props: EventCardProps) {
   const { event, small } = props;
   const t = useTranslations("common.EventCard");
-  const adjustedDate = adjustTimestampToTimezone(event.date, event.dateTzOffset);
+  const adjustedDate = adjustTimestampToUTC(event.date, event.dateTzOffset);
   return (
     <Link
       href={{ pathname: "/event/[slug]", params: { slug: event.slug } }}
