@@ -6,7 +6,7 @@ export const Day = 24 * Hour;
 
 
 export function adjustTimestampToTimezone(timestamp: number, tzOffset: number) {
-  const currentTzOffset = new Date(timestamp).getTimezoneOffset();
+  const currentTzOffset = new Date().getTimezoneOffset();
   const offsetMs = (currentTzOffset - tzOffset) * Minute;
   return timestamp + offsetMs;
 }
