@@ -135,6 +135,11 @@
         "member3Role": "Administrateur - GB",
         "member4Username": "Jacque",
         "member4Role": "Modérateur - États unis"
+      },
+      "Stats": {
+        "eventsCount": "Parties",
+        "fieldsCount": "Terrains",
+        "clubsCount": "Associations"
       }
     },
     "Register": {
