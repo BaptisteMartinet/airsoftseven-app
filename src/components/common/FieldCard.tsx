@@ -30,11 +30,10 @@ export default function FieldCard(props: FieldCardProps) {
             <Image src="/banners/m4-closeup_512.jpg" height={160} alt="Norway" />
           </CardSection>
         ) : null}
-
-        <Text fw={500} lineClamp={1} mt="md" mb="xs">
+        <Text mt="md" mb="xs" fw={500} lineClamp={1}>
           {field.name}
         </Text>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="dimmed" lineClamp={1}>
           {field.address}
         </Text>
       </Card>

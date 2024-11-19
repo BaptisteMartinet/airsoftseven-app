@@ -31,10 +31,10 @@ export default function ClubCard(props: ClubCardProps) {
           </CardSection>
         ) : null}
 
-        <Text fw={500} lineClamp={1} mt="md" mb="xs">
+        <Text mt="md" mb="xs" fw={500} lineClamp={1}>
           {club.name}
         </Text>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="dimmed" lineClamp={1}>
           {club.description}
         </Text>
       </Card>
