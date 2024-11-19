@@ -48,7 +48,7 @@ export default function EventCard(props: EventCardProps) {
           <CardSection>
             <AspectRatio ratio={16 / 6} pos="relative">
               <Image src="/banners/m4-closeup_512.jpg" height="100%" alt="m4" />
-              <Overlay backgroundOpacity={0} blur={10}>
+              <Overlay backgroundOpacity={0} blur={10} zIndex="auto">
                 <Group justify="center" h="100%">
                   <Text c="white" fz={32} lineClamp={1}>{event.field.name}</Text>
                 </Group>
