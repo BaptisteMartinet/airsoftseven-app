@@ -1,7 +1,7 @@
 import type { IdType } from "@/core/api/types";
 
 import { useTranslations } from "next-intl";
-import { Card, CardSection, Image, Text } from "@mantine/core";
+import { Box, Card, CardSection, Group, Text } from "@mantine/core";
 import { adjustTimestampToUTC } from '@/core/utils/time';
 import { Link } from "@/navigation";
 
@@ -29,13 +29,14 @@ export default function EventCard(props: EventCardProps) {
   const { event, small } = props;
   const t = useTranslations("common.EventCard");
   const adjustedDate = adjustTimestampToUTC(event.date, event.dateTzOffset);
+
   return (
     <Link
       href={{ pathname: "/event/[slug]", params: { slug: event.slug } }}
       style={{ textDecoration: "none" }}
     >
       <Card
-        miw={300}
+        miw={256}
         shadow="sm"
         padding={small ? "xs" : "lg"}
         radius="md"
@@ -43,17 +44,18 @@ export default function EventCard(props: EventCardProps) {
       >
         {!small ? (
           <CardSection>
-            <Image src="/banners/m4-closeup_512.jpg" height={160} alt="Norway" />
+            <Group bg="grape" h={100} justify="center">
+              <Text c="white" fz={28} lineClamp={1}>{event.field.name}</Text>
+            </Group>
           </CardSection>
         ) : null}
-
-        <Text fw={500} lineClamp={1} mt="md" mb="xs">
+        <Text mt="md" mb="xs" fw={500} lineClamp={1}>
           {event.title}
         </Text>
-        <Text size="sm" c="dimmed" tt="capitalize">
+        <Text size="sm" c="dimmed" tt="capitalize" lineClamp={1}>
           {t("date", { date: adjustedDate })}
         </Text>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="dimmed" lineClamp={1}>
           {t("description", {
             fieldName: event.field.name,
             clubName: event.club.name,
