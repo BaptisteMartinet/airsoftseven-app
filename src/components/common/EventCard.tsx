@@ -1,7 +1,7 @@
 import type { IdType } from "@/core/api/types";
 
 import { useTranslations } from "next-intl";
-import { Box, Card, CardSection, Group, Text } from "@mantine/core";
+import { Box, Card, CardSection, Group, Text, Image, Overlay, AspectRatio } from "@mantine/core";
 import { adjustTimestampToUTC } from '@/core/utils/time';
 import { Link } from "@/navigation";
 
@@ -46,9 +46,14 @@ export default function EventCard(props: EventCardProps) {
       >
         {!small ? (
           <CardSection>
-            <Group bg="grape" h={100} justify="center">
-              <Text c="white" fz={28} lineClamp={1}>{event.field.name}</Text>
-            </Group>
+            <AspectRatio ratio={16 / 6} pos="relative">
+              <Image src="/banners/m4-closeup_512.jpg" height="100%" alt="m4" />
+              <Overlay backgroundOpacity={0} blur={10} zIndex="auto">
+                <Group justify="center" h="100%">
+                  <Text c="white" fz={32} lineClamp={1}>{event.field.name}</Text>
+                </Group>
+              </Overlay>
+            </AspectRatio>
           </CardSection>
         ) : null}
         <Text mt="md" mb="xs" fw={500} lineClamp={1}>
