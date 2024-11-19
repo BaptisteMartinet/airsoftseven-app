@@ -7,11 +7,12 @@ export interface FieldCardProps {
     name: string;
     address: string;
   };
+  width?: number;
   small?: boolean;
 }
 
 export default function FieldCard(props: FieldCardProps) {
-  const { field, small } = props;
+  const { field, width, small } = props;
 
   return (
     <Link
@@ -19,7 +20,8 @@ export default function FieldCard(props: FieldCardProps) {
       style={{ textDecoration: "none" }}
     >
       <Card
-        miw={300}
+        w={width}
+        miw={256}
         shadow="sm"
         padding={small ? "xs" : "lg"}
         radius="md"
@@ -30,11 +32,10 @@ export default function FieldCard(props: FieldCardProps) {
             <Image src="/banners/m4-closeup_512.jpg" height={160} alt="Norway" />
           </CardSection>
         ) : null}
-
-        <Text fw={500} lineClamp={1} mt="md" mb="xs">
+        <Text mt="md" mb="xs" fw={500} lineClamp={1}>
           {field.name}
         </Text>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="dimmed" lineClamp={1}>
           {field.address}
         </Text>
       </Card>

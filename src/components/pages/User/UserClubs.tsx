@@ -42,7 +42,7 @@ export default function UserClubs(props: UserClubsProps) {
       count={clubsCount}
       nodes={clubs}
       getNodeKey={(club) => club.id}
-      renderNode={(club) => <ClubCard club={club} />}
+      renderNode={(club) => <ClubCard club={club} width={300} />}
       onClickFetchMore={handleFetchMore}
     />
   );

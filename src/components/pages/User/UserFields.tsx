@@ -42,7 +42,7 @@ export default function UserFields(props: UserFieldsProps) {
       count={fieldsCount}
       nodes={fields}
       getNodeKey={(field) => field.id}
-      renderNode={(field) => <FieldCard field={field} />}
+      renderNode={(field) => <FieldCard field={field} width={300} />}
       onClickFetchMore={handleFetchMore}
     />
   );
