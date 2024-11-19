@@ -42,7 +42,7 @@ export default function UserEvents(props: UserEventsProps) {
       count={eventsCount}
       nodes={events}
       getNodeKey={(event) => event.id}
-      renderNode={(event) => <EventCard event={event} />}
+      renderNode={(event) => <EventCard event={event} width={300} />}
       onClickFetchMore={handleFetchMore}
     />
   );

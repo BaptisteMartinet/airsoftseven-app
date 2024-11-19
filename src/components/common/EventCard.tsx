@@ -22,11 +22,12 @@ export interface EventCardProps {
       name: string;
     };
   };
+  width?: number;
   small?: boolean;
 }
 
 export default function EventCard(props: EventCardProps) {
-  const { event, small } = props;
+  const { event, width, small } = props;
   const t = useTranslations("common.EventCard");
   const adjustedDate = adjustTimestampToUTC(event.date, event.dateTzOffset);
 
@@ -36,6 +37,7 @@ export default function EventCard(props: EventCardProps) {
       style={{ textDecoration: "none" }}
     >
       <Card
+        w={width}
         miw={256}
         shadow="sm"
         padding={small ? "xs" : "lg"}

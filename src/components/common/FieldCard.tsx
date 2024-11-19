@@ -7,11 +7,12 @@ export interface FieldCardProps {
     name: string;
     address: string;
   };
+  width?: number;
   small?: boolean;
 }
 
 export default function FieldCard(props: FieldCardProps) {
-  const { field, small } = props;
+  const { field, width, small } = props;
 
   return (
     <Link
@@ -19,7 +20,8 @@ export default function FieldCard(props: FieldCardProps) {
       style={{ textDecoration: "none" }}
     >
       <Card
-        miw={300}
+        w={width}
+        miw={256}
         shadow="sm"
         padding={small ? "xs" : "lg"}
         radius="md"
