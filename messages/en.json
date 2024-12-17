@@ -1,36 +1,36 @@
 {
   "Metadata": {
-    "title": "AirsoftSeven | Recherche de parties airsoft",
-    "description": "Trouver un événement airsoft n'importe où dans le monde en un instant."
+    "title": "AirsoftSeven | Find airsoft events",
+    "description": "Finding airsoft events anywhere in the world in seconds."
   },
   "shared": {
-    "error": "Une erreur est survenue",
+    "error": "Something went wrong",
     "metadataTitle": "{title} | AirsoftSeven",
-    "delete": "Supprimer",
-    "deleteSuccess": "Supprimé avec succès",
-    "report": "Signaler",
+    "delete": "Delete",
+    "deleteSuccess": "Successfully deleted",
+    "report": "Report",
     "enums": {
-      "reportReason": "{reason, select, Duplicate {Dupliqué} Offensive {Offensant} Other {Autre} other {Unknown}}",
-      "playgroundType": "{type, select, CQB {CQB} Forest {Forêt} Buildings {Immeuble} Speedsoft {Speedsoft} other {Unknown}}",
-      "eventGamemodeType": "{type, select, MilSim {MilSim} Nocturnal {Nocturne} Speedsoft {Speedsoft} Skirmish {Dominicale} other {Unknown}}"
+      "reportReason": "{reason, select, Duplicate {Duplicate} Offensive {Offensive} Other {Other} other {Unknown}}",
+      "playgroundType": "{type, select, CQB {CQB} Forest {Forest} Buildings {Buildings} Speedsoft {Speedsoft} other {Unknown}}",
+      "eventGamemodeType": "{type, select, MilSim {MilSim} Nocturnal {Nocturnal} Speedsoft {Speedsoft} Skirmish {Skirmish} other {Unknown}}"
     }
   },
   "common": {
     "Header": {
       "title": "AirsoftSeven",
-      "createEvent": "Ajouter un événement",
+      "createEvent": "Add event",
 
       "ProfileMenu": {
-        "profile": "Profil",
-        "logout": "Déconnexion",
-        "login": "Connexion",
-        "register": "Inscription"
+        "profile": "Profile",
+        "logout": "Logout",
+        "login": "Login",
+        "register": "Register"
       }
     },
     "Footer": {
       "links": {
         "contact": "Contact",
-        "home": "Accueil",
+        "home": "Home",
         "github": "GitHub"
       }
     },
@@ -38,255 +38,255 @@
       "locale": "{locale, select, fr {Francais} en {English} other {Unknown}}"
     },
     "ClubPicker": {
-      "createClub": "Ajouter une association"
+      "createClub": "Create club"
     },
     "ClubCreateModal": {
-      "modalTitle": "Ajouter une association",
+      "modalTitle": "Create Club",
       "labels": {
-        "name": "Nom",
-        "namePlaceholder": "Nom de l'association",
+        "name": "Name",
+        "namePlaceholder": "Club name",
         "description": "Description",
         "descriptionPlaceholder": "Description",
-        "rules": "Règles",
-        "rulesPlaceholder": "Renseigner les règles pratiquées par cette association",
-        "publicURL": "Lien",
-        "publicURLPlaceholder": "Site internet, groupe facebook, etc",
-        "acceptUnderage": "Mineurs acceptés",
-        "rentals": "Location disponible"
+        "rules": "Rules",
+        "rulesPlaceholder": "Provide the rules practiced by this association",
+        "publicURL": "Link",
+        "publicURLPlaceholder": "Website, facebook group, etc",
+        "acceptUnderage": "Underage accepted",
+        "rentals": "Rentals available"
       },
-      "clubCreateSuccess": "Association ajoutée avec succès",
-      "submit": "Ajouter"
+      "clubCreateSuccess": "Club successfully created",
+      "submit": "Create"
     },
     "FieldPicker": {
-      "createField": "Ajouter une terrain"
+      "createField": "Create field"
     },
     "FieldCreateModal": {
-      "modalTitle": "Ajouter un terrain",
+      "modalTitle": "Create Field",
       "labels": {
-        "name": "Nom",
-        "namePlaceholder": "Nom du terrain",
-        "address": "Adresse",
-        "addressPlaceholder": "Adresse du terrain",
+        "name": "Name",
+        "namePlaceholder": "Field name",
+        "address": "Address",
+        "addressPlaceholder": "Field address",
 
         "description": "Description",
         "descriptionPlaceholder": "Description",
-        "publicURL": "Lien",
-        "publicURLPlaceholder": "Site internet, groupe facebook, etc",
-        "playgroundTypes": "Types de terrains",
-        "playgroundTypesPlaceholder": "Ajouter un ou plusieurs types de terrains"
+        "publicURL": "Link",
+        "publicURLPlaceholder": "Website, facebook group, etc",
+        "playgroundTypes": "Playground types",
+        "playgroundTypesPlaceholder": "Add one or more playground types"
       },
-      "fieldCreateSuccess": "Terrain ajouté avec succès",
-      "submit": "Ajouter"
+      "fieldCreateSuccess": "Field successfully created",
+      "submit": "Create"
     },
     "EventCard": {
       "date": "{date, date, full}",
-      "description": "Organisé par {clubName} à {fieldName}",
+      "description": "Organized by {clubName} at {fieldName}",
       "capacity": "{capacity} places",
-      "acceptUnderage": "Mineurs acceptés",
-      "rentals": "Location disponible"
+      "acceptUnderage": "Underage accepted",
+      "rentals": "Rentals available"
     },
     "PaginatedList": {
-      "count": "{count} résultats",
-      "loadMore": "Afficher plus"
+      "count": "{count} results",
+      "loadMore": "Load more"
     },
     "CopyLocationButton": {
-      "copyLink": "Copier le lien",
-      "copyLinkSuccess": "Lien copié avec succès"
+      "copyLink": "Copy link",
+      "copyLinkSuccess": "Link successfully copied"
     },
     "ReportCreateModal": {
-      "modalTitle": "Signaler",
-      "reportCreateSuccess": "Votre signalement a bien été pris en compte.",
+      "modalTitle": "Report",
+      "reportCreateSuccess": "Report successfully created.",
       "labels": {
-        "reason": "Raison",
+        "reason": "Reason",
         "message": "Message",
-        "messagePlaceholder": "Décrivez au mieux la raison du signalement."
+        "messagePlaceholder": "Describe the report reason as accurately as possible."
       },
-      "submit": "Signaler"
+      "submit": "Report"
     }
   },
   "pages": {
     "Home": {
       "Hero": {
-        "title": "Trouver une partie d'airsoft n'a jamais été aussi simple",
-        "description": "AirsoftSeven est un système d'indexation collaboratif de parties d'airsoft. Organisez ou trouvez une partie facilement.",
-        "addressPickerPlaceholder": "Rechercher à proximité d'une adresse ou ville"
+        "title": "Finding an airsoft game has never been this easy",
+        "description": "AirsoftSeven is a collaborative indexing system for airsoft games. Organize or find a game easily.",
+        "addressPickerPlaceholder": "Search near an address or city"
       },
       "Faq": {
-        "title": "Foire aux questions",
-        "question1Title": "Pourquoi AirsoftSeven ?",
-        "question1Desc": "Le projet est né en 2024 d'une envie commune de simplifier la recherche et l'organisation de parties d'airsoft. Il n'est pas là pour remplacer les événements Facebook et autres, mais plutôt pour venir en complémentarité afin d'avoir un outil efficace de recherche de parties.",
-        "question2Title": "Comment sont ajoutées  les parties ?",
-        "question2Desc": "Elles sont ajoutées de deux manières. Premièrement, n'importe quel utilisateur peut ajouter une partie s'il en a la connaissance (les informations minimum étant une date, un lieu et une association.). Aucune validation n'est nécessaire, il y a cependant un antispam ainsi qu'un système de signalement pour éviter les abus. La deuxième méthode implique l'utilisation de scripts scannant Internet à la recherche de parties. L'objectif long terme étant que les associations viennent ajouter directement leurs parties.",
-        "question3Title": "Le projet fonctionne-t-il à l'international ?",
-        "question3Desc": "Oui, le site est entièrement traduit en anglais et n'a aucune restriction géographique particulière. Il peut être utilisé pour organiser des parties partout dans le monde.",
-        "question4Title": "Le projet est il open source ?",
-        "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB."
+        "title": "Frequently Asked Questions",
+        "question1Title": "Why AirsoftSeven?",
+        "question1Desc": "The project was born in 2024 from a shared desire to simplify the search and organization of airsoft games. It is not meant to replace Facebook events and others, but rather to complement them by providing an efficient tool for finding games.",
+        "question2Title": "How are games added?",
+        "question2Desc": "They are added in two ways. First, any user can add a game if they have the information (the minimum details being a date, location, and association). No validation is required, but there is an anti-spam system and a reporting feature to prevent abuse. The second method involves using scripts that scan the internet for games. The long-term goal is for associations to directly add their games.",
+        "question3Title": "Does the project work internationally?",
+        "question3Desc": "Yes, the website is fully translated into English and has no specific geographic restrictions. It can be used to organize games anywhere in the world.",
+        "question4Title": "Is the project open source?",
+        "question4Desc": "Yes! It is maintained by airsoft developers using the following technologies: React/NextJS, GraphQL, MariaDB."
       },
       "Team": {
-        "title": "Contributeurs principaux",
+        "title": "Main contributors",
         "member1Username": "Baptiste (Bapt)",
         "member1Role": "Lead dev - France",
         "member2Username": "Pierre",
-        "member2Role": "Développeur - France",
+        "member2Role": "Developer - France",
         "member3Username": "Paul",
-        "member3Role": "Administrateur - GB",
+        "member3Role": "Administrator - GB",
         "member4Username": "Jacque",
-        "member4Role": "Modérateur - États unis"
+        "member4Role": "Moderator - États unis"
       },
       "Stats": {
-        "eventsCount": "Évènements",
-        "fieldsCount": "Terrains",
-        "clubsCount": "Associations"
+        "eventsCount": "Events",
+        "fieldsCount": "Fields",
+        "clubsCount": "Clubs"
       }
     },
     "Register": {
-      "title": "Inscription",
-      "alreadyRegistered": "Déjà un compte ? ",
-      "login": "Se connecter",
+      "title": "Register",
+      "alreadyRegistered": "Already have an account? ",
+      "login": "Login",
       "labels": {
-        "username": "Pseudo",
-        "usernamePlaceholder": "Mon pseudo",
-        "usernameError": "Pseudo invalide",
+        "username": "Username",
+        "usernamePlaceholder": "My username",
+        "usernameError": "Invalid username",
         "email": "Email",
         "emailPlaceholder": "email@domain.com",
-        "emailError": "Email invalide",
-        "password": "Mot de passe",
-        "passwordPlaceholder": "Votre mot de passe",
-        "passwordError": "Le mot de passe doit contenir au moins 8 caractères.",
-        "newsletterOptInt": "Recevoir la newsletter"
+        "emailError": "Invalid email",
+        "password": "Password",
+        "passwordPlaceholder": "Your password",
+        "passwordError": "Password must contain at least 8 caracters",
+        "newsletterOptInt": "Receive newsletter"
       },
-      "submit": "S'incrire",
-      "registerSuccess": "Compte créé avec succès.",
+      "submit": "Sign up",
+      "registerSuccess": "Profile successfully created",
       "emailVerifyDialog": {
-        "title": "Vérification d'email",
-        "description": "Un code de vérification vient de vous être envoyé par email."
+        "title": "Email verification",
+        "description": "A verification code has just been sent to your email."
       }
     },
     "Login": {
-      "title": "Rebonjour !",
-      "notRegisteredYet": "Toujours pas de compte ? ",
-      "register": "Créer un compte",
+      "title": "Welcome back!",
+      "notRegisteredYet": "Don't have an account? ",
+      "register": "Register",
       "labels": {
         "email": "Email",
         "emailPlaceholder": "email@domain.com",
-        "emailError": "Email invalide",
-        "password": "Mot de passe",
-        "passwordPlaceholder": "Votre mot de passe",
-        "passwordError": "Le mot de passe doit contenir au moins 8 caractères."
+        "emailError": "Invalid email",
+        "password": "Password",
+        "passwordPlaceholder": "Your password",
+        "passwordError": "Password must contain at least 8 caracters"
       },
-      "forgotPassword": "Mot de passe oublié ?",
-      "submit": "Se connecter"
+      "forgotPassword": "Forgotten password?",
+      "submit": "Login"
     },
     "ForgotPassword": {
-      "title": "Mot de passe oublié ?",
-      "description": "Réinitialisation",
+      "title": "Forgotten password?",
+      "description": "Reset password",
       "ForgotPasswordForm": {
-        "backToLoginBtn": "Retour à la connexion",
+        "backToLoginBtn": "Back to login",
         "labels": {
           "email": "Email",
           "emailPlaceholder": "email@domain.com"
         },
-        "submit": "Envoyer le code"
+        "submit": "Send code"
       },
       "ResetPasswordForm": {
         "labels": {
           "code": "Code",
-          "codePlaceholder": "Saisir le code recu par email",
-          "newPassword": "Nouveau mot de passe",
-          "newPasswordPlaceholder": "Nouveau mot de passe"
+          "codePlaceholder": "Enter code received by email",
+          "newPassword": "New password",
+          "newPasswordPlaceholder": "New password"
         },
-        "passwordResetSuccess": "Mot de passe réinitialisé avec succès",
-        "submit": "Réinitialiser le mot de passe"
+        "passwordResetSuccess": "Password successfully updated",
+        "submit": "Reset password"
       }
     },
     "EventCreate": {
-      "pageTitle": "Ajouter une partie",
+      "pageTitle": "Add event",
       "labels": {
-        "title": "Titre",
-        "titlePlaceholder": "Titre de la partie",
+        "title": "Title",
+        "titlePlaceholder": "Event title",
         "date": "Date",
-        "datePlaceholder": "Selectionner une date",
-        "durationDays": "Durée (en jours)",
-        "club": "Association",
-        "clubPlaceholder": "Saisir le nom d'une association",
-        "field": "Terrain",
-        "fieldPlaceholder": "Saisir le nom d'un terrain",
+        "datePlaceholder": "Select a date",
+        "durationDays": "Duration (in days)",
+        "club": "Club",
+        "clubPlaceholder": "Specify a club name",
+        "field": "Field",
+        "fieldPlaceholder": "Specify a field name",
 
         "description": "Description",
         "descriptionPlaceholder": "Description",
-        "publicURL": "Lien",
-        "publicURLPlaceholder": "Site internet, évènement facebook, etc",
-        "price": "Prix",
-        "pricePlaceholder": "Prix",
-        "capacity": "Nombre de joueurs attendus",
-        "capacityPlaceholder": "Joueurs attendus",
-        "gamemodes": "Modes de jeu",
-        "gamemodesPlaceholder": "Modes de jeu"
+        "publicURL": "Link",
+        "publicURLPlaceholder": "Website, facebook group, etc",
+        "price": "Price",
+        "pricePlaceholder": "Price",
+        "capacity": "Capacity",
+        "capacityPlaceholder": "Players capacity",
+        "gamemodes": "Gamemodes",
+        "gamemodesPlaceholder": "Gamemodes"
       },
-      "submit": "Ajouter"
+      "submit": "Create"
     },
     "Event": {
       "EventBanner": {
-        "resource": "Évènement/",
-        "subtitle": "{date, date, full} par {clubName}",
+        "resource": "Event/",
+        "subtitle": "{date, date, full} by {clubName}",
         "Actions": {
-          "interests": "{interestsCount} intéressés"
+          "interests": "{interestsCount} interested"
         }
       },
       "EventContent": {
-        "capacity": "Places",
-        "price": "Prix",
-        "publicURL": "Lien",
-        "author": "Ajouté par {username}"
+        "capacity": "Capacity",
+        "price": "Price",
+        "publicURL": "Link",
+        "author": "Added by {username}"
       }
     },
     "Events": {
       "Filters": {
-        "addressPlaceholder": "Rechercher à proximité d'une adresse",
+        "addressPlaceholder": "Search near address",
         "distanceLabel": "{distanceKm} km ({distanceMi, number, ::precision-integer} miles)",
-        "filtersBtn": "Filtres",
-        "modalTitle": "Filtres",
-        "submit": "Rechercher"
+        "filtersBtn": "Filters",
+        "modalTitle": "Filters",
+        "submit": "Search"
       },
       "EventsList": {
-        "eventsCount": "{count} parties trouvées",
-        "createEvent": "Ajouter un événement",
-        "loadMore": "Afficher plus",
-        "showMapBtn": "Afficher la carte",
-        "showListBtn": "Afficher la liste"
+        "eventsCount": "{count} events found",
+        "createEvent": "Add event",
+        "loadMore": "Load more",
+        "showMapBtn": "Show map",
+        "showListBtn": "Show list"
       }
     },
     "User": {
       "UserBanner": {
-        "resource": "Utilisateur/",
+        "resource": "User/",
         "Actions": {
-          "copyLink": "Copier le lien",
-          "copyLinkSuccess": "Lien copié avec succès"
+          "copyLink": "Copy link",
+          "copyLinkSuccess": "Link successfully copied"
         }
       }
     },
     "Club": {
       "ClubBanner": {
-        "resource": "Association/"
+        "resource": "Club/"
       },
       "ClubContent": {
         "description": "Description",
-        "rules": "Règles",
-        "publicURL": "Lien",
-        "events": "Prochaines parties",
-        "author": "Ajouté par {username}"
+        "rules": "Rules",
+        "publicURL": "Link",
+        "events": "Next events",
+        "author": "Added by {username}"
       }
     },
     "Field": {
       "FieldBanner": {
-        "resource": "Terrain/"
+        "resource": "Field/"
       },
       "FieldContent": {
         "description": "Description",
-        "publicURL": "Lien",
-        "address": "Localisation",
-        "events": "Prochaines parties",
-        "author": "Ajouté par {username}"
+        "publicURL": "Link",
+        "address": "Location",
+        "events": "Next events",
+        "author": "Added by {username}"
       }
     }
   }
