@@ -17,7 +17,7 @@ export default function ResourceBanner(props: ResourceBannerProps) {
   const mobile = useMobile();
 
   return (
-    <AspectRatio ratio={16 / 3} pos="relative">
+    <Box pos="relative" h={360}>
       <Image src={imgSrc} height="100%" alt={imgAlt} />
       <Overlay backgroundOpacity={0.3} blur={10} zIndex="auto">
         <Box
@@ -39,6 +39,6 @@ export default function ResourceBanner(props: ResourceBannerProps) {
           </Box>
         </Box>
       </Overlay>
-    </AspectRatio>
+    </Box>
   );
 }
