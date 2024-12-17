@@ -18,7 +18,6 @@
   "common": {
     "Header": {
       "title": "AirsoftSeven",
-      "betaCaption": " Beta",
       "createEvent": "Ajouter un événement",
 
       "ProfileMenu": {
