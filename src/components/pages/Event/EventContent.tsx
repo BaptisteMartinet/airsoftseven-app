@@ -41,7 +41,7 @@ export default function EventContent(props: EventContentProps) {
       {description ? (
         <Text>{description}</Text>
       ) : null}
-      <SimpleGrid cols={{ base: 2, lg: 5 }}>
+      <SimpleGrid cols={{ base: 2, sm: 3, lg: 5 }}>
         {capacity ? <DataCard value={capacity.toString()} label={t('capacity')} /> : null}
         {price ? <DataCard value={price.toString()} label={t('price')} /> : null}
         {publicURL ? (

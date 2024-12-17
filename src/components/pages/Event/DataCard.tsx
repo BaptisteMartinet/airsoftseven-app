@@ -1,8 +1,5 @@
-'use client'
-
 import React, { type ReactNode } from 'react';
 import { AspectRatio, Center, Paper, Text } from '@mantine/core';
-import { useMobile } from '@/core/utils/hooks';
 
 export interface DataCardProps {
   value: ReactNode,
@@ -12,12 +9,11 @@ export interface DataCardProps {
 
 export default function DataCard(props: DataCardProps) {
   const { value, label, disableValueText } = props;
-  const mobile = useMobile();
 
   const value_ = disableValueText ? (
     value
   ) : (
-    <Text fz={mobile ? 20 : 45} fw={500} c="blue">{value}</Text>
+    <Text fz={45} fw={500} c="blue">{value}</Text>
   );
 
   return (
