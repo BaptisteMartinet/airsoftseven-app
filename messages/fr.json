@@ -237,12 +237,9 @@
         }
       },
       "EventContent": {
-        "description": "Description",
-        "capacity": "Nombre de joueurs attendus",
+        "capacity": "Places",
         "price": "Prix",
         "publicURL": "Lien",
-        "club": "Association",
-        "field": "Terrain",
         "author": "Ajouté par {username}"
       }
     },

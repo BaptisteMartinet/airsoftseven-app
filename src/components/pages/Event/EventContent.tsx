@@ -1,7 +1,9 @@
 import { useTranslations } from "next-intl";
-import { Box, Stack, Text, Anchor as MantineAnchor } from "@mantine/core";
+import { Box, Stack, Text, SimpleGrid, ActionIcon, Group } from "@mantine/core";
+import { IconLink, IconSoccerField } from '@tabler/icons-react';
 import { genGmapsLocationLink } from "@/core/utils/gmaps";
-import { StaticMap, Anchor, TitledContainer } from "@/components/common";
+import { StaticMap, Anchor, TitledContainer, FieldCard, ClubCard } from "@/components/common";
+import DataCard from './DataCard';
 
 export interface EventContentProps {
   description: string | null;
@@ -11,6 +13,7 @@ export interface EventContentProps {
   club: {
     slug: string;
     name: string;
+    description: string;
   };
   field: {
     slug: string;
@@ -36,60 +39,46 @@ export default function EventContent(props: EventContentProps) {
   return (
     <Stack gap="sm">
       {description ? (
-        <TitledContainer title={t("description")}>
-          <Text>{description}</Text>
-        </TitledContainer>
+        <Text>{description}</Text>
       ) : null}
-      {capacity ? (
-        <TitledContainer title={t("capacity")}>
-          <Text>{capacity}</Text>
-        </TitledContainer>
-      ) : null}
-      {price ? (
-        <TitledContainer title={t("price")}>
-          <Text>{price}</Text>
-        </TitledContainer>
-      ) : null}
-      {publicURL ? (
-        <TitledContainer title={t("publicURL")}>
-          <MantineAnchor href={publicURL} target="_blank">
-            {publicURL}
-          </MantineAnchor>
-        </TitledContainer>
-      ) : null}
-      <TitledContainer title={t('club')}>
-        <Anchor
-          href={
-            { pathname: "/club/[slug]", params: { slug: club.slug } } as any
-          } // TODO casted due to type issue
-        >
-          {club.name}
-        </Anchor>
-      </TitledContainer>
-      <TitledContainer title={t("field")}>
-        <Anchor
-          href={
-            { pathname: "/field/[slug]", params: { slug: field.slug } } as any
-          } // TODO casted due to type issue
-        >
-          {field.name}
-        </Anchor>
-        <br />
-        <Anchor href={googleMapsLocationLink}>{field.address}</Anchor>
-        <Box h={500}>
-          <a href={googleMapsLocationLink} target="_blank">
-            <StaticMap
-              width={1000}
-              height={500}
-              center={{ lat: field.latitude, lng: field.longitude }}
-              zoom={11}
-              markers={[
-                { position: { lat: field.latitude, lng: field.longitude } },
-              ]}
-            />
-          </a>
-        </Box>
-      </TitledContainer>
+      <SimpleGrid cols={{ base: 2, lg: 5 }}>
+        {capacity ? <DataCard value={capacity.toString()} label={t('capacity')} /> : null}
+        {price ? <DataCard value={price.toString()} label={t('price')} /> : null}
+        {publicURL ? (
+          <DataCard
+            value={
+              <ActionIcon
+                component="a"
+                href={publicURL}
+                target="_blank"
+                variant="transparent"
+                size="xl"
+              >
+                <IconLink size={40} />
+              </ActionIcon>
+            }
+            label={t('publicURL')}
+            disableValueText
+          />
+        ) : null}
+      </SimpleGrid>
+      <Group my="md" justify="center" gap="xl">
+        <ClubCard club={club} width={280} />
+        <FieldCard field={field} width={280} />
+      </Group>
+      <Box h={400}>
+        <a href={googleMapsLocationLink} target="_blank">
+          <StaticMap
+            width={1000}
+            height={500}
+            center={{ lat: field.latitude, lng: field.longitude }}
+            zoom={11}
+            markers={[
+              { position: { lat: field.latitude, lng: field.longitude } },
+            ]}
+          />
+        </a>
+      </Box>
       <Anchor
         href={
           { pathname: "/user/[slug]", params: { slug: author.slug } } as any
