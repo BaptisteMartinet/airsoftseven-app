@@ -250,6 +250,7 @@
       },
       "EventsList": {
         "eventsCount": "{count} parties trouvées",
+        "createEvent": "Ajouter un événement",
         "loadMore": "Afficher plus",
         "showMapBtn": "Afficher la carte",
         "showListBtn": "Afficher la liste"
