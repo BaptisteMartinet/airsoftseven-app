@@ -118,9 +118,7 @@
         "question3Title": "Le projet fonctionne-t-il à l'international ?",
         "question3Desc": "Oui, le site est entièrement traduit en anglais et n'a aucune restriction géographique particulière. Il peut être utilisé pour organiser des parties partout dans le monde.",
         "question4Title": "Le projet est il open source ?",
-        "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB.",
-        "question5Title": "À quelle date est prévue la sortie de la Bêta ?",
-        "question5Desc": "Le projet est pour le moment en phase de test. Il sortira dans sa v1.0 courant octobre 2024."
+        "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB."
       },
       "Team": {
         "title": "Contributeurs principaux",

@@ -38,11 +38,6 @@ export default function Faq() {
           <AccordionControl>{t("question4Title")}</AccordionControl>
           <AccordionPanel>{t("question4Desc")}</AccordionPanel>
         </AccordionItem>
-
-        <AccordionItem className={classes.item} value="question5">
-          <AccordionControl>{t("question5Title")}</AccordionControl>
-          <AccordionPanel>{t("question5Desc")}</AccordionPanel>
-        </AccordionItem>
       </Accordion>
     </Container>
   );
