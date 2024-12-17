@@ -107,8 +107,8 @@
   "pages": {
     "Home": {
       "Hero": {
-        "title": "Finding an airsoft game has never been this easy",
-        "description": "AirsoftSeven is a collaborative indexing system for airsoft games. Organize or find a game easily.",
+        "title": "Finding airsoft events has never been this easy",
+        "description": "AirsoftSeven is a collaborative indexing system for airsoft events. Organize or find an event easily.",
         "addressPickerPlaceholder": "Search near an address or city"
       },
       "Faq": {
