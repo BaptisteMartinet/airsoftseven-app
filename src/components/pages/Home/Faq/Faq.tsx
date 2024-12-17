@@ -18,7 +18,7 @@ export default function Faq() {
         {t("title")}
       </Title>
 
-      <Accordion variant="separated" mih={410}>
+      <Accordion variant="separated" mih={340}>
         <AccordionItem className={classes.item} value="question1">
           <AccordionControl>{t("question1Title")}</AccordionControl>
           <AccordionPanel>{t("question1Desc")}</AccordionPanel>
