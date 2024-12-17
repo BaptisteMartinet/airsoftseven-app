@@ -19,6 +19,7 @@ export interface EventQueryRes {
       id: IdType;
       slug: string;
       name: string;
+      description: string;
     };
     field: {
       id: IdType;
@@ -61,6 +62,7 @@ const EventQuery: TypedDocumentNode<EventQueryRes, EventQueryVars> = gql`
         id
         slug
         name
+        description
       }
       field {
         id

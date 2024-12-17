@@ -20,9 +20,6 @@ export default function Header() {
             </Anchor>
             <Anchor href="/" size="lg" fw={500}>
               {t("title")}
-              <Text size="md" component="span">
-                {t("betaCaption")}
-              </Text>
             </Anchor>
           </Group>
           <Anchor href="/" hiddenFrom="xs">

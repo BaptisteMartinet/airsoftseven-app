@@ -35,7 +35,7 @@ export default function FieldBanner(props: FieldBannerProps) {
           events={events}
         />
       }
-      bgColor={theme.colors.green[8]}
+      imgSrc="/banners/m4-closeup_512.jpg"
     />
   );
 }

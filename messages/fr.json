@@ -18,7 +18,6 @@
   "common": {
     "Header": {
       "title": "AirsoftSeven",
-      "betaCaption": " Beta",
       "createEvent": "Ajouter un événement",
 
       "ProfileMenu": {
@@ -109,21 +108,19 @@
     "Home": {
       "Hero": {
         "title": "Trouver une partie d'airsoft n'a jamais été aussi simple",
-        "description": "AirsoftSeven est un système d'indexation collaboratif de parties d'airsoft. Organiser ou trouver une partie n'a jamais été aussi simple.",
+        "description": "AirsoftSeven est un système d'indexation collaboratif de parties d'airsoft. Organisez ou trouvez une partie facilement.",
         "addressPickerPlaceholder": "Rechercher à proximité d'une adresse ou ville"
       },
       "Faq": {
         "title": "Foire aux questions",
         "question1Title": "Pourquoi AirsoftSeven ?",
-        "question1Desc": "Le projet est né en 2024 d'une envie commune de simplifier la recherche et l'organisation de parties d'airsoft. Il n'est pas là pour remplacer les événements Facebook ou autres, mais plutôt pour venir en complémentarité afin d'avoir un outil efficace de recherche de parties.",
+        "question1Desc": "Le projet est né en 2024 d'une envie commune de simplifier la recherche et l'organisation de parties d'airsoft. Il n'est pas là pour remplacer les événements Facebook et autres, mais plutôt pour venir en complémentarité afin d'avoir un outil efficace de recherche de parties.",
         "question2Title": "Comment sont ajoutées  les parties ?",
         "question2Desc": "Elles sont ajoutées de deux manières. Premièrement, n'importe quel utilisateur peut ajouter une partie s'il en a la connaissance (les informations minimum étant une date, un lieu et une association.). Aucune validation n'est nécessaire, il y a cependant un antispam ainsi qu'un système de signalement pour éviter les abus. La deuxième méthode implique l'utilisation de scripts scannant Internet à la recherche de parties. L'objectif long terme étant que les associations viennent ajouter directement leurs parties.",
         "question3Title": "Le projet fonctionne-t-il à l'international ?",
         "question3Desc": "Oui, le site est entièrement traduit en anglais et n'a aucune restriction géographique particulière. Il peut être utilisé pour organiser des parties partout dans le monde.",
         "question4Title": "Le projet est il open source ?",
-        "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB.",
-        "question5Title": "À quelle date est prévue la sortie de la Bêta ?",
-        "question5Desc": "Le projet est pour le moment en phase de test. Il sortira dans sa v1.0 courant octobre 2024."
+        "question4Desc": "Oui ! Il est maintenu par des devs airsofters avec les technos suivantes : React/NextJS, GraphQL, MariaDB."
       },
       "Team": {
         "title": "Contributeurs principaux",
@@ -237,12 +234,9 @@
         }
       },
       "EventContent": {
-        "description": "Description",
-        "capacity": "Nombre de joueurs attendus",
+        "capacity": "Places",
         "price": "Prix",
         "publicURL": "Lien",
-        "club": "Association",
-        "field": "Terrain",
         "author": "Ajouté par {username}"
       }
     },
@@ -256,6 +250,7 @@
       },
       "EventsList": {
         "eventsCount": "{count} parties trouvées",
+        "createEvent": "Ajouter un événement",
         "loadMore": "Afficher plus",
         "showMapBtn": "Afficher la carte",
         "showListBtn": "Afficher la liste"

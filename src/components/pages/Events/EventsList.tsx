@@ -9,8 +9,10 @@ import {
   Group,
   Skeleton,
   Text,
+  Tooltip,
 } from "@mantine/core";
-import { EventCard } from "@/components/common";
+import { IconCircleDashedPlus } from '@tabler/icons-react';
+import { EventCard, Anchor } from "@/components/common";
 
 export interface EventsListProps {
   events: Array<Event>;
@@ -32,13 +34,25 @@ export default function EventsList(props: EventsListProps) {
           <Text my={10} fw={500}>
             {t("eventsCount", { count: eventsCount })}
           </Text>
-          <Grid columns={3}>
-            {events.map((event) => (
-              <GridCol key={event.id} span={1}>
-                <EventCard event={event} />
-              </GridCol>
-            ))}
-          </Grid>
+          {events.length > 0 ? (
+            <Grid columns={3}>
+              {events.map((event) => (
+                <GridCol key={event.id} span={1}>
+                  <EventCard event={event} />
+                </GridCol>
+              ))}
+            </Grid>
+          ) : (
+            <Button
+              variant="outline"
+              rightSection={<IconCircleDashedPlus />}
+              component={Anchor}
+              href="/event-create"
+              mt="md"
+            >
+              {t('createEvent')}
+            </Button>
+          )}
           {events.length !== eventsCount ? (
             <Group mt={20} justify="center">
               <Button

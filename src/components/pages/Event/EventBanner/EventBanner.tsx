@@ -54,7 +54,7 @@ export default function EventBanner(props: EventBannerProps) {
           author={author}
         />
       }
-      bgColor={theme.colors.grape[8]}
+      imgSrc="/banners/m4-closeup_512.jpg"
     />
   );
 }

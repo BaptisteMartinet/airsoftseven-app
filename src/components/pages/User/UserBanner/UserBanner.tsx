@@ -22,7 +22,7 @@ export default function UserBanner(props: UserBannerProps) {
       resourceName={t("pages.User.UserBanner.resource")}
       title={username}
       actions={<Actions userId={userId} reported={reported} />}
-      bgColor={theme.colors.blue[8]}
+      imgSrc="/banners/m4-closeup_512.jpg"
     />
   );
 }

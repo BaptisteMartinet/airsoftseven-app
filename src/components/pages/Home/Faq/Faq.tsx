@@ -18,7 +18,7 @@ export default function Faq() {
         {t("title")}
       </Title>
 
-      <Accordion variant="separated" mih={410}>
+      <Accordion variant="separated" mih={340}>
         <AccordionItem className={classes.item} value="question1">
           <AccordionControl>{t("question1Title")}</AccordionControl>
           <AccordionPanel>{t("question1Desc")}</AccordionPanel>
@@ -37,11 +37,6 @@ export default function Faq() {
         <AccordionItem className={classes.item} value="question4">
           <AccordionControl>{t("question4Title")}</AccordionControl>
           <AccordionPanel>{t("question4Desc")}</AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem className={classes.item} value="question5">
-          <AccordionControl>{t("question5Title")}</AccordionControl>
-          <AccordionPanel>{t("question5Desc")}</AccordionPanel>
         </AccordionItem>
       </Accordion>
     </Container>

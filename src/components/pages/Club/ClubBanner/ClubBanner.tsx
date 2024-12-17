@@ -35,7 +35,7 @@ export default function ClubBanner(props: ClubBannerProps) {
           events={events}
         />
       }
-      bgColor={theme.colors.orange[5]}
+      imgSrc="/banners/m4-closeup_512.jpg"
     />
   );
 }
