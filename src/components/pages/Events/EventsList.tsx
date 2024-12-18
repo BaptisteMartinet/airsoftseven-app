@@ -4,12 +4,10 @@ import { useTranslations } from "next-intl";
 import {
   Box,
   Button,
-  Grid,
-  GridCol,
+  SimpleGrid,
   Group,
   Skeleton,
   Text,
-  Tooltip,
 } from "@mantine/core";
 import { IconCircleDashedPlus } from '@tabler/icons-react';
 import { EventCard, Anchor } from "@/components/common";
@@ -35,13 +33,11 @@ export default function EventsList(props: EventsListProps) {
             {t("eventsCount", { count: eventsCount })}
           </Text>
           {events.length > 0 ? (
-            <Grid columns={3}>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }}>
               {events.map((event) => (
-                <GridCol key={event.id} span={1}>
-                  <EventCard event={event} />
-                </GridCol>
+                <EventCard key={event.id} event={event} />
               ))}
-            </Grid>
+            </SimpleGrid>
           ) : (
             <Button
               variant="outline"
