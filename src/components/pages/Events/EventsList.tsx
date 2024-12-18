@@ -9,7 +9,6 @@ import {
   Group,
   Skeleton,
   Text,
-  Tooltip,
 } from "@mantine/core";
 import { IconCircleDashedPlus } from '@tabler/icons-react';
 import { EventCard, Anchor } from "@/components/common";
