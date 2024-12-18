@@ -18,7 +18,7 @@ export const Pathnames: PathnamesT<typeof Locales> = {
   },
   "/forgot-password": {
     fr: "/mot-de-passe-oublie",
-    en: "forgot-password",
+    en: "/forgot-password",
   },
   "/event-create": {
     fr: "/nouvelle-partie",
