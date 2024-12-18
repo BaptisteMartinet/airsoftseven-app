@@ -46,7 +46,7 @@ export default function EventsMap(props: EventsMapProps) {
     <GMap
       mapId={process.env.NEXT_PUBLIC_EVENTS_MAP_ID}
       center={center}
-      onCenterChanged={(event) => setCenter(event.detail.center)}
+      onCameraChanged={(event) => setCenter(event.detail.center)}
       defaultZoom={10}
       disableDefaultUI
       clickableIcons={false}
