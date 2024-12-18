@@ -53,6 +53,7 @@ export default function ResetPasswordForm(props: ResetPasswordFormProps) {
           {...form.getInputProps('code')}
           label={t('labels.code')}
           placeholder={t('labels.codePlaceholder')}
+          autoComplete="one-time-code"
           required
         />
         <PasswordInput
@@ -60,6 +61,7 @@ export default function ResetPasswordForm(props: ResetPasswordFormProps) {
           {...form.getInputProps('newPassword')}
           label={t('labels.newPassword')}
           placeholder={t('labels.newPasswordPlaceholder')}
+          autoComplete="new-password"
           required
         />
         <Button type="submit" loading={submitStatus === 'pending'}>
