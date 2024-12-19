@@ -19,7 +19,7 @@ export default async function middleware(request: NextRequest) {
       maxAge: 31536000,
       path: '/',
       sameSite: 'lax',
-      domain: process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? `.${process.env.NEXT_PUBLIC_APP_DOMAIN}` : '',
+      domain: process.env.NODE_ENV === 'production' ? `.${process.env.NEXT_PUBLIC_APP_DOMAIN}` : '',
     });
   }
 
