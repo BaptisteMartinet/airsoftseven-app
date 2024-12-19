@@ -1,10 +1,9 @@
-import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
-import { Locales, TranslationsFolderName } from "./i18nConfig";
+import { DefaultLocale, Locales, TranslationsFolderName } from "./i18nConfig";
 
 export default getRequestConfig(async ({ locale }) => {
-  if (!Locales.includes(locale as any)) notFound();
+  const effectiveLocale = Locales.includes(locale) ? locale : DefaultLocale
   return {
-    messages: (await import(`../${TranslationsFolderName}/${locale}.json`)).default,
+    messages: (await import(`../${TranslationsFolderName}/${effectiveLocale}.json`)).default,
   };
 });
