@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import { useTranslations } from "next-intl";
 import { Box, Button } from "@mantine/core";
 import { isNotEmpty } from "@mantine/form";
@@ -30,6 +30,9 @@ function EventsPage(props: EventsPageProps) {
   const t = useTranslations('pages.Events.EventsList');
   const t_shared = useTranslations("shared");
   const now = React.useRef(Date.now());
+
+  const { data: data2 } = useQuery(gql`query Test { language }`);
+  console.log(data2);
 
   const { data, loading, refetch, fetchMore } = useQuery(EventsQuery, {
     variables: {
