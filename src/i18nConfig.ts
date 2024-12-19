@@ -6,6 +6,8 @@ export const DefaultLocale = "fr";
 
 export const TranslationsFolderName = "messages";
 
+export const NextIntlCookieName = 'NEXT_LOCALE';
+
 export const Pathnames: PathnamesT<typeof Locales> = {
   "/": "/",
   "/register": {
